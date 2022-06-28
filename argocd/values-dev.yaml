@@ -34,13 +34,13 @@ argo-cd:
           - group: '*'
             kind: '*'
 
-defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
-defaultTargetRevision: dev
-
-applications:
-  argocd:
-    project: tools
-    namespace: argocd
-  sealed-secrets:
-    project: tools
-    namespace: sealed-secrets
+  defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
+  defaultTargetRevision: dev
+  
+  applications:
+    argocd:
+      project: tools
+      namespace: argocd
+    sealed-secrets:
+      project: tools
+      namespace: sealed-secrets

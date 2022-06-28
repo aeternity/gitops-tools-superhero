@@ -1,0 +1,20 @@
+traefik:
+  globalArguments: []
+  additionalArguments:
+    - "--entrypoints.web.http.redirections.entrypoint.to=:443"
+    - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+  logs:
+    access:
+      enabled: true
+  serviceAccount:
+    create: true
+  service:
+    enabled: true
+    type: LoadBalancer
+    annotations:
+      load-balancer.hetzner.cloud/name: "traefik-lb"
+      load-balancer.hetzner.cloud/location: "hel1"
+      load-balancer.hetzner.cloud/type: "lb11"
+      load-balancer.hetzner.cloud/use-private-ip: "true"
+      load-balancer.hetzner.cloud/ipv6-disabled: "true"
+      load-balancer.hetzner.cloud/disable-private-ingress: "true"

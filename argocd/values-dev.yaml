@@ -22,7 +22,7 @@ argo-cd:
         additionalAnnotations: {}
         description: Tools used to run the environment
         sourceRepos:
-          - 'https://github.com/aeternity/gitops-tools.git'
+          - 'https://github.com/aeternity/gitops-tools-superhero.git'
         destinations:
           - namespace: tools
             server: https://kubernetes.default.svc

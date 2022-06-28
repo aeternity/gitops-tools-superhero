@@ -26,6 +26,8 @@ argo-cd:
         description: Tools used to run the environment
         sourceRepos:
           - 'https://github.com/aeternity/gitops-tools-superhero.git'
+          - 'https://bitnami-labs.github.io/sealed-secrets'
+          - 'https://argoproj.github.io/argo-helm'
         destinations:
           - namespace: tools
             server: https://kubernetes.default.svc

@@ -15,6 +15,9 @@ argo-cd:
         - type: helm
           url: https://bitnami-labs.github.io/sealed-secrets
           name: sealed-secrets
+        - type: helm
+          url: https://helm.traefik.io/traefik
+          name: traefik
     additionalProjects:
       - name: tools
         namespace: argocd
@@ -47,3 +50,5 @@ applications:
 
 namespaces:
   - tools
+  - sealed-secrets
+  - argocd

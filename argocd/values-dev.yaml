@@ -10,6 +10,7 @@ argo-cd:
         - "argocd.dev.superk8s.de"
     extraArgs:
       - --insecure
+    logLevel: debug
     config:
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com

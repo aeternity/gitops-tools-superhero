@@ -6,6 +6,8 @@ traefik:
   logs:
     access:
       enabled: true
+    debug:
+      enabled: true
   serviceAccount:
     create: true
   service:

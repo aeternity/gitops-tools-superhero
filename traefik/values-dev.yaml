@@ -1,8 +1,8 @@
 traefik:
   globalArguments: []
-  #additionalArguments:
-    #- "--entrypoints.web.http.redirections.entrypoint.to=:443"
-    #- "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+  additionalArguments:
+    - "--entrypoints.web.http.redirections.entrypoint.to=:443"
+    - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
   logs:
   # Traefik logs concern everything that happens to Traefik itself (startup, configuration, events, shutdown, and so on).
     general:

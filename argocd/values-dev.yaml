@@ -4,7 +4,7 @@ argo-cd:
       ingressClassName: traefik
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: traefik
+        #kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
       pathType: ImplementationSpecific
       hosts:

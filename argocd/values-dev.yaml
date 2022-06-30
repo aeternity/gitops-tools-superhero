@@ -73,4 +73,6 @@ applications:
   metrics-server:
     project: tools
     namespace: kube-system
-  
+  cert-manager:
+    project: tools
+    namespace: cert-manager

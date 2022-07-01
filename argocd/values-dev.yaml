@@ -30,6 +30,9 @@ argo-cd:
         - type: helm
           url: https://charts.jetstack.io
           name: cert-manager
+        - type: helm
+          url: https://charts.adfinis.com
+          name: cert-manager-issuers
     additionalProjects:
       - name: tools
         namespace: argocd
@@ -74,5 +77,8 @@ applications:
     project: tools
     namespace: kube-system
   cert-manager:
+    project: tools
+    namespace: cert-manager
+  cert-manager-issuers:
     project: tools
     namespace: cert-manager

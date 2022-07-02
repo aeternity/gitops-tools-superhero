@@ -12,6 +12,7 @@ cert-manager-issuers:
           privateKeySecretRef:
             name: letsencrypt-staging-account-key
           solvers:
-            - http01:
-                ingress:
-                  class: traefik
+            - dns01:
+                webhook:
+                  groupName: superk8s-de
+                  solverName: dev-superk8s-de

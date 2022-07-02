@@ -11,8 +11,12 @@ cert-manager-issuers:
           server: https://acme-staging-v02.api.letsencrypt.org/directory
           privateKeySecretRef:
             name: letsencrypt-staging-account-key
-          solvers:
-            - dns01:
-                webhook:
-                  groupName: superk8s-de
-                  solverName: dev-superk8s-de
+            solvers:
+              - dns01:
+                  webhook:
+                    # This group needs to be configured when installing the helm package, otherwise the webhook won't have permission to create an ACME challenge for this API group.
+                    groupName: superk8s-de
+                    solverName: hetzner
+                    config:
+                      secretName: hetzner-secret
+                      apiUrl: https://dns.hetzner.com/api/v1

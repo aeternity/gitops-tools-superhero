@@ -1,16 +1,16 @@
 argo-cd:
   server:
     ingress:
-      ingressClassName: traefik
+      #ingressClassName: traefik
       enabled: true
       annotations:
-        #kubernetes.io/ingress.class: traefik
+        kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
       pathType: ImplementationSpecific
       hosts:
         - "argocd.dev.superk8s.de"
     extraArgs:
-      - --insecure
+      - --insecure=true
     config:
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com

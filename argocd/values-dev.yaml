@@ -1,7 +1,6 @@
 argo-cd:
   server:
     ingress:
-      #ingressClassName: traefik
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
@@ -27,12 +26,6 @@ argo-cd:
         - type: helm
           url: https://helm.traefik.io/traefik
           name: traefik
-        - type: helm
-          url: https://charts.jetstack.io
-          name: cert-manager
-        - type: helm
-          url: https://charts.adfinis.com
-          name: cert-manager-webhook-hetzner
     additionalProjects:
       - name: tools
         namespace: argocd
@@ -54,8 +47,6 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: kube-system
             server: https://kubernetes.default.svc
-          - namespace: cert-manager
-            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -76,9 +67,3 @@ applications:
   metrics-server:
     project: tools
     namespace: kube-system
-  cert-manager:
-    project: tools
-    namespace: cert-manager
-  cert-manager-webhook-hetzner:
-    project: tools
-    namespace: cert-manager

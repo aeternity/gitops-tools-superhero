@@ -28,5 +28,4 @@ spec:
       selfHeal: false
     syncOptions:
       - CreateNamespace=true
-
 {{- end }}

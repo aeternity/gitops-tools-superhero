@@ -82,3 +82,7 @@ applications:
   metrics-server:
     project: tools
     namespace: kube-system
+  dex-ui:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'

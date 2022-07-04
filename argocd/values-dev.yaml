@@ -35,7 +35,6 @@ argo-cd:
         description: Tools used to run the environment
         sourceRepos:
           - 'https://github.com/aeternity/gitops-tools-superhero.git'
-
           - 'https://bitnami-labs.github.io/sealed-secrets'
           - 'https://argoproj.github.io/argo-helm'
         destinations:
@@ -83,6 +82,22 @@ applications:
     project: tools
     namespace: kube-system
   dex-ui:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aepp-base:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aepp-graffiti:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aerepl-http:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aesophia-http:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'

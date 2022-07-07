@@ -1,3 +1,7 @@
+encValues:
+  dex.github.clientID: "AgCXquQn9jI+yaZBpDjQ6Ne9VNWZYAHMALH/UEhTmfMUcCSxgUe52hRhhnR3xw6CM4laO1XKfq+YcHdInmea44Gq9FcO2+6dY2TFqH+SPp0dDzdbLBb/jC2xiAMRMCfIDSDs7mgRm/WOpCr33hU+SU6jVc+uEX0C97EtyNq0n52oRI1FMW2D6tmEBYnBu8OE2/vxTVR22aWW1hcjikZHLs1L7B7urF090MtU2x1eJU9jpgkgkLcwLXgEDvzcpWNtzeQ4Asdvk0Jkdt8j17Tv7wzRnDZG8cALCDnuijDV5VSfAAWgUnLR6fJym3ksKEziLsDlLXWP8ZlcnLqCsCN/+FdTPQMXtYvQLQnuw4T8einOFnGiMjNR5X72frv8OEc5Csdo37Fw1EcT9aGIv17TeS/HZBxnm4fJa6HcbomJzxtxHKlVqtEe+WCb+eCCim6DeapACfpQZvD5s/N8w6hbq77Qo44h7lNz0U1JGn/KUN6vXf/NqfOlRgcTzuNBLTy6ltfKeT0MEzdS/9AQSCZSThfXEPa3VqjZZXJly6JXpefQxZm41+cxbz3J6lBCJZwl/nN/VW/UxDiatYcc7tz0DG1jgAmLEfZDOm+yvjKsJGNVwEGhxVjtCNcn/rIxRbuZt3tJh816BvQv7Y6VULWw5/aleEePbAbfqP/ae961f+RRYKqv6G2nBedUAG0Tqvq3SBwhi0duYdOMptog2cjowQ0d34I19A=="
+  dex.github.clientSecret: "AgC/ZJiTxZbODbRzu8NNGMlmjbmZ3DiBG3SzrZ5qPnd9eMNUiLlsJv7ZGGBkIWzpCEBJn2H4fKKxPMpwIt/yXTbZ5JaxS+s3VYcwS7L9AUOIKcSNp+kQjBEoJBisfLevCEzmmWztn1LGeM2n1E1pDVuLu4IP5Mw3YNcSbc5zgsiNvK98YXAz5NzWOCrTFJjwjOkxa5qSoc7wVXFojSYG5vm+oUZwY8VTFuZ9ppOwJdh4vWhPPehAuDnxFDdUWN5L4mgFjduDHrdnOqWjp7EDTmAb3F3YnUza3MuuucZKxjLOCVR+AaTIxerzCZYB5x22QmnipPHulCbR0a2MGkjqs3jvdxCqqXNumhsSA4GerlkgdhM04cEjaIJg+l/cZL/PVua/WaZCApIUdzTAMDOrA5Vw8kjJKqVu7ytHgj3fSs4SL49N4qwaUXCWcjS9h0gHLiPt1BBlg64OrOP2eaeW5Wu7FX+V1Cz6nqL9NKOWR25uqgicYXgjVcu1+GLh9wVSyKqYSZ8cqom1VcoAMeYPeBmYtlRv4U3dugZANrGSWbXZjbGwmYGYFHQ14UawNN5HQqynaraRBAqnyq8C5uV4EcrmOqEVWEyU9BXFHVgHBXNUJoHlo0hShB7xM3MZYAW+qSEhRPIlNSmN5hSpEL/9hl5oOwAsLwqFuKyh8exfdeYIsMhwVsdOW17Qz12rmCMOReN/USmyWTNQtuLuriW9VEgOWrzcWRLRvHs7gPsEiWJ/5yfioDqUj1JE"
+
 argo-cd:
   server:
     ingress:
@@ -14,6 +18,7 @@ argo-cd:
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
       # Argo CD instance label key
+      url: https://argocd.dev.superk8s.de
       application.instanceLabelKey: argocd.argoproj.io/instance
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git
@@ -27,6 +32,16 @@ argo-cd:
         - type: helm
           url: https://helm.traefik.io/traefik
           name: traefik
+      dex.config: |
+        connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: $dex.github.clientID
+              clientSecret: $dex.github.clientSecret
+              orgs:
+              - name: aeternity
       resource.customizations: |
           networking.k8s.io/Ingress:
             health.lua: |

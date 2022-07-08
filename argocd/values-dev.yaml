@@ -42,6 +42,10 @@ argo-cd:
               clientSecret: $dex.github.clientSecret
               orgs:
               - name: aeternity
+    rbacConfig:
+      policy.default: role:readonly
+      policy.csv: |
+        g, aeternity:devops, role:admin
       resource.customizations: |
           networking.k8s.io/Ingress:
             health.lua: |

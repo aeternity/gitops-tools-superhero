@@ -1,69 +1,20 @@
-encValues:
-  dex.github.clientID: "AgAhJ8EiL37VYBWj9PK11x4oBCGj2f9TzJZpXsxqtZfLvO1T4KfztYFAqptUuUJGFNwPwucplIPpmqmHj6RcOg+X7mDOifxwVoYreRvHIo5hnfjF17QVi049Fh3TBffUBRbApzS275gIqhWxm9awq3EiuF1F5gCyL5H5b9T6dgln+qLgxcf32BrAYMFFR5hXBsLqZfDP5+NwN/+46OlxPs5zhMclW81Z9cIklWMJ22uIOIvxxBfVmRHEZjVoZs7yzeL4A2QHdiICMG5aKbbIxIggu4qujKr94Vuq442Uil//FBUZyqO0+uV28v4H2pBmgUZlopEZY11KuQ2I+rQlB2ac/zFB47My0A23vnkNQGhm3VWXb+4ej772sJ+uSwdWmlzSPuJeV2QG9BgCPegeIdbbyrASaaCVv7wWIYOCU4VliVCssu2VNIqhykyreZF+t8bk74fwbt7+Hkyb1VOHDlx5wltrz3vDLnuqNr9WYiRaLXIA4WrUc3YYEzWCbh1ZQpkUQgbyESV/ky99hAh5RFaWgfs5LlCFsPagIwXpwddczupuoZK2G1OnM9+s7EyOizPkZnqV9t32wsmEy6dRMXLUjz7N5NvgQs+UVAy5yIv5J36MuIKNlbI1YWOkVNO+tLnN3L3Glb2c1kNPSbwGqursvM60xO4O8AVr422Cw0CrExQT3qRNB4TMmRq7SwICIx/sS/7rv7gQsmy5EmW2s2+HLihwjg=="
-  dex.github.clientSecret: "AgCbC2hKHePjyzIGdoyxhjOMjJY2ieJfzBwciPNFPVEt38DEKY76SYrV9fgZit/PQxGbWfDltVTgoN4Rj9+cEzPiiCy1y2oGh29qtqT2i5Us0AUkovPcsSwzlmvZI5PgsFoX3mGx2WWC2yAvMKXz9QQMSsSSubWGsRK4W6udXYl4k7tpWFeGmEHEfOR7nUh3m5tm3Uh7/vX9KO9By69qh4G9pVkN2e1bD6+Sn3kPuT2do+vwLZCV/rUouKLStYMPgLV3R4rbclTUgHEKrNv8gSRWeLSsvghaMchFJxDTwS0eWN6eUklonXA6N1jiSABHDo66psMGYbfc0Pq6ealp35n4Bhjkl18DP11fnXLv09N5TY0rxESkSd6p74/axh4EjqnQ3AWfA5d/O6093OdHdJpyE0gbXk6613iVmH+ov01gnwcWPGg8amPunUBIbqfxxSFqKBBGuAhMXgMkpslLD49psFgqom6T9Ati2yRkIBT096Y/dtQdKQByr3SVOcolxgqBr+eSS5wYjSAzP9cOGXFfosPkasP3BJW3yRJVDvmYurF14Ojeis6/ZO0jCK0nj/be/WNDYz6at/en9LdaMkabburtzJqVHaZgbSG2srKnpU07fmm+OnEdSViDbhzEDF1JROsSRcd0Mjoni6LiVV5JULMiCTDKzzblMDTZggRHoYpOY+X77G5DOITUaHvdX1V38/XMdnpjX+bCKCBYRAZP7S9pYYHvuwLwW5Dhx2lNt0gdg0ZqtLVr"
-  server.secretkey: "AgB7F8Grc42wJuJNJGiGpxq2dBXoVF8rNulNzX2jHrEMxvCS86oERQF5MGOiMFana8rFzSQI1w8vNCBHf2HvI9Q9Zmf4eaMa7EqPUdT70n7uSfAAk8svbjuphuVcZXxXhTaUYQI0TKVoP6pht3NDPhq6MHm080ZaijTMEq/W03RXDuLORi/Q0JNb2l65dzWv7DZP7N2TeKjuS6NdGIFfVOKDyAqSmJTYGV2xWyL1+jomrYujG2OBBW2FraFd2LLNvN50V1W6brIVZA5WpatOqfPZvTYS91ICk5mnqyTDRCHWMNOBVS0EnpX9cdxLgofT+orceYnQXiM10fEWtXv3UjQaNlL5WxUfrSDtaM8GjLayxTzCl/GGwp1dvydYSCL4QVb4dBohni3OVoWNC6ArSoSq3/+cn5mMbw53FyPY+gM0UxZtoCDdij/MlNchCeb7KQu0G3BqhIpO0RQh+yyu9xsoTTMwF1CbkmJnYcEqEaHr1/LUT0+t7dn/X4J30TK7e3ToIU6Lb/B51n6pZQ6V+czwbO8j2moaIRapD4GNtyRKgFHI2Ve03D9EG7kKSsBXv7EAce7HA8bc1u6uWfXTbElrPs3lWG/zXFzY978KZimFzrfiF3GLGiAIhS+nAw+FF2Bd+I4KBA5CUkXkeoNEKadQLYRIJb5GMCsvX1gAqvIMkpXkpUnqIrteJfhkCFqTZsXc9X6Vv+bwizxcYQe2pyzSOHDJjS1XjqE="
 argo-cd:
   server:
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
-      pathType: ImplementationSpecific
-      hosts:
-        - "argocd.dev.superk8s.de"
     extraArgs:
-      - --insecure=true
-      - --repo-server-timeout-seconds=180
+      - --insecure
     config:
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
       # Argo CD instance label key
-      url: https://argocd.dev.superk8s.de
       application.instanceLabelKey: argocd.argoproj.io/instance
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git
-        - url: https://github.com/aeternity/gitops-apps-superhero.git
         - type: helm
           url: https://argoproj.github.io/argo-helm
           name: argo
         - type: helm
           url: https://bitnami-labs.github.io/sealed-secrets
           name: sealed-secrets
-        - type: helm
-          url: https://helm.traefik.io/traefik
-          name: traefik
-        - type: helm
-          url: https://fluent.github.io/helm-charts
-          name: fluent
-      dex.config: |
-        connectors:
-          - type: github
-            id: github
-            name: GitHub
-            config:
-              clientID: $dex.github.clientID
-              clientSecret: $dex.github.clientSecret
-              orgs:
-              - name: aeternity
-      resource.customizations: |
-          networking.k8s.io/Ingress:
-            health.lua: |
-              hs = {}
-              hs.status = "Healthy"
-              return hs
-          admissionregistration.k8s.io/MutatingWebhookConfiguration:
-            ignoreDifferences: |
-              jsonPointers:
-              - /webhooks/0/failurePolicy
-          admissionregistration.k8s.io/ValidatingWebhookConfiguration:
-            ignoreDifferences: |
-              jsonPointers:
-              - /webhooks/0/failurePolicy
-    rbacConfig:
-      policy.default: role:readonly
-      policy.csv: |
-        g, aeternity:devops, role:admin
     additionalProjects:
       - name: tools
         namespace: argocd
@@ -71,9 +22,7 @@ argo-cd:
         additionalAnnotations: {}
         description: Tools used to run the environment
         sourceRepos:
-          - 'https://github.com/aeternity/gitops-tools-superhero.git'
-          - 'https://bitnami-labs.github.io/sealed-secrets'
-          - 'https://argoproj.github.io/argo-helm'
+          - 'https://github.com/aeternity/gitops-tools.git'
         destinations:
           - namespace: tools
             server: https://kubernetes.default.svc
@@ -81,73 +30,3 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: sealed-secrets
             server: https://kubernetes.default.svc
-          - namespace: traefik
-            server: https://kubernetes.default.svc
-          - namespace: kube-system
-            server: https://kubernetes.default.svc
-          - namespace: monitoring
-            server: https://kubernetes.default.svc
-          - namespace: logging
-            server: https://kubernetes.default.svc
-        clusterResourceWhitelist:
-          - group: '*'
-            kind: '*'
-      - name: apps
-        namespace: argocd
-        additionalLabels: {}
-        additionalAnnotations: {}
-        description: Applications deployed on K8S
-        sourceRepos:
-          - 'https://github.com/aeternity/gitops-apps-superhero.git'
-        destinations:
-          - namespace: apps
-            server: https://kubernetes.default.svc
-        clusterResourceWhitelist:
-          - group: '*'
-            kind: '*'
-
-defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
-defaultTargetRevision: dev
-
-applications:
-  argocd:
-    project: tools
-    namespace: argocd
-  sealed-secrets:
-    project: tools
-    namespace: sealed-secrets
-  traefik:
-    project: tools
-    namespace: traefik
-  metrics-server:
-    project: tools
-    namespace: kube-system
-  kube-prometheus-stack:
-    project: tools
-    namespace: monitoring
-  kube-prometheus-blackbox-exporter:
-    project: tools
-    namespace: monitoring
-  fluent-bit:
-    project: tools
-    namespace: logging
-  dex-ui:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aepp-base:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aepp-graffiti:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aerepl-http:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aesophia-http:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'

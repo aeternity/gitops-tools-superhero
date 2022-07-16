@@ -22,7 +22,7 @@ argo-cd:
         additionalAnnotations: {}
         description: Tools used to run the environment
         sourceRepos:
-          - 'https://github.com/aeternity/gitops-tools.git'
+          - 'https://github.com/aeternity/gitops-tools-superhero.git'
         destinations:
           - namespace: tools
             server: https://kubernetes.default.svc
@@ -30,3 +30,14 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: sealed-secrets
             server: https://kubernetes.default.svc
+
+defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
+defaultTargetRevision: dev
+
+applications:
+  argocd:
+    project: tools
+    namespace: argocd
+  sealed-secrets:
+    project: tools
+    namespace: sealed-secrets

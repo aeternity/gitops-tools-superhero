@@ -30,6 +30,9 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: sealed-secrets
             server: https://kubernetes.default.svc
+        clusterResourceWhitelist:
+          - group: '*'
+            kind: '*'
 
 defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
 defaultTargetRevision: dev
@@ -41,3 +44,4 @@ applications:
   sealed-secrets:
     project: tools
     namespace: sealed-secrets
+

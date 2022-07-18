@@ -15,6 +15,6 @@ spec:
     receiver: rocketchat
   receivers:
   - name: rocketchat
-    webhook_configs:
-      - send_resolved: true
+    webhookConfigs:
+      - sendResolved: true
         url: webhook_url

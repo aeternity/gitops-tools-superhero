@@ -98,14 +98,6 @@ kube-prometheus-stack:
       hosts:
         - "alertmanager.dev.superk8s.de"
       pathType: ImplementationSpecific
-    config:
-      route:
-        receiver: rocketchat
-      receivers:
-        - name: rocketchat
-          webhook_configs:
-            - send_resolved: true
-              url: webhook_url
   defaultRules:
     rules:
       kubeScheduler: false

@@ -31,7 +31,7 @@ kube-prometheus-stack:
             target_label: target
             # Ensure blackbox-exporter is reachable from Prometheus
           - target_label: __address__ 
-            replacement: prometheus-blackbox-exporter.monitoring:9115
+            replacement: blackbox-prometheus-blackbox-exporter.monitoring.svc.cluster.local:9115
         - job_name: redis_exporter
           static_configs:
             - targets: ['10.0.1.13:9121', '10.0.1.11:9121']

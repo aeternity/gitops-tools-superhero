@@ -4,8 +4,8 @@ kind: AlertmanagerConfig
 metadata:
   name: alertmanager-rocketchat-config
   labels:
-    alertmanagerConfig: {{- include "kube-prometheus-stack.labels" . | nindent 4 }}
-  namespace: {{ .Release.Namespace }}
+    alertmanagerConfig: alertmanager-rocketchat-config
+  namespace: monitoring
 spec:
   route:
     groupBy: ['job']
@@ -17,4 +17,4 @@ spec:
   - name: rocketchat
     webhookConfigs:
       - sendResolved: true
-        url: webhook_url
+        url: https://devchat.aeternity.com/hooks/62d50420fa5401065c7e7892/irR6fSiD835qstag7zjdM9Fjw2ZQ7DcaYztQdygBvZFcmFtR

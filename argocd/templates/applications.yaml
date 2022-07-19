@@ -17,6 +17,7 @@ spec:
     repoURL: {{ $value.repoUrl | default $root.Values.defaultRepoUrl }}
     targetRevision: {{ $value.targetRevision | default $root.Values.defaultTargetRevision }}
     helm:
+      skipCrds: true
       valueFiles:
         - values-dev.yaml
   destination:

@@ -10,34 +10,6 @@ kube-prometheus-stack:
     prometheusSpec:
       serviceMonitorSelectorUsesHelmValues: false
       ruleSelectorNilUsesHelmValues: false
-      additionalScrapeConfigs:
-        - job_name: blackbox
-          metrics_path: /probe
-          params:
-            module: [http_2xx]
-          static_configs:
-            # Add URLs as target parameter
-            - targets:
-              - https://example.com
-              - https://www.google.com
-              - https://stackoverflow.com
-              - https://scala-lang.org
-              - https://helm.sh
-          relabel_configs:
-          - source_labels: [__address__]
-            target_label: __param_target
-          - source_labels: [__param_target]
-            # Important!     
-            target_label: target
-            # Ensure blackbox-exporter is reachable from Prometheus
-          - target_label: __address__ 
-            replacement: kube-prometheus-blackbox-exporter.monitoring.svc.superhero-dev:9115
-        - job_name: redis_exporter
-          static_configs:
-            - targets: ['10.0.1.13:9121', '10.0.1.11:9121']
-        - job_name: node_exporter
-          static_configs:
-            - targets: ['10.0.1.13:9100', '10.0.1.11:9100']
     ingress:
       enabled: true
       annotations:

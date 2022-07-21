@@ -125,7 +125,7 @@ applications:
   kube-prometheus-stack:
     project: tools
     namespace: monitoring
-  kube-prometheus-blackbox-exporter:
+  prometheus-blackbox-exporter:
     project: tools
     namespace: monitoring
   fluent-bit:

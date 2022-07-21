@@ -92,4 +92,4 @@ prometheus-blackbox-exporter:
       - sourceLabels: [__param_target]
         targetLabel: instance
       - targetLabel: __address__
-        replacement: kube-prometheus-blackbox-exporter.monitoring.svc.superhero-dev:9115
+        replacement: prometheus-blackbox-exporter.monitoring.svc.superhero-dev:9115

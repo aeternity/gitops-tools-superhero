@@ -1,4 +1,4 @@
-prometheus-blackbox-exporter:
+kube-prometheus-blackbox-exporter:
   config:
     modules:
       http_2xx:

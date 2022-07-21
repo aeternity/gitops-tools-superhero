@@ -22,8 +22,6 @@ prometheus-blackbox-exporter:
 
     defaults:
       additionalMetricsRelabels: {}
-      labels:
-        release: prometheus-stack
       interval: 30s
       scrapeTimeout: 60s
       module: http_2xx

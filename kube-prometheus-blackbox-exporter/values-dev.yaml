@@ -22,8 +22,7 @@ prometheus-blackbox-exporter:
 
     defaults:
       additionalMetricsRelabels: {}
-      labels: 
-        app.kubernetes.io/name: kube-prometheus-blackbox-exporter
+      labels: {}
       interval: 60s
       scrapeTimeout: 60s
       module: http_2xx

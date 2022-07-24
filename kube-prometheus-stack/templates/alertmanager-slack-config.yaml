@@ -17,4 +17,4 @@ spec:
   - name: rocketchat
     webhookConfigs:
       - sendResolved: true
-        url: https://webhook_url
+        url: 'https://webhook_url'

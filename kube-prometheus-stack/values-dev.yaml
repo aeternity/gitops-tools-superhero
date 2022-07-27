@@ -95,9 +95,9 @@ kube-prometheus-stack:
       templates:
         - '/etc/alertmanager/config/*.tmpl'
     templateFiles:
-      rocketchat.tmpl: |-
+      slack.tmpl: |-
            {{ define "cluster" }}{{ .ExternalURL | reReplaceAll ".*alertmanager\\.(.*)" "$1" }}{{ end }}        
-           {{ define "rocketchat.ae.text" }}
+           {{ define "slack.ae.text" }}
            {{- $root := . -}}
            {{ range .Alerts }}
              *Alert:* {{ .Annotations.summary }} - `{{ .Labels.severity }}`
@@ -110,7 +110,7 @@ kube-prometheus-stack:
                {{ end }}
            {{ end }}
            {{ end }}
-           {{ define "rocketchat.ae.title" -}}
+           {{ define "slack.ae.title" -}}
               [{{ .Status | toUpper -}}
               {{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{- end -}}
               ] {{ .CommonLabels.alertname }}

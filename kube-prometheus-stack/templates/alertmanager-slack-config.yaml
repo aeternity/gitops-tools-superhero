@@ -2,7 +2,7 @@
 apiVersion: monitoring.coreos.com/v1alpha1
 kind: AlertmanagerConfig
 metadata:
-  name: alertmanager-rocketchat-config
+  name: alertmanager-slack-config
   labels:
     alertmanagerConfig: {{- include "kube-prometheus-stack.labels" . | nindent 4 }}
   namespace: {{ .Release.Namespace }}
@@ -10,11 +10,16 @@ spec:
   route:
     groupBy: ['job']
     groupWait: 30s
-    groupInterval: 1m
-    repeatInterval: 1m
-    receiver: rocketchat
+    groupInterval: 5m
+    repeatInterval: 12h
+    receiver: alertmanager-slack
   receivers:
-  - name: rocketchat
-    webhookConfigs:
-      - sendResolved: true
-        url: webhook_url
+  - name: alertmanager-slack
+    slackConfigs:
+    - sendResolved: true
+      apiURL:
+        name: kube-prometheus-stack-secret
+        key: webhook_url
+      channel: '#monitoring'
+      title: {{`"{{ template \"slack.ae.title\" . }}"`}}
+      text: {{`"{{ template \"slack.ae.text\" . }}"`}}

@@ -19,7 +19,7 @@ spec:
     helm:
       skipCrds: true
       valueFiles:
-        - values-dev.yaml
+        - values-stg.yaml
   destination:
     namespace: {{ $value.namespace }}
     server: 'https://kubernetes.default.svc'

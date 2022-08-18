@@ -30,6 +30,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: sealed-secrets
             server: https://kubernetes.default.svc
+          - namespace: traefik
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -44,3 +46,6 @@ applications:
   sealed-secrets:
     project: tools
     namespace: sealed-secrets
+  traefik:
+    project: tools
+    namespace: traefik

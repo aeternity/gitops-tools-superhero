@@ -15,9 +15,6 @@ argo-cd:
         - type: helm
           url: https://bitnami-labs.github.io/sealed-secrets
           name: sealed-secrets
-        - type: helm
-          url: https://helm.traefik.io/traefik
-          name: traefik
     additionalProjects:
       - name: tools
         namespace: argocd
@@ -32,8 +29,6 @@ argo-cd:
           - namespace: argocd
             server: https://kubernetes.default.svc
           - namespace: sealed-secrets
-            server: https://kubernetes.default.svc
-          - namespace: traefik
             server: https://kubernetes.default.svc
           - namespace: kube-system
             server: https://kubernetes.default.svc
@@ -51,9 +46,6 @@ applications:
   sealed-secrets:
     project: tools
     namespace: sealed-secrets
-  traefik:
-    project: tools
-    namespace: traefik
   metrics-server:
     project: tools
     namespace: kube-system

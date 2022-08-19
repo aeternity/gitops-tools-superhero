@@ -32,3 +32,11 @@ traefik:
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "https"
       load-balancer.hetzner.cloud/http-certificates: "stg.superk8s.de"
+  # Create an IngressRoute for the dashboard
+ingressRoute:
+  dashboard:
+    enabled: false
+    # Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
+    annotations: {}
+    # Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
+    labels: {}

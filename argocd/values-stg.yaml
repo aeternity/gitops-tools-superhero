@@ -39,5 +39,5 @@ defaultTargetRevision: stg
 
 applications:
   argocd:
-  project: tools
-  namespace: argocd
+    project: tools
+    namespace: argocd

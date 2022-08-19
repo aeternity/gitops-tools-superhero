@@ -33,4 +33,11 @@ argo-cd:
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
+            
+defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
+defaultTargetRevision: dev
 
+applications:
+  argocd:
+    project: tools
+    namespace: argocd

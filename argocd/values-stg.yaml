@@ -9,6 +9,7 @@ argo-cd:
       application.instanceLabelKey: argocd.argoproj.io/instance
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git
+        - url: https://github.com/aeternity/gitops-apps-superhero.git
         - type: helm
           url: https://argoproj.github.io/argo-helm
           name: argo
@@ -18,6 +19,23 @@ argo-cd:
         - type: helm
           url: https://helm.traefik.io/traefik
           name: traefik
+        - type: helm
+          url: https://fluent.github.io/helm-charts
+          name: fluent
+      resource.customizations: |
+          networking.k8s.io/Ingress:
+            health.lua: |
+              hs = {}
+              hs.status = "Healthy"
+              return hs
+          admissionregistration.k8s.io/MutatingWebhookConfiguration:
+            ignoreDifferences: |
+              jsonPointers:
+              - /webhooks/0/failurePolicy
+          admissionregistration.k8s.io/ValidatingWebhookConfiguration:
+            ignoreDifferences: |
+              jsonPointers:
+              - /webhooks/0/failurePolicy
     additionalProjects:
       - name: tools
         namespace: argocd
@@ -40,6 +58,19 @@ argo-cd:
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
+      - name: apps
+        namespace: argocd
+        additionalLabels: {}
+        additionalAnnotations: {}
+        description: Applications deployed on K8S
+        sourceRepos:
+          - 'https://github.com/aeternity/gitops-apps-superhero.git'
+        destinations:
+          - namespace: apps
+            server: https://kubernetes.default.svc
+        clusterResourceWhitelist:
+          - group: '*'
+            kind: '*'
 
 defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
 defaultTargetRevision: stg
@@ -57,4 +88,51 @@ applications:
   metrics-server:
     project: tools
     namespace: kube-system
-
+  dex-ui:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aepp-base:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aepp-graffiti:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aerepl-http:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aesophia-http:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  superhero-ui:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  superhero-wallet:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  state-channel-demo-frontend:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  state-channel-demo-backend:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  dex-backend-mainnet:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  dex-backend-testnet:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  explorer:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'

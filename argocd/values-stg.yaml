@@ -1,7 +1,20 @@
+encValues:
+  dex.github.clientID: "AgAxtwXfRRsxaC7foeMZ/tH/TpfxgWIxjATeI/rsCOPhDIvUWEk7aJjPNH7I6d+xyK0rH8zZklVqM3xAeQXCo1lhy0t7WrEPJHfEpz6wPaOsMu5aB4BDot105GCGwpi/7lt/kj5zalwh3mkpulWf9Z9TXU1uSNp360y3DcYqMsGJuHN/aUFyZNXXHYP9k3zmxFcRuSigrxrMSZo1Pj/zSQ0IOO4qf72N8+wQrI46CBmlXVQbHqgas0z6T3kgX3hFfBb+FKsTtH8vtL+X8PXVQMFV/H80vCoX7E9ibKJaQtx0nNSD+STL+gFs/agpnAtkCIgeFqGEgBNvSFQaAENukdAkIwzZt5K8c7V6nlv3upYDjUsp6e76h4o7jMe0QsJYghsGMLrCfLokitVUFK1tP4T3/1wP5T54ATQw91wpyfm4oXXrJoiz4HxencMWSgF7Em6Nq6a8khsVlmaDlJ8ZwOQbWnk/UGjMRH5oM7ZJeSPKEo0nDc/5/5iSVjeR0eTVcluHbHMWMKmw2kZ867Frq3vgn+OqhPChem7iwgx9wGcit1bATRnm/JVpu6dIk966K4mt8xJz4+rIuApg5M51bibrTgITADzx2MW+QCmRm6fWdcf6PixtAfL/Nja1HNsLM6ykob3N7ZTNHBvAtin6yCiOL1VwB66rlwG72B4M9BUlQpq7MtV/wkCzn+ZkXBaXQX52GpDPVxu6C+VdWCa/fo6irPoYMg=="
+  dex.github.clientSecret: "AgC3z2hjqYGNHxH955g21l6aJU97hzj+fxdBPtDDHy45Om0CcaS7a9hcualSvaXxkn7g1+tSUA4jJxyvtbIDC0VWec24C31YCG8jLMA43850JRC++MglkrbvMIscqNJ0JQf31AWC36Ya+otmzboCIzoxQtuMC6C4hzwc4yTBd5H4M5eUsvNnXuAn6l03HvAPSUvnbWhihjoxpcZZfsVlGVbDwXgYgdGtS/wLWu7Baf1eDWLOOibWVzLhT60BF9yy9F4oQklqkdreqKt/XJXcrD8cjYEl1hFltDDH+347n+fKd7mYpa6stcMTS4Cx/PA1zkzCSfN/LydYGBNEPXUw4tw6AiNf3vBVgDuOdkGdLxLD3vjn0T+pDanK+T+80RURhBgyvVkmRyb97qUGGekcTFsatA0JCMoykqeHpxjs9OhI1qLxeA/kAdJrlsG5+C92D3PixTmGo99IND+/qDbU45IdypgZ7e8vi6CBturc8AEc7cnGRz6PQMFVkEqpvwyq4QdfJiAbyY4jR1j4iNl7yjjbSdA7p+jP7Itja/dPJYwiqoHd9rlL3GIJkim8dUGho8w21fskdZNrJgNfavCeVSWs+KiiSD5GzhDG1hovjBi1QXFLFNo4lFdhTcz7vK/0BuVai01TzSnGxmMMMZdHv5ZaKNXb4PSSMjNoGcxk5kMy8ETPn2fCDzyGbeXHU9y01zN+hYyWD3iygfI+62u2lC38Sni7NhtaM8/TpyDU8wykbaCowRuOWPi7"
+  server.secretkey: "AgAD/F44bWBT/3oQ5lF+quzEkkzmmy2Pd/IEBfrl0g4StYQNURdnNMz2tMuxvbPdqF9Ns/DySOEtuQ3bdTP+pe+D5JUKRxml7gKpJIgeH1d4Ulon0LKugM1BLy5ORXSuTb1II8OSPtTWM9EDk3zFLvuo30zQ8zb0nqblpdHxA4Y8XiSV65v7MF8lTsSC4RdW1DbEwrVENQXTorfIUffs7yzxcSINagPCZo+j5Ju5qfD7lL8pxCUrx06Ll/hrKo7cOYWFoF8MrDrJY4GRQadaDibA1Gxsf8rUIKZaCTlKcw6ALKNTC8Wfqp1O5Ny+zLesMionZZEuRdXxrIXGkifylJhDPz0PDtHdzB0rU7lgh4ojj7b4jCxG28erm3FWhSJ6EP/s8UaturWUNQRfpqeDqxwY2IVTismoU1Lh7iadA78j9KfIYO3CwXQqkO4LSjUY+eO0VLkafatA/U2E+KRg4thCIEpVhRBa7sqWjSq7aK+3uOFMtysA62O2JLzdgpm7k6EocxbCYMR8ZnaWMSOd8xko63mzucQ+sH4CZPuT9ziXlcD9K9gehal9E5ecCZWxY2zfsZ42KQMt8O6+z8njurNiZCOFF92yxqhsko97ZKOGk+CHPjkmklXne85Dz/Rjq+ya6909au8THEby7xrcEgvyZBONquDlkTAcL91Pezg1Kkvcf79vKfubetVyv7Ez5HaBrsaT5Bvw0Ljk2fnYaVCe"
 argo-cd:
   server:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      pathType: ImplementationSpecific
+      hosts:
+        - "argocd.stg.superk8s.de"
     extraArgs:
       - --insecure
+      - --repo-server-timeout-seconds=180
     config:
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
@@ -22,6 +35,16 @@ argo-cd:
         - type: helm
           url: https://fluent.github.io/helm-charts
           name: fluent
+      dex.config: |
+        connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: $dex.github.clientID
+              clientSecret: $dex.github.clientSecret
+              orgs:
+              - name: aeternity
       resource.customizations: |
           networking.k8s.io/Ingress:
             health.lua: |
@@ -36,6 +59,10 @@ argo-cd:
             ignoreDifferences: |
               jsonPointers:
               - /webhooks/0/failurePolicy
+    rbacConfig:
+      policy.default: role:readonly
+      policy.csv: |
+        g, aeternity:devops, role:admin
     additionalProjects:
       - name: tools
         namespace: argocd

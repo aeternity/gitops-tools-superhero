@@ -16,10 +16,6 @@ argo-cd:
       - --insecure
       - --repo-server-timeout-seconds=180
     config:
-      secret:
-      # -- Create the argocd-secret
-      createSecret: false
-
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
       # Argo CD instance label key

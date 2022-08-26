@@ -13,12 +13,13 @@ argo-cd:
       hosts:
         - "argocd.stg.superk8s.de"
     extraArgs:
-      - --insecure
+      - --insecure=true
       - --repo-server-timeout-seconds=180
     config:
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
       # Argo CD instance label key
+      url: https://argocd.stg.superk8s.de
       application.instanceLabelKey: argocd.argoproj.io/instance
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git

@@ -31,7 +31,7 @@ traefik:
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "https"
-      load-balancer.hetzner.cloud/http-certificates: "stg.superk8s.de"
+      load-balancer.hetzner.cloud/http-certificates: "prd.superk8s.de"
   # Create an IngressRoute for the dashboard
 ingressRoute:
   dashboard:

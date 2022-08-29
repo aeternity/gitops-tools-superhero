@@ -125,7 +125,7 @@ applications:
     namespace: monitoring
   fluent-bit:
     project: tools
-    namespace: monitoring
+    namespace: logging
   dex-ui:
     project: apps
     namespace: apps

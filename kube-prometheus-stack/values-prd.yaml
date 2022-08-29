@@ -1,0 +1,283 @@
+encValues:
+  github_client_id: 'AgCbM4zGrL2VF6ZqFrEROcxgJyFHkYxVXoC6MznrBUyX+YduRCmjPGRxXswO8EchbeJ3aLfvPqljVEaKy8j8B6jEJQdKRliZzwEkZmBLZw1NwPsZeaQEEThnup1n+Ntce7rJtF0V1illXSYXHMtF5ol+3smETk7s/ePZL7uBdwP0/350FLTrm3FBsLu/4vS4aikIOBjXtb1jluSAUf38xcb7fHCUIkV4DJnjFNrL4gRM7zR5gwhwoV1HC9occp/+H1nmin80bX21U9G4VepgsNBj9JnBIixe1dqXJRUi7qxwNdKYp1yrw3QTPWcaiACEd83H7ioQV6OpKQZ+b5Nje/qcZsiSXWOPupfPEJDbZCd7lzR3oeydH7i2pZbXWrXMVFUBimYH5LTbnBb+AJwfyHJtWLM8Khthbfe9jCrnXPVUU0gQTBqCSHnk8vL9+r/eph9erR1v+LoZWAGxF4/48Nx6T0GzSweQ/NQz/D0LoQiDdb1xrU29ImPIomki4IZr+x7IIsG9Tx61u7RqDL65VE4qcaYyiuouwsPGc2gGY61fK+xI2dvNNaC/IEb2Jsl64vWfPQibMCMOe1BGGFKKcgAj6piotp8gbtFX4sXWeJyRfqfnzu3kNe15QpKqgeFXlP2ZFHvGe33YwCAU2gCcsi8m+RoAOu5tQ5z+X8DE1SUOK/cUVKKGbhtYCE92kIVwUI91TCW1IDzeBFk+Twv+OezfEJkxjQ=='
+  github_client_secret: 'AgBaHU2pzy8kZlp7CV5RxMtO5jszinh/3tIj2QO2GtEboC15FjlBUyhGr1JCjFvEsC/F/tn5mElwz++/j90H9s/qxOkKJT58fnu7XkgteNqvdfdFx9Y2MaYRIIpL2mm6HnumPFGSWQtXQ4LguLRognP2YpaooiowtNm6KW3Rn6LZnJHLfazi2V7uZPJ/bLjRynmgVnt8dvGVnRmsYmWwGkRv65oLR2zHwlA24KKYygvWOZSqEWA7VMBZRrg2IWDnanTmANPkAsaPO372VnFWV7bi7V8ZrJa75Gu316i4PhuEoRivUHdAYHTtnCwXjOpYgngWE1JnlqiG0Okmh8MYBtGQYOy02Q6Wfl/hBsoaFcjppqBMwr0ohfel8pZFsFZ6mon33WSHD99OL+50vtDDPflltqjFERw5sKD4WmSYBdANysrApo9doFdURyi6xKyBov/M/fqvWHlleZ0TD39H3A0+EnU9yD0etdqdwXEfMSg15BhLR4/AQz033FJzXGAqt7jEgqTfjIOC81nOgQ8vfnMhrw8MxQkzXwI7Q/3lsgdrT03sNYpKSwRYjXRDUfRr4+qnbnCg3UWVEiLOoym0NboMbhzESumUghu0OcoZUH0dalLr8wkdWwTBreym+9dxMw2BZYAShq/OQ/8u/74g6zrJUDh3XYwFC/OJQ7zxbLNIa3OT+Le6RMaldBnUArSc5fTjrn126wHkzev/xgY0Av50uS6lm3rK2y+tdcDDhfvR48TGJX/sFvlm'
+  grafana_admin_user: 'AgCW7vAuTEICvLZP/161uL/pGRzkGPk37k2tJYulX9Xp8GYI53kmhUaslE4injJGyjiIJ1L4GyWx7wSOrAai27XhbAPCYX3BSOqcT+RbCKRPEo0rZ2VzgPDO8dNEAe/Qqg8FORNncdNocmP4iZKpI6h0kUYwwBopk5tStFdHde66iRuNPYkoeFTOEr/x2Ad0TIQEEaZTxRWyphUjOshVrDpA2YpcwmLDh+xfswHjr+mZxWy3rHz/x5STnxt0qMxi/mzshifow7inEZBHIOhkPCE/QUFVjgtrxe0l1c3mdmOTp7ASVcE+EuoKXTL7DmZY0JGqpJr/AEHI7VWqxRArBKaKxbJl3w7NTDLEUissvjlVZVQaJWg9t5gkfGv0ASYlahfXC8HYynpsCfbJ5aJGK5D35shv7A/DxEFZtYV3tM9IDAlw3W+hVbBGCvrUxZdYXE1vYgkatKRSlILHYBogHkULC1F58voR03QIr2Srmce6uBLSTmHnIkNrk3h1THvsiIJpbjwyV3HBo4F0ezgw0wHUYQfaqTvYUHsconVc0Vm07SbR9pXuqdqoROzkMdis57zr5Fe2V8dIc0K39yurvIQe1RkY4p1OqoJPx90f2PywzZXDzUjxy1vUwssyABKkjy1NZUKpXBGlkZy6KGVZKqDBnzwdlJ5lJDjCYF7/NKz6PzglGY4ayV7X13KxQ7v5oqBH/u8uOg=='
+  grafana_admin_password: 'AgDEauo3imecKqcX9Hv/FsdPNK6lnVUPZdFOHWSazqqUD80Q5gCF0ha0tcXiP1xni8p+pYIHAC2DhKx61eli6BsrbMJpXg3aB2UPEaErCgQRALN3IyFr/MRqOn1R1UftjCqKsumJUKiccHYCeKkGahN/wTul4kHIa1xjOVK8O9VVa+CKBnn0fb2/QW2Nj+Tfzw9bzmqKXTsr9sEBJahAumHKPkIirQoIdnRuVW3idYgVHPVuh1Y1EdwmTVlH184zN+psmngkXzisQfBaw5BfKGNY8gqoDLvI795untHsj0jmnVqUxwCfKMm6TyUmnSRIv1NTBBP5AOmXPAwoYCNVapn7IZ+mMsFhvSU8bLqNJKB6noeQH/Ky1bpNhEyImggTe7yOE+jhu0VG2CSUb6M2cc8/ZHSl8cpTjvO4pVaDRX1ChMAUs1zAIU8zi9bK2I1BqwVB6mtxoZhompi7JqVhXWVfuE5e/bnRmIPvZT4RfwL2IFzxeJeLR4MC9yX4SFI77w2jNQVVnlD7oaI6iK0POqu4T7E3+zLHcQ8Ci8PD4Z1+U5vth2PWRfgaCZGTXzPUf3qDTf1TbvsXrUxhQchzYjXjPMngDxQ6UtrMSBHcwQxsE1peZAJlHeH+u8jj4MqLCA/V98M/VxKRT/H4jxeChtk97K2K0seieyhUpaEBSzqK5YLxAKEmWQpqVjpjgN60n/DQ+G8YSer7jWsCrXTE'
+  webhook_url: 'AgAr3kpRGTwJm6OYvcEMae4djXs1bxp+tprubtKF2efd04DfPEtLQ9bVv+Jftex6cqJz+nGWiqazJb0CrcnG56JjLZn4W7Wiu/QD746bR0+0U4JWgpUWpcClYUXw8Gel1HX0dSNPIK4ngy2GvYgT4166Dw7pTap6fsRPqQXvxSIbFkBFUc8PNrx3U5NbuL/cmrQp81/cfgQvjF036sEH3QioBgoAmTFV1izEqr0/MJ0kypV5nvr7S8XZzIGGC+JPvaIc59i+kuH2WmkQS8qm7MW1tb8sype5MNeqX6r/3B+O4iMtNHCTwOVi9wvD1vsWapcIQMquj5f5KbOLRe4IStvZ4Mg6FFy6sg27idCf4thpi3BRAgmbbrRCyed5RvdzIVZlTb2fuS8rX/MlciSl+U8J0RvGhCrTcb35TjVR2L7UNPKXLzS6w95mHBanY5CJoe1v+OH87UjztFQllFaLs04FCMgH5J8rs8JPLSXpGgwgbI2OPPY9ZYV+vtWPL5gkqI7ir105naacBuu6E332k776N27GmtetxAOXNN2vRLFLpZ90TUYp1LcPpE0gy0iQ6WUBtzT9W83krvTDE44mQR4joZqFEvim0BRW5eO5pZTgvu4Ecu8xAFMxOVsHXnxzd4XSyFjnZ0ih2CCPtN10hJFbC4/nwDOhIxfU9FVdDznewKkHnN1lHnKvL/2upcf0Iu1imysL0QWIsEEoa5fUf6cIzk7tmvpY3fv4FlApud4DfoZwiKWxie/cOIew+A2K7FwHq4rwJYxEGeeGH0bVk0GL2BXwA6jRYtMT5rfB3t6VWNk='
+
+kube-prometheus-stack:
+  prometheus:
+    prometheusSpec:
+      serviceMonitorSelectorUsesHelmValues: false
+      ruleSelectorNilUsesHelmValues: false
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      hosts:
+        - "prometheus.stg.superk8s.de"
+      pathType: ImplementationSpecific
+
+  grafana:
+    admin:
+      existingSecret: kube-prometheus-stack-secret
+      userKey: grafana_admin_user
+      passwordKey: grafana_admin_password
+    sidecar:
+      dashboards:
+        enabled: true
+        folderAnnotation: grafana-dashboard-dir
+    grafana.ini:
+      server:
+        domain: grafana.stg.superk8s.de
+        root_url: https://grafana.stg.superk8s.de
+      plugins:
+        enable_alpha: true
+      auth.github:
+        enabled: true
+        client_id: $__file{/etc/secrets/github_client_id}
+        client_secret: $__file{/etc/secrets/github_client_secret}
+        scopes: user:email,read:org
+        auth_url: https://github.com/login/oauth/authorize
+        token_url: https://github.com/login/oauth/access_token
+        api_url: https://api.github.com/user
+        allow_sign_up: true
+        allowed_organizations: aeternity
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      hosts:
+        - "grafana.stg.superk8s.de"
+      pathType: ImplementationSpecific
+    plugins:
+      - grafana-piechart-panel
+    dashboardProviders:
+     dashboardproviders.yaml:
+       apiVersion: 1
+       providers:
+       - name: 'tools'
+         orgId: 1
+         folder: 'Tools'
+         type: file
+         disableDeletion: true
+         editable: true
+         options:
+           path: /var/lib/grafana/dashboards/tools
+    dashboards:
+      tools:
+        traefik2:
+          gnetId: 11462
+          revision: 1
+          datasource: Prometheus
+        argocd:
+          gnetId: 14584
+          revision: 1
+          datasource: Prometheus
+    extraSecretMounts:
+    - name: secrets-mount
+      secretName: kube-prometheus-stack-secret
+      defaultMode: 0440
+      mountPath: /etc/secrets
+      readOnly: true
+
+  alertmanager:
+    alertmanagerSpec:
+      externalUrl: "https://alertmanager.stg.superk8s.de"
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      hosts:
+        - "alertmanager.stg.superk8s.de"
+      pathType: ImplementationSpecific
+    config:
+      templates:
+        - '/etc/alertmanager/config/*.tmpl'
+    templateFiles:
+      slack.tmpl: |-
+           {{ define "cluster" }}{{ .ExternalURL | reReplaceAll ".*alertmanager\\.(.*)" "$1" }}{{ end }}        
+           {{ define "slack.ae.text" }}
+           {{- $root := . -}}
+           {{ range .Alerts }}
+             *Alert:* {{ .Annotations.summary }} - `{{ .Labels.severity }}`
+             *Cluster:* {{ template "cluster" $root }}
+             *Description:* {{ .Annotations.description }}
+             *Graph:* <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
+             *Runbook:* <{{ .Annotations.runbook }}|:spiral_note_pad:>
+             *Details:*
+               {{ range .Labels.SortedPairs }} - *{{ .Name }}:* `{{ .Value }}`
+               {{ end }}
+           {{ end }}
+           {{ end }}
+           {{ define "slack.ae.title" -}}
+              [{{ .Status | toUpper -}}
+              {{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{- end -}}
+              ] {{ .CommonLabels.alertname }}
+            {{- end }}
+  defaultRules:
+    rules:
+      kubeScheduler: false
+
+  additionalPrometheusRulesMap:
+  - name: blackbox
+    groups:
+    - name: blackbox
+      rules:
+        - alert: BlackboxProbeHttpFailure
+          expr: probe_http_status_code <= 199 OR probe_http_status_code >= 400
+          for: 0m
+          labels:
+            severity: critical
+            namespace: monitoring
+            env: stg
+          annotations:
+            summary: "Probe failed (URL: {{ $labels.instance }})"
+            description: "Probe failed\n STATUS_CODE = {{ $value }})"
+        - alert: BlackboxProbeBackend
+          expr: probe_failed_due_to_regex{target="superhero-backend"} > 0
+          for: 0m
+          labels:
+            severity: critical
+            namespace: monitoring
+            env: stg
+          annotations:
+            summary: "Probe failed (URL: {{ $labels.instance }})"
+            description: "Please check status on the following link: https://superhero-backend.stg.superk8s.de/health/backend"
+    - name: kubernetes
+      rules:
+        - alert: KubernetesNodeReady
+          expr: kube_node_status_condition{condition="Ready",status="true"} == 0
+          for: 10m
+          labels:
+            severity: critical
+          annotations:
+            summary: Kubernetes Node ready (instance {{ $labels.instance }})
+            description: "Node {{ $labels.node }} has been unready for a long time\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+        - alert: KubernetesMemoryPressure
+          expr: kube_node_status_condition{condition="MemoryPressure",status="true"} == 1
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: Kubernetes memory pressure (instance {{ $labels.instance }})
+            description: "{{ $labels.node }} has MemoryPressure condition\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+        - alert: KubernetesDiskPressure
+          expr: kube_node_status_condition{condition="DiskPressure",status="true"} == 1
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: Kubernetes disk pressure (instance {{ $labels.instance }})
+            description: "{{ $labels.node }} has DiskPressure condition\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+        - alert: KubernetesOutOfDisk
+          expr: kube_node_status_condition{condition="OutOfDisk",status="true"} == 1
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: Kubernetes out of disk (instance {{ $labels.instance }})
+            description: "{{ $labels.node }} has OutOfDisk condition\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+        - alert: KubernetesOutOfCapacity
+          expr: sum by (node) ((kube_pod_status_phase{phase="Running"} == 1) + on(uid) group_left(node) (0 * kube_pod_info{pod_template_hash=""})) / sum by (node) (kube_node_status_allocatable{resource="pods"}) * 100 > 90
+          for: 2m
+          labels:
+            severity: warning
+          annotations:
+            summary: Kubernetes out of capacity (instance {{ $labels.instance }})
+            description: "{{ $labels.node }} is out of capacity\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+        - alert: KubernetesContainerOomKiller
+          expr: (kube_pod_container_status_restarts_total - kube_pod_container_status_restarts_total offset 10m >= 1) and ignoring (reason) min_over_time(kube_pod_container_status_last_terminated_reason{reason="OOMKilled"}[10m]) == 1
+          for: 0m
+          labels:
+            severity: warning
+          annotations:
+            summary: Kubernetes container oom killer (instance {{ $labels.instance }})
+            description: "Container {{ $labels.container }} in pod {{ $labels.namespace }}/{{ $labels.pod }} has been OOMKilled {{ $value }} times in the last 10 minutes.\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"                   
+    - name: pods
+      rules:
+        - alert: ContainerCpuUsage
+          expr: (sum(rate(container_cpu_usage_seconds_total{name!=""}[5m])) BY (instance, name) * 100) > 80
+          for: 5m
+          labels:
+            severity: critical
+            namespace: monitoring
+            env: stg
+          annotations:
+            summary: "Container CPU usage"
+            description: "Container CPU usage is above 80%\n VALUE = {{ $value }}"
+        - alert: RedisDown
+          expr: redis_up == 0
+          for: 0m
+          labels:
+            severity: critical
+            namespace: monitoring
+            env: stg
+          annotations:
+            summary: Redis down (instance {{ $labels.instance }})
+            description: "Redis instance is down"
+        - alert: HostHighCpuLoad
+          expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
+          for: 0m
+          labels:
+            severity: warning
+            namespace: monitoring
+            env: stg
+          annotations:
+            summary: Host high CPU load (instance {{ $labels.instance }})
+            description: "CPU load is > 80%\n  VALUE = {{ $value }}"
+        - alert: HostOutOfMemory
+          expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 10
+          for: 2m
+          labels:
+            severity: warning
+          annotations:
+            summary: Host out of memory (instance {{ $labels.instance }})
+            description: "Node memory is filling up (< 10% left)\n  VALUE = {{ $value }}"
+        - alert: KubePersistentVolumeFillingUp
+          annotations:
+            description: The PersistentVolume claimed by {{ $labels.persistentvolumeclaim }}
+              in Namespace {{ $labels.namespace }} is only {{ $value | humanizePercentage }}
+              free.
+            summary: PersistentVolume is filling up.
+          expr: |
+            (
+              kubelet_volume_stats_available_bytes{job="kubelet"}
+                /
+              kubelet_volume_stats_capacity_bytes{job="kubelet"}
+            ) < 0.03
+            and
+            kubelet_volume_stats_used_bytes{job="kubelet"} > 0
+            unless on(namespace, persistentvolumeclaim)
+            kube_persistentvolumeclaim_access_mode{ access_mode="ReadOnlyMany"} == 1
+            unless on(namespace, persistentvolumeclaim)
+            kube_persistentvolumeclaim_labels{label_excluded_from_alerts="true"} == 1
+          for: 1m
+          labels:
+            severity: critical
+        - alert: KubePodCrashLooping
+          annotations:
+            description: 'Pod {{ $labels.namespace }}/{{ $labels.pod }} ({{ $labels.container
+              }}) is in waiting state (reason: "CrashLoopBackOff").'
+            summary: Pod is crash looping.
+          expr: |
+            max_over_time(kube_pod_container_status_waiting_reason{reason="CrashLoopBackOff", job="kube-state-metrics"}[5m]) >= 1
+          for: 15m
+          labels:
+            severity: warning
+        - alert: KubePodNotReady
+          annotations:
+            description: Pod {{ $labels.namespace }}/{{ $labels.pod }} has been in a non-ready
+              state for longer than 15 minutes.
+            summary: Pod has been in a non-ready state for more than 15 minutes.
+          expr: |
+            sum by (namespace, pod) (
+              max by(namespace, pod) (
+                kube_pod_status_phase{job="kube-state-metrics", phase=~"Pending|Unknown"}
+              ) * on(namespace, pod) group_left(owner_kind) topk by(namespace, pod) (
+                1, max by(namespace, pod, owner_kind) (kube_pod_owner{owner_kind!="Job"})
+              )
+            ) > 0
+          for: 15m
+          labels:
+            severity: warning

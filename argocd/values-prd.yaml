@@ -85,6 +85,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: monitoring
             server: https://kubernetes.default.svc
+          - namespace: logging
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -124,6 +126,9 @@ applications:
   prometheus-blackbox-exporter:
     project: tools
     namespace: monitoring
+  fluent-bit:
+    project: tools
+    namespace: logging
   dex-ui:
     project: apps
     namespace: apps

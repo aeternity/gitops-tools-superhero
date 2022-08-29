@@ -1,5 +1,5 @@
 encValues:
-  OS_MASTER_PASSWORD: "AgBLRI5jR3WB7f9efRKdcIHDB0ewAJ/CooAdk8M6GBVDuES6hrZ4EOGZIk2E4fZgfpNQ5wCai8Gnn40ySoAFZ77/ntKRe1MAf8IF64gEIB3EOcRQnYkElhgrO0noncBGH5JnScifTpWZwnMHyxFVpBKzvRO8VVWcG/jMMUVHFypDWaX1SjDa61iJuCKbbiY/S2OR5XbfGApu3axdH49kL43uIOklNxwTsIft0BltX9NVKz8dxgjvlVIWywXzShrUS2/0kwBqLY9OhgiGllnStKRCNxUo/Mh0YvMsIT8ZTTB95MFBmqkUplkA0wY+3Fy372GSSt8U8vX+aYZ047StMn7hCCp8BDTXktgIenQf+WPTStn3Fk2ZB4AezoWCnGGHqnaSg64310O8LbNCG8UmVR3ge6ij1spPG5I8E6nslW915ap9/JwfVEtoW2BTDFtlOpns/c4sI5N9BCK9KA3Xo+vYVZiDZt5kHAygQXGqpZ3+bhMAG6GL1OcaYbdc2qc8T6kLarF2zMzRxSrzcOxAcRfolar7nXbNBmUIuKX2/oKOosZptaKCXHNDEQcX+ceVOpH0XxPjbNdExIUXN44ylwBRvZGc14spCVUStZkoaOzTMOD1/0WNODOVPXMYPTgE14QVEqZAinzvC4WGzVpf1MlVrpNDuNX6wKWVpA3By8InlEZNb8Mctnk/MtPjQGaVSV2DoW/R2rm/sg=="
+  OS_MASTER_PASSWORD: "AgA4rwEzHO9u2T7bqB1hOZ89jSAB95NPuCCk1ycTL5R1N/Xv5UAnQWI3HWuxhs4MeH4hA5WuKe6p28t36SLTAZfcBulP8tNTPf1G16NBt8yc+J46AYjZjMRD/+bgrDUHvFubqpWDATZi2jFTPqvXiJVh5pQnBk2I5cT8T1qsvQMgPNdb+C6G3L/ga/BgWpIBO6t90Kb7CC7xxjNhbt/7qum3F9wifAbFjILFR7iyrhPEWyORwgCrTNDsEd+Pb9FFUwG1LY6k/yllZp/4ZuHgKUVTcLtHBgGyS9QJ59foIbSbL/L8NltA2zp9kOgecU2/UFDNpLj+r/x/nnxufBSivhOUrMzeeWgjJt6ABTo2pWRequws8EtQeLdesssCXhHfad0ZrA0BovVl5aq08Em3h8jBSs57xBY+1XAOlAVeSS4nQzZIXslFznoZ+wMzkRkUZlW0I0/DvQcz+S4VH+tbmAEq0d5TuzIUNxaRTZi3kN1p19QIBLtcK6LqVxmyHmZ283Y4Vm9hWg0wu+MaZRDudSLab/Qoms03+qKMK2bOCWnjwvrQ3HCRoCFYJCFYfvM/LFpIEXRA32iPD1zTRTpTbKp1Tpr0+h1beeb+Mp0b0sf30RoHCzDc5pN8YNAOJn+TZKOtGjfx0KxIyqKOnHo3hiKjvofwD11FzUSYRBCkBDjxwdouLufsEeh1nssKxrSjV58lS6RB4IyRx6AT"
 
 fluent-bit:
   # Default values for fluent-bit.
@@ -358,7 +358,7 @@ fluent-bit:
       [OUTPUT]
           Name            es
           Match           *
-          Host            opensearch-dev.aepps.com
+          Host            opensearch-prd.aepps.com
           Port            443
           AWS_Auth        Off
           HTTP_User       es-admin

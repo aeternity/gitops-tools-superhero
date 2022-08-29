@@ -121,7 +121,7 @@ applications:
   kube-prometheus-stack:
     project: tools
     namespace: monitoring
-  kube-prometheus-stack-crds:
+  prometheus-blackbox-exporter:
     project: tools
     namespace: monitoring
   dex-ui:

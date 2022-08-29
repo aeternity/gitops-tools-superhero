@@ -1,0 +1,11 @@
+apiVersion: v2
+name: kube-prometheus-stack-crds
+description: kube-prometheus-stack-crds collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.
+
+version: 32.4.1
+
+dependencies:
+  - name: kube-prometheus-stack-crds
+    version: 32.4.1
+    repository: https://morremeyer.github.io/charts/
+

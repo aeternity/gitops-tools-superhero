@@ -121,6 +121,9 @@ applications:
   kube-prometheus-stack:
     project: tools
     namespace: monitoring
+  kube-prometheus-stack-crds:
+    project: tools
+    namespace: monitoring
   dex-ui:
     project: apps
     namespace: apps

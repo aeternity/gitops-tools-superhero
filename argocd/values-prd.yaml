@@ -116,6 +116,9 @@ applications:
   metrics-server:
     project: tools
     namespace: kube-system
+  kube-prometheus-stack:
+    project: tools
+    namespace: monitoring
   dex-ui:
     project: apps
     namespace: apps

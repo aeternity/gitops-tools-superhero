@@ -129,6 +129,9 @@ applications:
   kubernetes-event-exporter:
     project: tools
     namespace: monitoring
+  kube-prometheus-stack:
+    project: tools
+    namespace: monitoring
   dex-ui:
     project: apps
     namespace: apps

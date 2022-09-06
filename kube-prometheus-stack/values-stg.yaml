@@ -32,7 +32,7 @@ kube-prometheus-stack:
               replacement: ${1}://${2}${3}
               target_label: __param_target
             - target_label: __address__
-              replacement: blackbox-prometheus-blackbox-exporter.monitoring.svc.cluster.local:9115
+              replacement: prometheus-blackbox-exporter.monitoring.svc.cluster.local:9115
             - source_labels: [__param_target]
               target_label: instance
             - action: labelmap

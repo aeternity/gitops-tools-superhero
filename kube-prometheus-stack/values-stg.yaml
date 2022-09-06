@@ -11,28 +11,22 @@ kube-prometheus-stack:
       serviceMonitorSelectorUsesHelmValues: false
       ruleSelectorNilUsesHelmValues: false
       additionalScrapeConfigs:
-        - job_name: "blackbox-kubernetes-ingresses"
+        - job_name: 'kubernetes-ingresses'
           metrics_path: /probe
           params:
-            module: [http_2xx, http_backend]
+            module: [http_2xx]
           kubernetes_sd_configs:
-          - role: ingress
+            - role: ingress        
           relabel_configs:
-          # Example relabel to probe only some ingresses that have "example.io/should_be_probed = true" annotation
-          #  - source_labels: [__meta_kubernetes_ingress_annotation_example_io_should_be_probed]
-          #    action: keep
-          #    regex: true
-            - source_labels:
-                [
-                  __meta_kubernetes_ingress_scheme,
-                  __address__,
-                  __meta_kubernetes_ingress_path,
-                ]
+            - source_labels: [__meta_kubernetes_ingress_annotation_prometheus_io_probe]
+              action: keep
+              regex: true
+            - source_labels: [__meta_kubernetes_ingress_scheme,__address__,__meta_kubernetes_ingress_path]
               regex: (.+);(.+);(.+)
               replacement: ${1}://${2}${3}
               target_label: __param_target
             - target_label: __address__
-              replacement: prometheus-blackbox-exporter.monitoring.svc.superhero-stg:9115
+              replacement: blackbox-exporter.example.com:9115
             - source_labels: [__param_target]
               target_label: instance
             - action: labelmap
@@ -40,7 +34,7 @@ kube-prometheus-stack:
             - source_labels: [__meta_kubernetes_namespace]
               target_label: kubernetes_namespace
             - source_labels: [__meta_kubernetes_ingress_name]
-              target_label: ingress_name
+              target_label: kubernetes_name
     ingress:
       enabled: true
       annotations:

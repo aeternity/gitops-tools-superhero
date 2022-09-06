@@ -22,14 +22,10 @@ kube-prometheus-stack:
           #  - source_labels: [__meta_kubernetes_ingress_annotation_example_io_should_be_probed]
           #    action: keep
           #    regex: true
-            - source_labels:
-                [
-                  __meta_kubernetes_ingress_scheme,
-                  __address__,
-                  __meta_kubernetes_ingress_path,
-                ]
-              regex: (.+);(.+);(.+)
-              replacement: ${1}://${2}${3}
+            - source_labels: [__address__]
+              regex: (.*)
+              action: replace
+              replacement: https://$1
               target_label: __param_target
             - target_label: __address__
               replacement: prometheus-blackbox-exporter.monitoring.svc.superhero-stg:9115

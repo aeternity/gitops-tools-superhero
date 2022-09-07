@@ -10,6 +10,21 @@ kube-prometheus-stack:
     prometheusSpec:
       serviceMonitorSelectorUsesHelmValues: false
       ruleSelectorNilUsesHelmValues: false
+      additionalScrapeConfigs:
+        - job_name: 'blackbox'
+          metrics_path: /probe
+          params:
+            module: [http_2xx]
+          static_configs:
+            - targets:
+              - https://dex.stg.superk8s.de
+          relabel_configs:
+            - source_labels: [__address__]
+              target_label: __param_target
+            - source_labels: [__param_target]
+              target_label: instance
+            - target_label: __address__
+              replacement: prometheus-blackbox-exporter.monitoring.svc.superhero-stg:9115
     ingress:
       enabled: true
       annotations:

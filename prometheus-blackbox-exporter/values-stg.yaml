@@ -10,6 +10,7 @@ prometheus-blackbox-exporter:
           preferred_ip_protocol: "ip4"
           tls_config:
             insecure_skip_verify: true
+          method: GET
       http_backend:
         prober: http
         timeout: 60s

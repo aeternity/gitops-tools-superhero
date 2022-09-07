@@ -11,5 +11,7 @@ prometheus-blackbox-exporter:
           valid_http_versions:
           - HTTP/1.1
           - HTTP/2
+          headers:
+            Host: dex.stg.superk8s.de
         prober: http
         timeout: 5s

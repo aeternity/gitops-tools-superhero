@@ -3,17 +3,20 @@ prometheus-blackbox-exporter:
     modules:
       http_2xx:
         prober: http
-        timeout: 5s
+        timeout: 50s
         http:
-          valid_status_codes: []
+          valid_http_versions: ["HTTP/1.1", "HTTP/2.0"]
+          valid_status_codes: [200, 301, 302]  # Defaults to 2xx
           method: GET
-          no_follow_redirects: false
+          follow_redirects: true
           fail_if_ssl: false
-          fail_if_not_ssl: false
-          protocol: tcp
-          preferred_ip_protocol: ip4
-          tls_config:
-            insecure_skip_verify: true
+          fail_if_not_ssl: true
+          preferred_ip_protocol: "ip4"
+          headers:
+            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+            Accept-Encoding: gzip, deflate, br
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36
+            Accept-Language: \*
       http_backend:
         prober: http
         timeout: 60s

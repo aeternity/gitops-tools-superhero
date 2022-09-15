@@ -15,10 +15,13 @@ kube-prometheus-stack:
           metrics_path: /probe
           params:
             module: [http_2xx]
-          static_configs:
-            - targets:
-              - dex.stg.superk8s.de
-          relabel_configs:
+          dns_sd_configs:
+            - names:
+                - dex.stg.superk8s.de
+                - prometheus.io
+              type: A
+              port: 443
+          relabel_configs:  
             - source_labels: [__address__]
               target_label: __param_target
             - source_labels: [__param_target]

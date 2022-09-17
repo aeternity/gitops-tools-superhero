@@ -1,26 +1,94 @@
 prometheus-blackbox-exporter:
-  image:
-    repository: "webdevops/blackbox-exporter"
-    tag: "latest"
-    pullPolicy: "Always"
-  readinessProbe:
-    httpGet:
-      port: 9115
-  livenessProbe:
-    httpGet:
-      port: 9115
   config:
     modules:
-      # module used for standard 2xx http ping
       http_2xx:
-        http:
-          method: GET
-          preferred_ip_protocol: ip4
-          ip_protocol_fallback: false
-          tls_config:
-            insecure_skip_verify: true
-          valid_http_versions:
-          - HTTP/1.1
-          - HTTP/2.0
         prober: http
-        timeout: 5s
+        timeout: 15s
+        http:
+          valid_http_versions: ["HTTP/1.1", "HTTP/2.0"]
+          follow_redirects: true
+          preferred_ip_protocol: "ip4"
+      http_backend:
+        prober: http
+        timeout: 15s
+        http:
+          valid_http_versions: ["HTTP/1.1", "HTTP/2.0"]
+          follow_redirects: true
+          preferred_ip_protocol: "ip4"
+          fail_if_body_not_matches_regexp:
+            - "true"
+  serviceMonitor:
+    enabled: true
+
+    defaults:
+      additionalMetricsRelabels: {}
+      labels: {}
+      interval: 30s
+      scrapeTimeout: 30s
+      module: http_2xx
+    scheme: http
+
+    tlsConfig: {}
+    bearerTokenFile:
+
+    targets:
+      - name: dex
+        url: https://dex.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: base
+        url: https://base.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: faucet
+        url: https://faucet.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: aerepl-http
+        url: https://repl.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: aesophia
+        url: https://compiler.prd.superk8s.de/version
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: explorer-mainnet
+        url: https://explorer-mainnet.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: explorer-testnet
+        url: https://explorer-testnet.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: superhero-ui
+        url: https://superhero.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: superhero-wallet
+        url: https://superhero-wallet.prd.superk8s.de
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_2xx
+      - name: superhero-backend
+        url: https://superhero-backend.prd.superk8s.de/health/backend
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_backend
+
+    relabelings:
+      # This is the part where, the original SM endpoints passed as parameters to blackbox exporter.
+      # More info: https://prometheus.io/docs/guides/multi-target-exporter/#prometheus-config
+      - sourceLabels: [__address__]
+        targetLabel: __param_target
+      - sourceLabels: [__param_target]
+        targetLabel: instance
+      - targetLabel: __address__
+        replacement: blackbox-prometheus-blackbox-exporter.monitoring.svc.cluster.local:9115

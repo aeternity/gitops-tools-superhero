@@ -1,0 +1,20 @@
+---
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: alertmanager-rocketchat-config
+  labels:
+    alertmanagerConfig: alertmanager-rocketchat-config
+  namespace: monitoring
+spec:
+  route:
+    groupBy: ['job']
+    groupWait: 30s
+    groupInterval: 1h
+    repeatInterval: 12h
+    receiver: rocketchat
+  receivers:
+  - name: rocketchat
+    webhookConfigs:
+      - sendResolved: true
+        url: https://devchat.aeternity.com/hooks/62d50420fa5401065c7e7892/irR6fSiD835qstag7zjdM9Fjw2ZQ7DcaYztQdygBvZFcmFtR

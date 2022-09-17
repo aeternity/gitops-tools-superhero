@@ -1,11 +1,10 @@
 apiVersion: v2
 name: prometheus-blackbox-exporter
-description: prometheus-blackbox-exporter
+description: A Helm chart for Kubernetes
 
-version: 5.3.1
+version: 0.2.0
 
-dependencies:
-  - name: prometheus-blackbox-exporter
-    version: 5.3.1
-    repository: https://prometheus-community.github.io/helm-charts
-    
+dependencies: # A list of the chart requirements (optional)
+  - name: app
+    version: 0.4.0
+    repository: "file://../app"

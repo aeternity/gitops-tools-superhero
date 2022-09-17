@@ -1,4 +1,8 @@
-prometheus-blackbox-exporter:
+app:
+  image:
+    repository: webdevops/blackbox-exporter
+    tag: "latest"
+    pullPolicy: "Always"
   config:
     modules:
       # module used for standard 2xx http ping

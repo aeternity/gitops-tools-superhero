@@ -5,10 +5,10 @@ prometheus-blackbox-exporter:
     pullPolicy: "Always"
   readinessProbe:
     httpGet:
-      port: http
+      port: 9115
   livenessProbe:
     httpGet:
-      port: http
+      port: 9115
   config:
     modules:
       # module used for standard 2xx http ping

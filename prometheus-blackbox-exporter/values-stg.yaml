@@ -1,6 +1,6 @@
-app:
+prometheus-blackbox-exporter:
   image:
-    repository: webdevops/blackbox-exporter
+    repository: "webdevops/blackbox-exporter"
     tag: "latest"
     pullPolicy: "Always"
   config:

@@ -8,8 +8,8 @@ encValues:
 kube-prometheus-stack:
   prometheus:
     prometheusSpec:
-      serviceMonitorSelectorUsesHelmValues: false
-      ruleSelectorNilUsesHelmValues: false
+      serviceMonitorSelectorUsesHelmValues: true
+      ruleSelectorNilUsesHelmValues: true
     ingress:
       enabled: true
       annotations:

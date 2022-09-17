@@ -12,6 +12,5 @@ prometheus-blackbox-exporter:
             insecure_skip_verify: true
           valid_http_versions:
           - HTTP/1.1
-          - HTTP/2
         prober: http
         timeout: 5s

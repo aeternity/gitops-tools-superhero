@@ -3,6 +3,12 @@ prometheus-blackbox-exporter:
     repository: "webdevops/blackbox-exporter"
     tag: "latest"
     pullPolicy: "Always"
+  readinessProbe:
+    httpGet:
+      port: http
+  livenessProbe:
+    httpGet:
+      port: http
   config:
     modules:
       # module used for standard 2xx http ping

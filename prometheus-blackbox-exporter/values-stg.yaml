@@ -4,6 +4,9 @@ prometheus-blackbox-exporter:
       # module used for standard 2xx http ping
       http_2xx:
         http:
+          method: GET
+          headers:
+            Host: dex.stg.superk8s.de
           no_follow_redirects: false
           preferred_ip_protocol: ip4
           tls_config:

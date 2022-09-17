@@ -15,7 +15,7 @@ kube-prometheus-stack:
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-        - "prometheus.stg.superk8s.de"
+        - "prometheus.prd.superk8s.de"
       pathType: ImplementationSpecific
 
   grafana:
@@ -29,8 +29,8 @@ kube-prometheus-stack:
         folderAnnotation: grafana-dashboard-dir
     grafana.ini:
       server:
-        domain: grafana.stg.superk8s.de
-        root_url: https://grafana.stg.superk8s.de
+        domain: grafana.prd.superk8s.de
+        root_url: https://grafana.prd.superk8s.de
       plugins:
         enable_alpha: true
       auth.github:
@@ -48,7 +48,7 @@ kube-prometheus-stack:
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-        - "grafana.stg.superk8s.de"
+        - "grafana.prd.superk8s.de"
       pathType: ImplementationSpecific
     plugins:
       - grafana-piechart-panel
@@ -83,13 +83,13 @@ kube-prometheus-stack:
 
   alertmanager:
     alertmanagerSpec:
-      externalUrl: "https://alertmanager.stg.superk8s.de"
+      externalUrl: "https://alertmanager.prd.superk8s.de"
     ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-        - "alertmanager.stg.superk8s.de"
+        - "alertmanager.prd.superk8s.de"
       pathType: ImplementationSpecific
     config:
       templates:
@@ -130,7 +130,7 @@ kube-prometheus-stack:
           labels:
             severity: critical
             namespace: monitoring
-            env: stg
+            env: prd
           annotations:
             summary: "Probe failed (URL: {{ $labels.instance }})"
             description: "Probe failed\n STATUS_CODE = {{ $value }})"
@@ -140,10 +140,10 @@ kube-prometheus-stack:
           labels:
             severity: critical
             namespace: monitoring
-            env: stg
+            env: prd
           annotations:
             summary: "Probe failed (URL: {{ $labels.instance }})"
-            description: "Please check status on the following link: https://superhero-backend.stg.superk8s.de/health/backend"
+            description: "Please check status on the following link: https://superhero-backend.prd.superk8s.de/health/backend"
     - name: kubernetes
       rules:
         - alert: KubernetesNodeReady
@@ -202,7 +202,7 @@ kube-prometheus-stack:
           labels:
             severity: critical
             namespace: monitoring
-            env: stg
+            env: prd
           annotations:
             summary: "Container CPU usage"
             description: "Container CPU usage is above 90%\n VALUE = {{ $value }}"
@@ -212,7 +212,7 @@ kube-prometheus-stack:
           labels:
             severity: critical
             namespace: monitoring
-            env: stg
+            env: prd
           annotations:
             summary: Redis down (instance {{ $labels.instance }})
             description: "Redis instance is down"
@@ -222,7 +222,7 @@ kube-prometheus-stack:
           labels:
             severity: warning
             namespace: monitoring
-            env: stg
+            env: prd
           annotations:
             summary: Host high CPU load (instance {{ $labels.instance }})
             description: "CPU load is > 80%\n  VALUE = {{ $value }}"

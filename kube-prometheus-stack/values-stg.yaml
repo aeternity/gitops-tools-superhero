@@ -17,7 +17,7 @@ kube-prometheus-stack:
             module: [http_2xx]
           static_configs:
             - targets:  
-              - dex.dev.superk8s.de
+              - https://dex.dev.superk8s.de
               - https://prometheus.io
           relabel_configs:  
             - source_labels: [__address__]

@@ -143,7 +143,7 @@ kube-prometheus-stack:
             env: stg
           annotations:
             summary: "Probe failed (URL: {{ $labels.instance }})"
-            description: "Please check status on the following link: https://superhero-backend.stg.superk8s.de/health/backend"
+            description: "Please check status on the following link: https://superhero-backend.prd.superk8s.de/health/backend"
     - name: kubernetes
       rules:
         - alert: KubernetesNodeReady

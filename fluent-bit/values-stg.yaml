@@ -358,7 +358,7 @@ fluent-bit:
       [OUTPUT]
           Name            es
           Match           *
-          Host            opensearch-dev.aepps.com
+          Host            opensearch-stg.aepps.com
           Port            443
           AWS_Auth        Off
           HTTP_User       es-admin
@@ -367,6 +367,7 @@ fluent-bit:
           tls             On
           Replace_Dots    On
           Index fluentbitHetzner
+          Type  _doc
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers
     customParsers: |

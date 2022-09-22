@@ -304,7 +304,7 @@ fluent-bit:
           Exclude_Path /var/log/containers/dex*.log,/var/log/containers/mdw-frontend*.log,/var/log/containers/superhero*.log
       [INPUT]
           Name tail
-          Path /var/log/containers/dex*.log,/var/log/containers/mdw-frontend*.log,/var/log/containers/superhero*.log
+          Path /var/log/containers/dex-ui*.log,/var/log/containers/mdw-frontend*.log,/var/log/containers/superhero*.log
           Tag nginx.*
           DB /var/log/ds/flb_kube_nginx.db
           DB.Sync            Normal

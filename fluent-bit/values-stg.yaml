@@ -366,11 +366,12 @@ fluent-bit:
           HTTP_User       es-admin
           HTTP_Passwd     ${OS_MASTER_PASSWORD}
           AWS_Region      eu-central-1
-          tls             Off
+          tls             On
           Replace_Dots    On
           Generate_ID     On
           Index fluentbitHetzner
           Trace_Error On
+          Trace_Output On
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers
     customParsers: |

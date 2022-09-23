@@ -371,7 +371,6 @@ fluent-bit:
           Generate_ID     On
           Index fluentbitHetzner
           Trace_Error On
-          Trace_Output On
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers
     customParsers: |

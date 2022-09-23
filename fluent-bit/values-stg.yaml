@@ -368,7 +368,7 @@ fluent-bit:
           AWS_Region      eu-central-1
           tls             On
           Replace_Dots    On
-          Generate_ID     On
+          Write_Operation upsert
           Index fluentbitHetzner
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers

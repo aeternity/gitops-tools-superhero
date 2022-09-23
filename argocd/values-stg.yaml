@@ -134,9 +134,6 @@ applications:
   kube-prometheus-stack:
     project: tools
     namespace: monitoring
-  elasticsearch:
-    project: tools
-    namespace: elasticsearch
   dex-ui:
     project: apps
     namespace: apps

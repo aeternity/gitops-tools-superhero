@@ -87,6 +87,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: monitoring
             server: https://kubernetes.default.svc
+          - namespace: elasticsearch
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -132,6 +134,9 @@ applications:
   kube-prometheus-stack:
     project: tools
     namespace: monitoring
+  elasticsearch:
+    project: tools
+    namespace: elasticsearch
   dex-ui:
     project: apps
     namespace: apps

@@ -366,10 +366,9 @@ fluent-bit:
           HTTP_User       es-admin
           HTTP_Passwd     ${OS_MASTER_PASSWORD}
           AWS_Region      eu-central-1
-          tls             On
+          tls             Off
           Replace_Dots    On
           Index fluentbitHetzner
-          Type  _doc
           Trace_Error On
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers

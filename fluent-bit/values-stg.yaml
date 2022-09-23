@@ -368,7 +368,7 @@ fluent-bit:
           AWS_Region      eu-central-1
           tls             On
           Replace_Dots    On
-          Index fluentbitHetzner
+          Index fluent-hetzner-000001
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers
     customParsers: |

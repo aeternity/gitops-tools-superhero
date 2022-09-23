@@ -362,7 +362,7 @@ fluent-bit:
           Match           *
           Host            opensearch-stg.aepps.com
           Port            443
-          AWS_Auth        Off
+          AWS_Auth        On
           HTTP_User       es-admin
           HTTP_Passwd     ${OS_MASTER_PASSWORD}
           AWS_Region      eu-central-1

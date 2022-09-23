@@ -368,6 +368,7 @@ fluent-bit:
           Replace_Dots    On
           Index fluentbitHetzner
           Type  _doc
+          Trace_Error On
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers
     customParsers: |
@@ -464,4 +465,4 @@ fluent-bit:
   #     image: bitnami/kubectl:{{ .Capabilities.KubeVersion.Major }}.{{ .Capabilities.KubeVersion.Minor }}
   #     command: ['kubectl', 'version']
   
-  logLevel: info
+  logLevel: debug

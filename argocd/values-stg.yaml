@@ -87,7 +87,7 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: monitoring
             server: https://kubernetes.default.svc
-          - namespace: elasticsearch
+          - namespace: elastic-system
             server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
@@ -137,6 +137,9 @@ applications:
   hcloud-csi-driver:
     project: tools
     namespace: kube-system
+  eck-operator:
+    project: tools
+    namespace: elastic-system
   dex-ui:
     project: apps
     namespace: apps

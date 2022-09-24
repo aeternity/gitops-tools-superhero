@@ -140,6 +140,9 @@ applications:
   elasticsearch:
     project: tools
     namespace: elasticsearch
+  kibana:
+    project: tools
+    namespace: elasticsearch
   dex-ui:
     project: apps
     namespace: apps

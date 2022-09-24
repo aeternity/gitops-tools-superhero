@@ -255,7 +255,7 @@ elasticsearch:
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-    className: "traefik"
+    className: ""
     pathtype: ImplementationSpecific
     hosts:
       - host: elastic.stg.superk8s.de

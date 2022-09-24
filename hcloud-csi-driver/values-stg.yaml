@@ -57,4 +57,4 @@ hcloud-csi-driver:
   ## Metrics configuration
   metrics:
     ## Enable metrics (create exporters etc.)
-    enabled: true
+    enabled: false

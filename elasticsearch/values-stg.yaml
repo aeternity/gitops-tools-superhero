@@ -97,11 +97,11 @@ elasticsearch:
   networkHost: "0.0.0.0"
 
   volumeClaimTemplate:
-    storageClassName: "hcloud-volumes"
     accessModes: ["ReadWriteOnce"]
     resources:
       requests:
         storage: 30Gi
+    storageClassName: "hcloud-volumes"
 
   rbac:
     create: false

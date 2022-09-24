@@ -131,6 +131,9 @@ applications:
   fluent-bit:
     project: tools
     namespace: logging
+  hcloud-csi-driver:
+    project: tools
+    namespace: kube-system
   dex-ui:
     project: apps
     namespace: apps

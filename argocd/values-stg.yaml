@@ -137,12 +137,6 @@ applications:
   hcloud-csi-driver:
     project: tools
     namespace: kube-system
-  elasticsearch:
-    project: tools
-    namespace: elasticsearch
-  kibana:
-    project: tools
-    namespace: elasticsearch
   dex-ui:
     project: apps
     namespace: apps

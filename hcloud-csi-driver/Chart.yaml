@@ -7,4 +7,5 @@ version: 2.2.1
 dependencies:
   - name: hcloud-csi-driver
     version: 2.2.1
-    repository: https://kubernetes-sigs.github.io/hcloud-csi-driver/
+    repository: https://helm-charts.mlohr.com/
+

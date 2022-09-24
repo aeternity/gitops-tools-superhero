@@ -251,11 +251,11 @@ elasticsearch:
   ingress:
     enabled: true
     annotations:
-      kubernetes.io/ingress.class: traefik
+      #kubernetes.io/ingress.class: traefik
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-    #className: "traefik"
+    className: "traefik"
     pathtype: ImplementationSpecific
     hosts:
       - host: elastic.stg.superk8s.de

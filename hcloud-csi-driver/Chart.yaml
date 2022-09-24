@@ -1,0 +1,10 @@
+apiVersion: v2
+name: hcloud-csi-driver
+description: Hetzner cloud csi driver
+
+version: 2.2.1
+
+dependencies:
+  - name: hcloud-csi-driver
+    version: 2.2.1
+    repository: https://kubernetes-sigs.github.io/hcloud-csi-driver/

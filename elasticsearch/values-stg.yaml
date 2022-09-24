@@ -97,6 +97,7 @@ elasticsearch:
   networkHost: "0.0.0.0"
 
   volumeClaimTemplate:
+    storageClassName: "hcloud-volumes"
     accessModes: ["ReadWriteOnce"]
     resources:
       requests:

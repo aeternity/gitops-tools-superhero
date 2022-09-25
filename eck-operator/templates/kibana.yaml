@@ -2,6 +2,7 @@ apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
   name: stg-kibana
+  namespace: elasticsearch
 spec:
   version: 8.4.2
   count: 1

@@ -139,9 +139,6 @@ applications:
   hcloud-csi-driver:
     project: tools
     namespace: kube-system
-  eck-operator:
-    project: tools
-    namespace: elastic-system
   dex-ui:
     project: apps
     namespace: apps

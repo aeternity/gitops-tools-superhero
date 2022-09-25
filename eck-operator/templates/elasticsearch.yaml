@@ -21,7 +21,7 @@ spec:
             storage: 10Gi
         storageClassName: hcloud-volumes
   - name: data-nodes
-    count: 
+    count: 2
     config:
       node.roles: ["data"]
     volumeClaimTemplates:

@@ -6,7 +6,7 @@ metadata:
 spec:
   version: 8.4.2
   nodeSets:
-  - name: master
+  - name: nodes
     count: 3
     config:
       node.roles: [ "master", "data", "ingest", "ml", "transform" ]

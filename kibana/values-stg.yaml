@@ -1,5 +1,5 @@
 kibana:
-  elasticsearchHosts: "http://stg-elasticsearch-es-http:9200"
+  elasticsearchHosts: "https://stg-elasticsearch-es-http:9200"
   replicas: 1
   # Extra environment variables to append to this nodeGroup
   # This will be appended to the current 'env:' key. You can use any of the kubernetes env

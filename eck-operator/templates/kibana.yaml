@@ -9,18 +9,3 @@ spec:
   elasticsearchRef:
     name: stg-elasticsearch
     namespace: elasticsearch
-  http:
-    service:
-      spec:
-        type: LoadBalancer
-      metadata:
-        annotations:
-          load-balancer.hetzner.cloud/name: "kibana-lb"
-          load-balancer.hetzner.cloud/location: "nbg1"
-          load-balancer.hetzner.cloud/type: "lb11"
-          load-balancer.hetzner.cloud/use-private-ip: "true"
-          load-balancer.hetzner.cloud/ipv6-disabled: "true"
-          load-balancer.hetzner.cloud/disable-private-ingress: "true"
-          load-balancer.hetzner.cloud/protocol: "https"
-          load-balancer.hetzner.cloud/http-certificates: "stg.superk8s.de"
-

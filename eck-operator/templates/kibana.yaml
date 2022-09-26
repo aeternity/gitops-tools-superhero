@@ -11,6 +11,8 @@ spec:
     namespace: elasticsearch
   http:
     service:
+      spec:
+        type: LoadBalancer
       metadata:
         annotations:
           kubernetes.io/ingress.class: traefik

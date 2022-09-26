@@ -142,6 +142,9 @@ applications:
   eck-operator:
     project: tools
     namespace: elastic-system
+  kibana:
+    project: tools
+    namespace: elasticsearch
   dex-ui:
     project: apps
     namespace: apps

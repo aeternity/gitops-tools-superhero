@@ -1,8 +1,6 @@
 kibana:
-  elasticsearchHosts: "http://elasticsearch-stg-master:9200"
-
+  elasticsearchHosts: "http://stg-elasticsearch-es-nodes:9200"
   replicas: 1
-
   # Extra environment variables to append to this nodeGroup
   # This will be appended to the current 'env:' key. You can use any of the kubernetes env
   # syntax here
@@ -11,7 +9,6 @@ kibana:
       value: "--max-old-space-size=1800"
   #  - name: MY_ENVIRONMENT_VAR
   #    value: the_value_goes_here
-
   # Allows you to load environment variables from kubernetes secret or config map
   envFrom: []
   # - secretRef:
@@ -27,25 +24,19 @@ kibana:
   #    secretName: kibana-keystore
   #    path: /usr/share/kibana/data/kibana.keystore
   #    subPath: kibana.keystore # optional
-
   hostAliases: []
   #- ip: "127.0.0.1"
   #  hostnames:
   #  - "foo.local"
   #  - "bar.local"
-
   image: "docker.elastic.co/kibana/kibana"
   imageTag: "7.17.3"
   imagePullPolicy: "IfNotPresent"
-
   # additionals labels
   labels: {}
-
   annotations: {}
-
   podAnnotations: {}
   # iam.amazonaws.com/role: es-cluster
-
   resources:
     requests:
       cpu: "1000m"
@@ -55,11 +46,8 @@ kibana:
       memory: "2Gi"
 
   protocol: http
-
   serverHost: "0.0.0.0"
-
   healthCheckPath: "/app/kibana"
-
   # Allows you to add any config files in /usr/share/kibana/config/
   # such as kibana.yml
   kibanaConfig: {}
@@ -88,9 +76,7 @@ kibana:
   # This is the PriorityClass settings as defined in
   # https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass
   priorityClassName: ""
-
   httpPort: 5601
-
   extraVolumes:
     []
     # - name: extras
@@ -102,20 +88,16 @@ kibana:
     #   mountPath: /usr/share/extras
     #   readOnly: true
     #
-
   extraContainers: []
   # - name: dummy-init
   #   image: busybox
   #   command: ['echo', 'hey']
-
   extraInitContainers: []
   # - name: dummy-init
   #   image: busybox
   #   command: ['echo', 'hey']
-
   updateStrategy:
     type: "Recreate"
-
   service:
     type: ClusterIP
     loadBalancerIP: ""
@@ -133,7 +115,6 @@ kibana:
       []
       # 0.0.0.0/0
     httpPortName: http
-
   ingress:
     enabled: true
     className: ""

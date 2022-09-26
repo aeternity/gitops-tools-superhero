@@ -142,9 +142,6 @@ applications:
   eck-operator:
     project: tools
     namespace: elastic-system
-  hcloud-cloud-controller-manager:
-    project: tools
-    namespace: kube-system
   dex-ui:
     project: apps
     namespace: apps

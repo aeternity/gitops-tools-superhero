@@ -80,7 +80,7 @@ hcloud-cloud-controller-manager:
   ## configure the hcloud-cloud-controller-manager deployment
   deployment:
     ## Docker image for the hcloud-cloud-controller-manager
-    image: hetznercloud/hcloud-cloud-controller-manager:v1.12.1
+    image: hetznercloud/hcloud-cloud-controller-manager:latest
     ## ImagePullPolicy for hcloud-cloud-controller-manager containers
     imagePullPolicy: Always
     ## Configure ImagePullSecrets to be available for the deployment.

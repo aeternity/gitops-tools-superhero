@@ -1,14 +1,8 @@
 encValues:
-  OS_MASTER_PASSWORD: "AgByAmT+NDyCgNlMnfo3J27zqAwH35AQ9ORC6znv+4fx61IIDHzKguAk6jhVFGgWkG/DqkSEck/c12WoDEIdYJT1MoyrYwvj0LOitsDu/UECX+AcnqWojQgpLU/othR2e981Ro9LKvl6SpttXaaoRGikYRxY4X0p3dVUioYI7pgmguKLIEDdFxOT54yd0RBt2vh3Qb5IK6oQVIJJ5shqhDYdeFC7meO8s950tVlwpWT3yilCJhYQsSmamWTvrpr5LAc7+JR+esHXCmI2hQV7KOeTRQAZ9+gjrEcZWLMXsaYYSHq6q75a1z07JpLg6RoTeSRXwBRYb1q45dgT2NktvqOa1fOhbY2DVbAfKTnHiHxI32RuX8zHNage4yB9DRag/ZDwW5CoBWGIYJBiHP04EMEba+MohIfwJj+x4XHHXrauWHrdzvDSDJlJijxKKJFSGFbJ/lhEMlxFxYmoTxKAgCl6+2e8ugf5hgjRDGqK2Fr/hP26umr8YD1rtRqHwNvGCCtQ1nnxgXoQBM98RAqSL4cu6PNazicx19J98uIVSWlJsJMcmki0dOWhY+mbjVTlRZEk34+hqjqJuIkSu+YWCyb6W+/q1LbcFm72+18Tm08H9msZrGa0vWcJjPGJmRzdWDGh2yrEM7H3iAYnlojvgaM75zXGylvBTtjvAC+RU2seyYovwDklcmkUeHFzoCzF4ldvxeMO"
-  AWS_ACCESS_KEY_ID: "AgCMlYUXPk8ztr36e7j9dwDIaq/98CRkcdp6uKUQB46vK2Csd3KTss6mW/wdKKL84xEo97auHMDMVk8MBqbXK1oxPuS3tc3HY5cbfcDkc2klhql9RWjXfDTi5DIIuFviJF3nFasutGSb+6+SdVKCe2syZ8Q9Jf9Q1cbdZyOctJwRzFaqi+WZW2Pv+HuC3rDdCFKYfXF2lXyYXzhwdoqVGwiX9UIPG2jRKGOCW9HI2b+TfJ1lEz4013pBMDxmlWCMIiAtP86PFP2U85jonJyP+dkZRmzcqHLd2R+3oFO7Rio1WBHKgrR8w3b/B7ML7j9mOctss21j8gbrwZRybkK/iaTAWnkC+P/c5lrpSn19SyrB/tnOhnmegRdVKvJOe11iMNpgJ5cIkVPIFnmcftaPgTtKW7Sohrkgr8Y1KzKppWIXNZ7pmxV41LJ2dmsEK0f4n2Z9j9SJt5jGMl2Z4w3E1E1mTGas10bAuqvXO3RVSu3mIUrL3itwESrXEHQu68Iy5a6uZgXWlXna547RVfkbOmsOxmWVYY5xbBsz3BIB5bk1esLBHUSVwMIEjTbUH4qs6h0PCm4+1bu86VXbLGUyvRtlIWrKfrIj0cqeyUOB93GX4kSvyygrzokYpfi6ndtmodchmZYeIJqO1zT9s5Ifq+hPnCKfYHKjlNbq8ODJwMYols3M29APF8ZQoGhJOXcPJPhAXDJsR2o9SKVp+oPM+BDWTIx/ew=="
-  AWS_SECRET_ACCESS_KEY: "AgAqyaWSr9Z2gP9ghTIdwAmSXQ9ksCIEm/nAKe675q5ZuZWVzasKtwAGIzpknprGJiw2flIERIUaMoWZJ5rhxy7Mu6UEuJJ+rl3tZ4cdtohQzIv7qzoZgbOy20QUX6LMWcS2TbdxnE6pvBnGnowl/AiK6gwJDvK3J11gwOggxOcxGa4gaioxjswijEqFZpXn1dYDu0FldcUxCP0Pg6Auaa+bCRWIgfM/1VsfxQw0bX/IRQLNfUzm2j2M0nzjFDo27XSANyvGyr+Jsm5LORibI2ZLuwzUptkc1K8nfJOd2A76QmVZ2B5gYnaGIZHSPV0qGdhS49Chy9OnL3w+NgtzIO9gq4hTN+Yb5j7lToQzf1PEZtj54JFP8cFV7VhCueNo2zXpjxFGpIqpW9jZD6xz6e5MhyGwPzdWWJ/fBcvPcP6MGlgW5dWFLOwweNE1sjSFYR+3a2KtqR1DSH5uPY1RaIBwS0a/Swircq15N7A00w6j2qQ7lil8JONBJGESJi/3DWJ4lfvo4qbBzsxE0PpY3V/J0pR6ZLDb7QRKi5EliIZBjYWhMq3GZ5vdKxqdGvQdmbYKJf1ruhhuxYDblqnpMk3P+SJg7Ud7JmBPm5ilLkYVrczYuQq4WVjBPVBRJV9BQP2OlOLK7xUF1yOTcn1uRjUWikEzc6jF6iu1gYKZQLv9Q6W0chkGlEsCNRy6WH+gi1MovqzbCDP8+oMDG3kMx4/UhG5uwgu67w/o8Cw5QqycOXLD+ARyT9HO"
+  ES_PASSWORD: "AgAF62SPpLJUv0RppKMcZlAiExNJmBiLg6ZUBZXjSAqVGj1mP/aMIveJEUcnbXsNRwHMeirM2s5rUhPZdCgHLmnv1OnY6XJROXiuxBmxUCcxfi3xPbKgoHAi8xYfc1Th0BdL/FIvCb0ApBGnHIK0z+TTBjcHMn4BwjJuiI9MkUsG1KInSOu1dosqfY/72kT9SFnL62KeU9DcaJ4g2yQXZDtHXI8kYE27LSGDEZM62bYQtZ9Ug59FWjSKXxpQFPZMkj/TnFm/L73QC29cnimSfdUPqjPP9eBQ/AsmZhwlS6v68CrHyACzkpECLHGmxJCJPudKS1yr1yWQ72qEBXu0HB8pkpzQS2ryxIWnY7Uj5hOP/dKJPgqEUnOLOgHY9yid9tT2nE17qcdEn5ZGOkSNDuq7iQtIqIFNycRcbK+CBV8q2f2uVYOOqpCS+t3nCoXGu943qYgGbXMwqF/GKNXlwETHU7waQN5Qm69LTs/Kavc+ow8aDzI9cNk1pe7ASGDIT2rra90hiLSpC+kHS4BY7UI2BDzQJdlo6hazEZQhTur98Oz97JdUbQI2Jee6sKSkfPpRntYop5RXzfzbmjOB/jOe+G8Z7li5Kzs5m3Ws5WCM/FHwUnJkk//TqYThY7UhbkY/c94oTv7TUibh9GpxrIeHZDaxilaDEDiNkkwavwhu0Agz0ICyhW++2dBEfM6zb8P3zTng6MsFsrINmMGxx/GR0rrQj+Xo9Mk="
 
 fluent-bit:
-  # Default values for fluent-bit.
-  
-  # kind -- DaemonSet or Deployment
   kind: DaemonSet
-  
   # replicaCount -- Only applicable if kind=Deployment
   replicaCount: 1
   
@@ -360,12 +354,10 @@ fluent-bit:
       [OUTPUT]
           Name            es
           Match           *
-          Host            opensearch-stg.aepps.com
-          Port            443
-          AWS_Auth        On
-          HTTP_User       es-admin
-          HTTP_Passwd     ${OS_MASTER_PASSWORD}
-          AWS_Region      eu-central-1
+          Host            stg-elasticsearch-es-http
+          Port            9200
+          HTTP_User       elastic
+          HTTP_Passwd     ${ES_PASSWORD}
           tls             On
           Replace_Dots    On
           Index fluent-hetzner-000001

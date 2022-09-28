@@ -354,7 +354,7 @@ fluent-bit:
       [OUTPUT]
           Name            es
           Match           *
-          Host            https://stg-elasticsearch-es-http.elasticsearch.svc.superhero-stg
+          Host            stg-elasticsearch-es-http.elasticsearch.svc.superhero-stg
           Port            9200
           HTTP_User       elastic
           HTTP_Passwd     ${ES_PASSWORD}

@@ -354,8 +354,8 @@ fluent-bit:
       [OUTPUT]
           Name            es
           Match           *
-          Host            stg-elasticsearch-es-http.elasticsearch.svc.superhero-stg
-          Port            9200
+          Host            kibana.stg.superk8s.de
+          Port            443
           HTTP_User       elastic
           HTTP_Passwd     ${ES_PASSWORD}
           tls             On

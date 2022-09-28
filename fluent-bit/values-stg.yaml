@@ -358,7 +358,7 @@ fluent-bit:
           Port            9200
           HTTP_User       elastic
           HTTP_Passwd     ${ES_PASSWORD}
-          tls             On
+          tls             Off
           Replace_Dots    On
           Index fluent-hetzner-000001
           

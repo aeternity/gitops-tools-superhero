@@ -194,3 +194,7 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  test-repo:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'

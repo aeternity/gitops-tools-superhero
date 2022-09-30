@@ -9,6 +9,15 @@ spec:
     tls:
       selfSignedCertificate:
         disabled: true
+  monitoring:
+    metrics:
+      elasticsearchRefs:
+      - name: monitoring
+        namespace: observability 
+    logs:
+      elasticsearchRefs:
+      - name: monitoring
+        namespace: observability 
   nodeSets:
   - name: nodes
     count: 3

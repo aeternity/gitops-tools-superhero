@@ -12,12 +12,10 @@ spec:
   monitoring:
     metrics:
       elasticsearchRefs:
-      - name: monitoring
-        namespace: observability 
+      - name: stg-elasticsearch
     logs:
       elasticsearchRefs:
-      - name: monitoring
-        namespace: observability 
+      - name: stg-elasticsearch
   nodeSets:
   - name: nodes
     count: 3

@@ -45,9 +45,16 @@ spec:
               periodSeconds: 12
               successThreshold: 1
               timeoutSeconds: 12
+          resources:
+            requests:
+              memory: 2Gi
+            limits:
+              memory: 2Gi
           env:
           - name: READINESS_PROBE_TIMEOUT
-            value: "60"        
+            value: "60"
+          - name: ES_JAVA_OPTS
+            value: -Xms1g -Xmx1g
     volumeClaimTemplates:
     - metadata:
         name: elasticsearch-data

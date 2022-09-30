@@ -20,7 +20,7 @@ spec:
   - name: nodes
     count: 3
     config:
-      node.roles: [ "master", "data", "ingest", "ml", "transform" ]
+      node.roles: [ "master", "data", "ingest", "ml", "transform", remote_cluster_client ]
     podTemplate:
       spec:
         initContainers:

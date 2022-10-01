@@ -1,7 +1,7 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: stg-elasticsearch
+  name: elasticsearch
   namespace: elasticsearch
 spec:
   version: 8.4.2
@@ -12,10 +12,10 @@ spec:
   monitoring:
     metrics:
       elasticsearchRefs:
-      - name: stg-elasticsearch
+      - name: elasticsearch
     logs:
       elasticsearchRefs:
-      - name: stg-elasticsearch
+      - name: elasticsearch
   nodeSets:
   - name: nodes
     count: 3

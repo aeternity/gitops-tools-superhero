@@ -1,11 +1,11 @@
 apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
-  name: stg-kibana
+  name: kibana
   namespace: elasticsearch
 spec:
   version: 8.4.2
   count: 1
   elasticsearchRef:
-    name: stg-elasticsearch
+    name: elasticsearch
     namespace: elasticsearch

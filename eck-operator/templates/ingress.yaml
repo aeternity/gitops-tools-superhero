@@ -1,3 +1,5 @@
+{{- if $.Values.kibanaIngress.enabled -}}
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -7,17 +9,28 @@ metadata:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
+  {{- if $.Values.kibanaIngress.tls }}
   tls:
+     {{- range $.Values.kibanaIngress.tls }}
     - hosts:
-        - kibana.stg.superk8s.de
+      {{- range .hosts }}
+        - {{ . | quote }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
   rules:
-    - host: kibana.stg.superk8s.de
+    {{- range $.Values.kibanaIngress.hosts }}
+    - host: {{ .host | quote }}
       http:
         paths:
-          - path: /
+        {{- range .paths }}
+          - path: {{ .path }}
             pathType: Prefix
             backend:
               service:
-                name: stg-kibana-kb-http
+                name: {{ $.Values.kibanaIngress.svcName }}
                 port:
-                  number: 5601
+                  number: {{ $.Values.kibanaIngress.svcPort }}
+      {{- end }}
+    {{- end }}
+{{- end }}

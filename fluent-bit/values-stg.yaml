@@ -1,5 +1,5 @@
 encValues:
-  ES_PASSWORD: "AgAF62SPpLJUv0RppKMcZlAiExNJmBiLg6ZUBZXjSAqVGj1mP/aMIveJEUcnbXsNRwHMeirM2s5rUhPZdCgHLmnv1OnY6XJROXiuxBmxUCcxfi3xPbKgoHAi8xYfc1Th0BdL/FIvCb0ApBGnHIK0z+TTBjcHMn4BwjJuiI9MkUsG1KInSOu1dosqfY/72kT9SFnL62KeU9DcaJ4g2yQXZDtHXI8kYE27LSGDEZM62bYQtZ9Ug59FWjSKXxpQFPZMkj/TnFm/L73QC29cnimSfdUPqjPP9eBQ/AsmZhwlS6v68CrHyACzkpECLHGmxJCJPudKS1yr1yWQ72qEBXu0HB8pkpzQS2ryxIWnY7Uj5hOP/dKJPgqEUnOLOgHY9yid9tT2nE17qcdEn5ZGOkSNDuq7iQtIqIFNycRcbK+CBV8q2f2uVYOOqpCS+t3nCoXGu943qYgGbXMwqF/GKNXlwETHU7waQN5Qm69LTs/Kavc+ow8aDzI9cNk1pe7ASGDIT2rra90hiLSpC+kHS4BY7UI2BDzQJdlo6hazEZQhTur98Oz97JdUbQI2Jee6sKSkfPpRntYop5RXzfzbmjOB/jOe+G8Z7li5Kzs5m3Ws5WCM/FHwUnJkk//TqYThY7UhbkY/c94oTv7TUibh9GpxrIeHZDaxilaDEDiNkkwavwhu0Agz0ICyhW++2dBEfM6zb8P3zTng6MsFsrINmMGxx/GR0rrQj+Xo9Mk="
+  ES_PASSWORD: "AgAxfMMjpXdRff4TjoUqmqkHejvK/QbZ4w8qXyy9ASO5bbYNWj4uZmHw5u8R0U2dyerwH2+dDb2FkMISaRwuUf/hS6tSbbyUiBEyMQj4lTWRgdICH5Xnw2OcCgYxelFRBX7zeTBLMcFt4+xjpSGQBxZ/9vreY6qWTF6bu8zVOMv+aJ8oFGppJJKGU5LP3SODWtdikfvNNKbW1u5iAfElKyQgoGUg383kOF5IZyVgGDhajOJtztXsJ2zKm4p2xxkNGkI0+EiwtGGczAv8XT4+uoewJEtzXXPEUJR890VCTzNj7lMZQzk636X+c6InsMvryDysoBZrtobBK8mglw9qNEWzvy/QrZYm4hF3MnSAx1dk0h44Vg3IUi1qo94FU9+XHNWqmdV7POQjWG3Jg36aZZ0aUaL7AzB5796qF/vbIe6sRpv5IAzxlP3wzoRX1/G41BhidMssM32ZIb5bDjoksLiZJ9ctyYKVmVL+CQyKvEUf6X6SmQ4a88ipLY28PnTEfLwIIpPcB5gdbtnyrKoe1fNkMQOjrrj8z6GpufUcRieINvHZJvfhghTeMo6ra/Rbpxn0pm9Lyl7DhY5pMVwDpKcxJMNZaXNojxoR//9yFLodVGObnQ6rn9JtUxTqeww6UcQQ7oS8trm5IfiGrH9wrtX3jw/HfMBJC8a+lIPF/+/R0BlAlJFP8w94BXln5GaoKgGpSbCbxWDsBusdDL+fthY89d9cyopj1hg="
 
 fluent-bit:
   kind: DaemonSet
@@ -354,7 +354,7 @@ fluent-bit:
       [OUTPUT]
           Name            es
           Match           *
-          Host            stg-elasticsearch-es-http.elasticsearch.svc.superhero-stg
+          Host            elasticsearch-es-http.elasticsearch.svc.superhero-stg
           Port            9200
           HTTP_User       elastic
           HTTP_Passwd     ${ES_PASSWORD}

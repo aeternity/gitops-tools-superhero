@@ -66,7 +66,7 @@ argo-cd:
         g, aeternity:devops, role:admin
     additionalProjects:
       - name: tools
-        namespace: argocd
+        namespace: argocd 
         additionalLabels: {}
         additionalAnnotations: {}
         description: Tools used to run the environment
@@ -88,6 +88,8 @@ argo-cd:
           - namespace: logging
             server: https://kubernetes.default.svc
           - namespace: elasticsearch
+            server: https://kubernetes.default.svc
+          - namespace: elastic-system
             server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
@@ -139,7 +141,7 @@ applications:
     namespace: kube-system
   eck-operator:
     project: tools
-    namespace: kube-system
+    namespace: elastic-system
   dex-ui:
     project: apps
     namespace: apps

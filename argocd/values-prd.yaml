@@ -135,6 +135,9 @@ applications:
   hcloud-csi-driver:
     project: tools
     namespace: kube-system
+  eck-operator:
+    project: tools
+    namespace: kube-system
   dex-ui:
     project: apps
     namespace: apps

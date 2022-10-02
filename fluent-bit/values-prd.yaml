@@ -1,5 +1,5 @@
 encValues:
-  OS_MASTER_PASSWORD: "AgCT9x6ug+asMafmkscYRjj5Q/OLJjg+bYwYbOKnBneQ/qNKks+xI/cK6DdjcWvZBJ8uQ0ZBiUr0/9Vq1ARxNEjJ8bOEiMR24MvMDhlnqwTfO3RRykWPRn1LWEGENs1UX+VQhTlMvNcWdBIbh+T1WanOXvw0XrZZg14rnTvAuycvZbAcMS48YWVA5yC8S+WCdNqLtlv0kajwe7qJcI+AlsIWyA4kVBsrjyKUR2Flz+fMYugZ+7jGDHiLfT8MxeFiBgcyvdHF2g9W3ZJUyrK0mPj0B8vDqiSOdszDoC+Njw6tnAz0ehURWudkJQwA/UvV7FcRFiXH0APiEHCDaiTXjTnLZrgNTTHblSz7QG/sdkzwO/frYIGqY8rj4jx/ebUxZWREloU/7ibEBLksmXSofEa29k9CiA63jakGLdL6FztM1BLedY4tggsJN0WFRg1xeZ7kMucwng/WQdpkWbRy0v+o/rJfQ12NpFZtRVeZve+ehuEtihlPMdBl0hL6oro7XC641Gj1AsEgHfEq9Mja8Jkur1P/lNEo65C927YwLB9mOzM+p/eKYH08XH3syiNWH8mfIlI5K6tyJQG6uS0zIP4oTON47KL2DaOR4kMR85vxuf3DvHwgWSkSm14q7FVc27cY3+WJAYkU69rwWosNwlD7Ou4QytQ+VNexh6iB4Eh7U4+o7ltO+FVZdna3i/U9IPLcEvPqpx+DnA=="
+  OS_MASTER_PASSWORD: ""
 
 fluent-bit:
   # Default values for fluent-bit.
@@ -358,14 +358,13 @@ fluent-bit:
       [OUTPUT]
           Name            es
           Match           *
-          Host            opensearch-prd.aepps.com
-          Port            443
-          AWS_Auth        Off
-          HTTP_User       es-admin
-          HTTP_Passwd     ${OS_MASTER_PASSWORD}
-          AWS_Region      eu-central-1
-          tls             On
+          Host            elasticsearch-es-http.elasticsearch.svc.superhero-prd
+          Port            9200
+          HTTP_User       elastic
+          HTTP_Passwd     ${ES_PASSWORD}
+          tls             Off
           Replace_Dots    On
+          Suppress_Type_Name On
           Index fluentbitHetzner
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers

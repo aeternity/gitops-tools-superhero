@@ -1,0 +1,11 @@
+kibanaIngress:
+  enabled: true
+  hosts:
+    - host: "kibana.prd.superk8s.de"
+      paths:
+        - path: "/"
+  tls:
+    - hosts:
+      - "kibana.prd.superk8s.de"
+  svcName: "kibana-kb-http"
+  svcPort: "5601"

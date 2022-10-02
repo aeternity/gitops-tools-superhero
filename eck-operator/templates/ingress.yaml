@@ -1,0 +1,36 @@
+{{- if $.Values.kibanaIngress.enabled -}}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kibana
+  namespace: elasticsearch
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  {{- if $.Values.kibanaIngress.tls }}
+  tls:
+     {{- range $.Values.kibanaIngress.tls }}
+    - hosts:
+      {{- range .hosts }}
+        - {{ . | quote }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  rules:
+    {{- range $.Values.kibanaIngress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+        {{- range .paths }}
+          - path: {{ .path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $.Values.kibanaIngress.svcName }}
+                port:
+                  number: {{ $.Values.kibanaIngress.svcPort }}
+      {{- end }}
+    {{- end }}
+{{- end }}

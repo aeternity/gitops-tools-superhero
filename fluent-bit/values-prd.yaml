@@ -365,7 +365,7 @@ fluent-bit:
           tls             Off
           Replace_Dots    On
           Suppress_Type_Name On
-          Index fluentbitHetzner
+          Index fluent-hetzner-000001
           
     ## https://docs.fluentbit.io/manual/pipeline/parsers
     customParsers: |

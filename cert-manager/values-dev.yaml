@@ -1,2 +1,10 @@
-cert-manager:
+encValues:
+  accessKeySecret: ""
 
+dnsSolverDomains:
+  - 'aepps.com'
+  
+cert-manager:
+  installCRDs: true
+  securityContext:
+    fsGroup: 1001

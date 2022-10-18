@@ -37,4 +37,5 @@ spec:
         dnsZones:
           {{- toYaml .Values.dnsSolverDomains | nindent 10 }}
         {{- end }}
-        matchLabels: {}  
+        matchLabels:
+          "solver": "route53"

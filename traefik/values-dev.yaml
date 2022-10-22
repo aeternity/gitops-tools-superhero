@@ -32,15 +32,16 @@ traefik:
       #load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "tcp"
       load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
-      #load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
-  #ports:
-    #websecure:
-      #tls:
-        #enabled: true
-    #https:
-      #port: 10443
-      #expose: true
-      #exposedPort: 8443
-      #protocol: TCP
+      load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+      load-balancer.hetzner.cloud/health-check-port: 10443
+  ports:
+    websecure:
+      tls:
+        enabled: true
+    https:
+      port: 10443
+      expose: true
+      exposedPort: 8443
+      protocol: TCP
       #tls:
         #enabled: true

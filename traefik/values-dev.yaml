@@ -1,7 +1,7 @@
 traefik:
   globalArguments: []
   additionalArguments:
-    #- "--entrypoints.web.http.redirections.entrypoint.to=:443"
+    - "--entrypoints.web.http.redirections.entrypoint.to=:443"
     - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
     - '--serversTransport.insecureSkipVerify=true'
   logs:
@@ -30,5 +30,5 @@ traefik:
       load-balancer.hetzner.cloud/use-private-ip: "true"
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
-      load-balancer.hetzner.cloud/protocol: "tcp"
-      #load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
+      load-balancer.hetzner.cloud/protocol: "https"
+      load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"

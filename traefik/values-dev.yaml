@@ -32,4 +32,4 @@ traefik:
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "https"
       load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
-      load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+      #load-balancer.hetzner.cloud/uses-proxyprotocol: "true"

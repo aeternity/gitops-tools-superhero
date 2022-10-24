@@ -48,4 +48,4 @@ traefik:
       load-balancer.hetzner.cloud/protocol: "tcp"
       #load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
       load-balancer.hetzner.cloud/hostname: "dev.superk8s.de"
-      #load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+      load-balancer.hetzner.cloud/uses-proxyprotocol: "true"

@@ -16,9 +16,9 @@ spec:
           ingressTemplate:
             metadata:
               annotations:
-                #traefik.ingress.kubernetes.io/router.tls: "true"
-                #traefik.ingress.kubernetes.io/frontend-entry-points: "http"
-                traefik.ingress.kubernetes.io/router.entrypoints: websecure
+                traefik.ingress.kubernetes.io/router.tls: "true"
+                traefik.ingress.kubernetes.io/frontend-entry-points: "http"
+                #traefik.ingress.kubernetes.io/router.entrypoints: websecure
     - dns01:
         cnameStrategy: Follow
         route53:

@@ -35,6 +35,6 @@ traefik:
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "tcp"
-      load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
+      #load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
       load-balancer.hetzner.cloud/hostname: "dev.superk8s.de"
-      load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+      #load-balancer.hetzner.cloud/uses-proxyprotocol: "true"

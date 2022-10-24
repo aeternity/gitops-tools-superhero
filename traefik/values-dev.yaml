@@ -24,6 +24,17 @@ traefik:
     websecure:
       tls:
         enabled: true
+    https:
+      port: 10443
+      expose: true
+      exposedPort: 8443
+      protocol: TCP
+      tls:
+        enabled: true
+  tlsStore:
+    default:
+      defaultCertificate:
+        secretName: traefik-default-cert
   service:
     enabled: true
     type: LoadBalancer

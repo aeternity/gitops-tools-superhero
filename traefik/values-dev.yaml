@@ -20,6 +20,10 @@ traefik:
       enabled: true
   serviceAccount:
     create: true
+  ports:
+    websecure:
+      tls:
+        enabled: true
   service:
     enabled: true
     type: LoadBalancer

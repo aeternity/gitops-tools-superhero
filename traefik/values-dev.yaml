@@ -27,7 +27,7 @@ traefik:
     https:
       port: 10443
       expose: true
-      exposedPort: 8443
+      exposedPort: 443
       protocol: TCP
       tls:
         enabled: true

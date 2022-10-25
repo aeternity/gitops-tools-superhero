@@ -11,7 +11,7 @@ traefik:
     # also ask for the json format in the format option
     # format: json
     # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-      level: INFO
+      level: DEBUG
     access:
     # To enable access logs
       enabled: true
@@ -44,4 +44,4 @@ traefik:
       load-balancer.hetzner.cloud/protocol: "tcp"
       #load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
       load-balancer.hetzner.cloud/hostname: "dev.superk8s.de"
-      load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+      #load-balancer.hetzner.cloud/uses-proxyprotocol: "true"

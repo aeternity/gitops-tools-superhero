@@ -1,7 +1,7 @@
 traefik:
   globalArguments: []
   additionalArguments:
-    #- "--entrypoints.web.http.redirections.entrypoint.to=:8443"
+    #- "--entrypoints.web.http.redirections.entrypoint.to=:443"
     #- "--entrypoints.web.http.redirections.entrypoint.scheme=https"
     #- '--serversTransport.insecureSkipVerify=true'
   logs:
@@ -22,13 +22,6 @@ traefik:
     create: true
   ports:
     websecure:
-      tls:
-        enabled: true
-    https:
-      port: 10443
-      expose: true
-      exposedPort: 8443
-      protocol: TCP
       tls:
         enabled: true
   service:

@@ -24,6 +24,10 @@ traefik:
     websecure:
       tls:
         enabled: true
+  tlsStore:
+    default:
+      defaultCertificate:
+        secretName: traefik-default-cert
   service:
     enabled: true
     type: LoadBalancer

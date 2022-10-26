@@ -4,8 +4,8 @@ defaultCertificateDmains:
 traefik:
   globalArguments: []
   additionalArguments:
-    - "--entrypoints.web.http.redirections.entrypoint.to=:443"
-    - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    #- "--entrypoints.web.http.redirections.entrypoint.to=:443"
+    #- "--entrypoints.web.http.redirections.entrypoint.scheme=https"
     #- '--serversTransport.insecureSkipVerify=true'
   logs:
   # Traefik logs concern everything that happens to Traefik itself (startup, configuration, events, shutdown, and so on).
@@ -44,5 +44,5 @@ traefik:
       load-balancer.hetzner.cloud/protocol: "tcp"
       #load-balancer.hetzner.cloud/http-certificates: "dev.superk8s.de"
       load-balancer.hetzner.cloud/hostname: "dev.superk8s.de"
-      load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+      #load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
 

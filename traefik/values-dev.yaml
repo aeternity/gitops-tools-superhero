@@ -1,3 +1,6 @@
+defaultCertificateDmains:
+  - "*.dev.service.aepps.com"
+
 traefik:
   globalArguments: []
   additionalArguments:

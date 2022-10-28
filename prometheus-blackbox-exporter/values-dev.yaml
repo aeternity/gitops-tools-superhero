@@ -33,47 +33,47 @@ prometheus-blackbox-exporter:
 
     targets:
       - name: dex
-        url: https://dex.dev.superk8s.de
+        url: https://dex.dev.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: base
-        url: https://base.dev.superk8s.de
+        url: https://base.dev.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: faucet
-        url: https://faucet.dev.superk8s.de
+        url: https://faucet.dev.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: aerepl-http
-        url: https://repl.dev.superk8s.de
+        url: https://repl.dev.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: aesophia
-        url: https://compiler.dev.superk8s.de/version
+        url: https://compiler.dev.service.aepps.com/version
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: explorer
-        url: https://explorer.dev.superk8s.de
+        url: https://explorer.dev.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: superhero-ui
-        url: https://superhero.dev.superk8s.de
+        url: https://superhero.dev.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: superhero-wallet
-        url: https://superhero-wallet.dev.superk8s.de
+        url: https://superhero-wallet.dev.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: superhero-backend
-        url: https://superhero-backend.dev.superk8s.de/health/backend
+        url: https://superhero-backend.dev.service.aepps.com/health/backend
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend

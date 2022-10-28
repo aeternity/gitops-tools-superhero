@@ -15,7 +15,7 @@ kube-prometheus-stack:
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-        - "prometheus.prd.superk8s.de"
+        - "prometheus.prd.service.aepps.com"
       pathType: ImplementationSpecific
 
   grafana:
@@ -29,8 +29,8 @@ kube-prometheus-stack:
         folderAnnotation: grafana-dashboard-dir
     grafana.ini:
       server:
-        domain: grafana.prd.superk8s.de
-        root_url: https://grafana.prd.superk8s.de
+        domain: grafana.prd.service.aepps.com
+        root_url: https://grafana.prd.service.aepps.com
       plugins:
         enable_alpha: true
       auth.github:
@@ -48,7 +48,7 @@ kube-prometheus-stack:
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-        - "grafana.prd.superk8s.de"
+        - "grafana.prd.service.aepps.com"
       pathType: ImplementationSpecific
     plugins:
       - grafana-piechart-panel
@@ -83,13 +83,13 @@ kube-prometheus-stack:
 
   alertmanager:
     alertmanagerSpec:
-      externalUrl: "https://alertmanager.prd.superk8s.de"
+      externalUrl: "https://alertmanager.prd.service.aepps.com"
     ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-        - "alertmanager.prd.superk8s.de"
+        - "alertmanager.prd.service.aepps.com"
       pathType: ImplementationSpecific
     config:
       templates:
@@ -143,7 +143,7 @@ kube-prometheus-stack:
             env: prd
           annotations:
             summary: "Probe failed (URL: {{ $labels.instance }})"
-            description: "Please check status on the following link: https://superhero-backend.stg.superk8s.de/health/backend"
+            description: "Please check status on the following link: https://superhero-backend.stg.service.aepps.com/health/backend"
     - name: kubernetes
       rules:
         - alert: KubernetesNodeReady

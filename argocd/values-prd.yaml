@@ -11,7 +11,7 @@ argo-cd:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
       pathType: ImplementationSpecific
       hosts:
-        - "argocd.prdservice.aepps.com"
+        - "argocd.prd.service.aepps.com"
     extraArgs:
       - --insecure=true
       - --repo-server-timeout-seconds=180
@@ -19,7 +19,7 @@ argo-cd:
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
       # Argo CD instance label key
-      url: https://argocd.prdservice.aepps.com
+      url: https://argocd.prd.service.aepps.com
       application.instanceLabelKey: argocd.argoproj.io/instance
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git

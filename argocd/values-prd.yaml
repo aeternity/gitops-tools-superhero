@@ -36,6 +36,9 @@ argo-cd:
         - type: helm
           url: https://fluent.github.io/helm-charts
           name: fluent
+        - type: helm
+          url: https://charts.jetstack.io
+          name: cert-manager
       dex.config: |
         connectors:
           - type: github
@@ -91,6 +94,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: elastic-system
             server: https://kubernetes.default.svc
+          - namespace: cert-manager
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -142,6 +147,9 @@ applications:
   eck-operator:
     project: tools
     namespace: elastic-system
+  cert-manager:
+    project: tools
+    namespace: cert-manager
   dex-ui:
     project: apps
     namespace: apps

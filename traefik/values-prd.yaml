@@ -1,25 +1,26 @@
+defaultCertificateDmains:
+  - "*.prd.service.aepps.com"
+
 traefik:
   globalArguments: []
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"
     - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-    - '--serversTransport.insecureSkipVerify=true'
   logs:
-  # Traefik logs concern everything that happens to Traefik itself (startup, configuration, events, shutdown, and so on).
     general:
-    # By default, the logs use a text format (common), but you can
-    # also ask for the json format in the format option
-    # format: json
-    # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-      level: INFO
+      level: DEBUG
     access:
-    # To enable access logs
-      enabled: true
-    debug:
-    # To enable access logs
       enabled: true
   serviceAccount:
     create: true
+  ports:
+    websecure:
+      tls:
+        enabled: true
+  tlsStore:
+    default:
+      defaultCertificate:
+        secretName: traefik-default-cert
   service:
     enabled: true
     type: LoadBalancer
@@ -30,13 +31,5 @@ traefik:
       load-balancer.hetzner.cloud/use-private-ip: "true"
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
-      load-balancer.hetzner.cloud/protocol: "https"
-      load-balancer.hetzner.cloud/http-certificates: "prd.superk8s.de"
-  # Create an IngressRoute for the dashboard
-ingressRoute:
-  dashboard:
-    enabled: false
-    # Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
-    annotations: {}
-    # Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
-    labels: {}
+      load-balancer.hetzner.cloud/protocol: "tcp"
+      load-balancer.hetzner.cloud/hostname: "prd.service.aepps.com"

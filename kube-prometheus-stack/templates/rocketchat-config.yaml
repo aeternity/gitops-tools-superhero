@@ -15,6 +15,9 @@ spec:
     receiver: rocketchat
   receivers:
   - name: rocketchat
-    webhook_configs:
-      - send_resolved: true
-        url: rocketchat_webhook_url
+    slackConfigs:
+    - sendResolved: true
+      apiURL:
+        name: kube-prometheus-stack-secret
+        key: WEBHOOK_URL
+      channel: '#alerts'

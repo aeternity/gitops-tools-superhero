@@ -39,6 +39,9 @@ argo-cd:
         - type: helm
           url: https://charts.jetstack.io
           name: cert-manager
+        - type: helm
+          url: https://sentry-kubernetes.github.io/charts
+          name: sentry
       dex.config: |
         connectors:
           - type: github
@@ -96,6 +99,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: cert-manager
             server: https://kubernetes.default.svc
+          - namespace: sentry
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -150,6 +155,9 @@ applications:
   eck-operator:
     project: tools
     namespace: elastic-system
+  sentry:
+    project: tools
+    namespace: sentry
   dex-ui:
     project: apps
     namespace: apps
@@ -222,3 +230,4 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+

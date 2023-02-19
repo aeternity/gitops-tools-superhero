@@ -1,0 +1,10 @@
+apiVersion: v2
+name: sentry
+description: sentry chart
+
+version: 17.9.1
+
+dependencies:
+  - name: sentry
+    version: 17.9.1
+    repository: https://sentry-kubernetes.github.io/charts

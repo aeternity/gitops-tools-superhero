@@ -353,7 +353,7 @@ sentry:
       global:
         imagePullSecrets: []
         imageRegistry: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
     commonAnnotations: {}
     commonLabels: {}
     config: ""
@@ -418,7 +418,7 @@ sentry:
     global:
       imagePullSecrets: []
       imageRegistry: ""
-      storageClass: ""
+      storageClass: "hcloud-volume"
     heapOpts: -Xmx1024m -Xms1024m
     hostAliases: []
     hostIPC: false
@@ -455,7 +455,7 @@ sentry:
       mountPath: /opt/bitnami/kafka/logs
       selector: {}
       size: 8Gi
-      storageClass: ""
+      storageClass: "hcloud-volume"
     logRetentionBytes: _1073741824
     logRetentionCheckIntervalMs: 300000
     logRetentionHours: 168
@@ -606,7 +606,7 @@ sentry:
       mountPath: /bitnami/kafka
       selector: {}
       size: 8Gi
-      storageClass: ""
+      storageClass: "hcloud-volume"
     podAffinityPreset: ""
     podAnnotations: {}
     podAntiAffinityPreset: soft
@@ -753,7 +753,7 @@ sentry:
         global:
           imagePullSecrets: []
           imageRegistry: ""
-          storageClass: ""
+          storageClass: "hcloud-volume"
       commonAnnotations: {}
       commonLabels: {}
       configuration: ""
@@ -789,7 +789,7 @@ sentry:
       global:
         imagePullSecrets: []
         imageRegistry: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
       heapSize: 1024
       hostAliases: []
       image:
@@ -869,7 +869,7 @@ sentry:
         existingClaim: ""
         selector: {}
         size: 8Gi
-        storageClass: ""
+        storageClass: "hcloud-volume"
       podAffinityPreset: ""
       podAnnotations: {}
       podAntiAffinityPreset: soft
@@ -1020,7 +1020,7 @@ sentry:
       global:
         imagePullSecrets: []
         imageRegistry: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
     commonAnnotations: {}
     commonLabels: {}
     containerPorts:
@@ -1048,7 +1048,7 @@ sentry:
     global:
       imagePullSecrets: []
       imageRegistry: ""
-      storageClass: ""
+      storageClass: "hcloud-volume"
     hostAliases: []
     image:
       debug: false
@@ -1145,7 +1145,7 @@ sentry:
       enabled: false
       selector: {}
       size: 8Gi
-      storageClass: ""
+      storageClass: "hcloud-volume"
     podAffinityPreset: ""
     podAnnotations: {}
     podAntiAffinityPreset: soft
@@ -1497,7 +1497,7 @@ sentry:
           postgresqlUsername: ""
           replicationPassword: ""
           servicePort: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
     commonAnnotations: {}
     commonLabels: {}
     configurationConfigMap: ""
@@ -1532,7 +1532,7 @@ sentry:
         postgresqlUsername: ""
         replicationPassword: ""
         servicePort: ""
-      storageClass: ""
+      storageClass: "hcloud-volume"
     image:
       debug: false
       pullPolicy: IfNotPresent
@@ -1629,7 +1629,7 @@ sentry:
       selector: {}
       size: 8Gi
       snapshotName: ""
-      storageClass: ""
+      storageClass: "hcloud-volume"
       subPath: ""
     pgHbaConfiguration: ""
     postgresqlConfiguration: {}
@@ -1817,7 +1817,7 @@ sentry:
       global:
         imagePullSecrets: []
         imageRegistry: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
     commonAnnotations: {}
     communityPlugins: ""
     configuration: |-
@@ -1937,7 +1937,7 @@ sentry:
     global:
       imagePullSecrets: []
       imageRegistry: ""
-      storageClass: ""
+      storageClass: "hcloud-volume"
     hostAliases: []
     image:
       debug: false
@@ -2032,7 +2032,7 @@ sentry:
       mountPath: /bitnami/rabbitmq/mnesia
       selector: {}
       size: 8Gi
-      storageClass: ""
+      storageClass: "hcloud-volume"
       subPath: ""
       volumes: []
     plugins: rabbitmq_management rabbitmq_peer_discovery_k8s
@@ -2131,7 +2131,7 @@ sentry:
         imageRegistry: ""
         redis:
           password: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
     commonAnnotations: {}
     commonConfiguration: |-
       # Enable AOF https://redis.io/topics/persistence#append-only-file
@@ -2154,7 +2154,7 @@ sentry:
       imageRegistry: ""
       redis:
         password: ""
-      storageClass: ""
+      storageClass: "hcloud-volume"
     image:
       debug: false
       pullPolicy: IfNotPresent
@@ -2216,7 +2216,7 @@ sentry:
         selector: {}
         size: 8Gi
         sizeLimit: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
         subPath: ""
       podAffinityPreset: ""
       podAnnotations: {}
@@ -2393,7 +2393,7 @@ sentry:
         selector: {}
         size: 8Gi
         sizeLimit: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
         subPath: ""
       podAffinityPreset: ""
       podAnnotations: {}
@@ -2500,7 +2500,7 @@ sentry:
         medium: ""
         selector: {}
         size: 100Mi
-        storageClass: ""
+        storageClass: "hcloud-volume"
       preExecCmds: []
       quorum: 2
       readinessProbe:
@@ -2953,7 +2953,7 @@ sentry:
       global:
         imagePullSecrets: []
         imageRegistry: ""
-        storageClass: ""
+        storageClass: "hcloud-volume"
     commonAnnotations: {}
     commonLabels: {}
     configuration: ""
@@ -2989,7 +2989,7 @@ sentry:
     global:
       imagePullSecrets: []
       imageRegistry: ""
-      storageClass: ""
+      storageClass: "hcloud-volume"
     heapSize: 1024
     hostAliases: []
     image:
@@ -3069,7 +3069,7 @@ sentry:
       existingClaim: ""
       selector: {}
       size: 8Gi
-      storageClass: ""
+      storageClass: "hcloud-volume"
     podAffinityPreset: ""
     podAnnotations: {}
     podAntiAffinityPreset: soft

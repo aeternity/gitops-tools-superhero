@@ -210,3 +210,7 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+  aescan-frontend-mvp-testnet:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'

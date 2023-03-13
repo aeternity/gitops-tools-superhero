@@ -1,0 +1,11 @@
+apiVersion: v2
+name: sonarqube
+description: Helm chart for SonarQube, the quality management platform for developers and devops teams.
+type: application
+version: 8.0.0+463
+appVersion: "9.9.0"
+
+dependencies:
+  - name: sonarqube
+    version: 8.0.0+463
+    repository: https://SonarSource.github.io/helm-chart-sonarqube

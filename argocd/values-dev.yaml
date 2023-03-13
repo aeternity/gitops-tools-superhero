@@ -142,6 +142,9 @@ applications:
   cert-manager:
     project: tools
     namespace: cert-manager
+  sonarqube:
+    project: tools
+    namespace: sonarqube
   dex-ui:
     project: apps
     namespace: apps

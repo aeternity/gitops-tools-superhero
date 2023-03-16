@@ -12,4 +12,5 @@ sonarqube:
       kubernetes.io/ingress.class: traefik
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
     hosts:
-      - "sonarqube.dev.service.aepps.com"
+      - name: sonarqube.dev.service.aepps.com
+        path: /

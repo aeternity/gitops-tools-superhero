@@ -11,14 +11,7 @@ kube-prometheus-stack:
     prometheusSpec:
       serviceMonitorSelectorUsesHelmValues: false
       ruleSelectorNilUsesHelmValues: false
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
-      hosts:
-        - "prometheus.dev.service.aepps.com"
-      pathType: ImplementationSpecific
-    additionalScrapeConfigs:
+      additionalScrapeConfigs:
       - job_name: hcloud-cloud-controller-manager
         scrape_interval: 15s
         metrics_path: /metrics
@@ -26,6 +19,13 @@ kube-prometheus-stack:
         static_configs:
         - targets:
           - hcloud-cloud-controller-manager:8080
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      hosts:
+        - "prometheus.dev.service.aepps.com"
+      pathType: ImplementationSpecific
   grafana:
     admin:
       existingSecret: kube-prometheus-stack-secret

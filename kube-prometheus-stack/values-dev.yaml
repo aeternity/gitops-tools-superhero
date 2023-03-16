@@ -18,14 +18,14 @@ kube-prometheus-stack:
       hosts:
         - " "
       pathType: ImplementationSpecific
-      additionalScrapeConfigs:
-        - job_name: hcloud-cloud-controller-manager
-          scrape_interval: 15s
-          metrics_path: /metrics
-          scheme: http
-          static_configs:
-          - targets:
-            - hcloud-cloud-controller-manager:8080
+    additionalScrapeConfigs:
+      - job_name: hcloud-cloud-controller-manager
+        scrape_interval: 15s
+        metrics_path: /metrics
+        scheme: http
+        static_configs:
+        - targets:
+          - hcloud-cloud-controller-manager:8080
 
   grafana:
     admin:

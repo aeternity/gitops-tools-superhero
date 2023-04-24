@@ -211,11 +211,11 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aescan-frontend-mvp:
+  aescan:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aescan-frontend-mvp-testnet:
+    repoUrl: 'https://github.com/aeternity/gitops-apps.git'
+  aescan-testnet:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps.git'

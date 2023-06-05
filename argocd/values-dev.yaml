@@ -24,6 +24,7 @@ argo-cd:
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git
         - url: https://github.com/aeternity/gitops-apps-superhero.git
+        - url: https://github.com/aeternity/gitops-apps-aelabs.git
         - type: helm
           url: https://argoproj.github.io/argo-helm
           name: argo
@@ -106,6 +107,7 @@ argo-cd:
         description: Applications deployed on K8S
         sourceRepos:
           - 'https://github.com/aeternity/gitops-apps-superhero.git'
+          - 'https://github.com/aeternity/gitops-apps-aelabs.git'
         destinations:
           - namespace: apps
             server: https://kubernetes.default.svc
@@ -214,8 +216,8 @@ applications:
   aescan:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   aescan-testnet:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'

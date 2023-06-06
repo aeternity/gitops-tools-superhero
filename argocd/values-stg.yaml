@@ -84,7 +84,6 @@ argo-cd:
         description: Tools used to run the environment
         sourceRepos:
           - 'https://github.com/aeternity/gitops-tools-superhero.git'
-          - 'https://github.com/aeternity/gitops-apps-aelabs.git'
         destinations:
           - namespace: tools
             server: https://kubernetes.default.svc
@@ -118,6 +117,7 @@ argo-cd:
         description: Applications deployed on K8S
         sourceRepos:
           - 'https://github.com/aeternity/gitops-apps-superhero.git'
+          - 'https://github.com/aeternity/gitops-apps-aelabs.git'
         destinations:
           - namespace: apps
             server: https://kubernetes.default.svc

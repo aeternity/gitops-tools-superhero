@@ -24,6 +24,7 @@ argo-cd:
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git
         - url: https://github.com/aeternity/gitops-apps-superhero.git
+        - url: https://github.com/aeternity/gitops-apps-aelabs.git
         - type: helm
           url: https://argoproj.github.io/argo-helm
           name: argo
@@ -78,6 +79,7 @@ argo-cd:
         description: Tools used to run the environment
         sourceRepos:
           - 'https://github.com/aeternity/gitops-tools-superhero.git'
+          - 'https://github.com/aeternity/gitops-apps-aelabs.git'
         destinations:
           - namespace: tools
             server: https://kubernetes.default.svc

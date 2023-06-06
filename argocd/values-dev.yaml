@@ -156,7 +156,7 @@ applications:
   dex-ui:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   aepp-base:
     project: apps
     namespace: apps

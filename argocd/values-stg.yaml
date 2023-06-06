@@ -161,7 +161,7 @@ applications:
   dex-ui:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   aepp-base:
     project: apps
     namespace: apps
@@ -226,8 +226,7 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aescan-frontend-mvp:
+  aescan:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'

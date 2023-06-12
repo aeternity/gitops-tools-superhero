@@ -232,7 +232,7 @@ applications:
   ga-multisig-ui:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   aescan:
     project: apps
     namespace: apps

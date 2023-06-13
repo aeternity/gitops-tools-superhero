@@ -196,7 +196,7 @@ applications:
   state-channel-demo-frontend:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   state-channel-demo-backend:
     project: apps
     namespace: apps

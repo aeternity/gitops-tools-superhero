@@ -176,7 +176,7 @@ applications:
   aepp-graffiti:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   aerepl-http:
     project: apps
     namespace: apps

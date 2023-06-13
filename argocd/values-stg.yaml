@@ -216,7 +216,7 @@ applications:
   superhero-backend:
     project: apps
     namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   test-repo:
     project: apps
     namespace: apps

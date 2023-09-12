@@ -129,3 +129,5 @@ rabbitmq:
     ##        - frontend
     ##
     additionalRules: []
+  clustering:
+    enabled: true

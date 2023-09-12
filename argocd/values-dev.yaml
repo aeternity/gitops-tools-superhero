@@ -153,6 +153,9 @@ applications:
   sonarqube:
     project: tools
     namespace: sonarqube
+  rabbitmq:
+    project: tools
+    namespace: rabbitmq
   dex-ui:
     project: apps
     namespace: apps

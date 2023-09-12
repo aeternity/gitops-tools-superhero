@@ -1,0 +1,10 @@
+apiVersion: v2
+name: rabbitmq
+description: rabbitmq deamon set on each node.
+
+version: 3.12.4
+
+dependencies:
+  - name: rabbitmq
+    version: 3.12.4
+    repository: https://fluent.github.io/helm-charts

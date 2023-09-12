@@ -1,0 +1,104 @@
+encValues:
+  rabbitmq-password: "AgB4xwSVVE9JesIS2oqOL8NcHu+wKR+czgukclzwl0pDZ0xY7bkWbrm13SvCpo1odHdmEDqiFslhQPqtIw69f7EJz6oC7SPtH2bVlwM8pGY7FCzkHuYohjFA0hEqUMSFUR/3jAkEXQGeWftKsqw75gmhRTQAe8dZmipzKcHPEi6OsSbUtUx/V6r9JilXIN8F8kMlONwbeWEPu0NbLQcozNli50dVVpghzwCI9BlQMX+yQLy3C05CIyiJKYKsQSQlq28inIh8u8e9WJlniv9uvZGivWHZwuVi2DRjn8xT8qTKDxNpm/kGDKaoGeaD+f4arRdQL4UhVWwASCuJTPwcQFW2035A4JruZtUlwL86FGYmpuQVPq7A714uYwFBVRcQMcSDqUWZ3y25owkfMQut4/wv9C07RHLPuliyNydatUx+2lU0/eGUf6FrRUwGPOeTjQzHCQSpiDvD689ByNAJTbI7wpMgMWI2IIWoedO57qM9P57Kwjq4hdNHX5V/865Y3F6G2hk//Bt2/Qx15nmZkqoeNK6l99LaJHiNbRZJVGk+vT+2e1oodxf5wMkINbAQHDNkGXzbsbfjdVq+f1Mng0fj9aYw3YaN+i+363OSuuY5tppH6R/jSODKBaMGtQlVdPUsJGck+18k+7GYW1yLO1RF2a4KRAS9UwLSooq+CfvF3ZPCGDEbeVFbr5QP9bY/PTF0WxzaMUQXbsax"
+
+rabbitmq:
+  global:
+    imageRegistry: ""
+    imagePullSecrets: []
+    storageClass: ""
+  image:
+    registry: docker.io
+    repository: bitnami/rabbitmq
+    tag: 3.12.4-debian-11-r0
+    digest: ""
+    debug: false
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+  auth:
+    ## @param auth.username RabbitMQ application username
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    username: user
+    ## @param auth.password RabbitMQ application password
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    #password: rabbitmq-secret/rabbitmq-password
+    password: {{ .Values.encValues.rabbitmq-password | b64enc | quote }}
+    ## @param auth.securePassword Whether to set the RabbitMQ password securely. This is incompatible with loading external RabbitMQ definitions and 'true' when not setting the auth.password parameter.
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    securePassword: true
+    ## @param auth.existingPasswordSecret Existing secret with RabbitMQ credentials (must contain a value for `rabbitmq-password` key)
+    ## e.g:
+    ## existingPasswordSecret: name-of-existing-secret
+    ##
+    existingPasswordSecret: ""
+    ## @param auth.enableLoopbackUser If enabled, the user `auth.username` can only connect from localhost
+    ##
+    enableLoopbackUser: false
+    ## @param auth.erlangCookie Erlang cookie to determine whether different nodes are allowed to communicate with each other
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    erlangCookie: ""
+    ## @param auth.existingErlangSecret Existing secret with RabbitMQ Erlang cookie (must contain a value for `rabbitmq-erlang-cookie` key)
+    ## e.g:
+    ## existingErlangSecret: name-of-existing-secret
+    ##
+    existingErlangSecret: ""
+  persistence:
+    ## @param persistence.enabled Enable RabbitMQ data persistence using PVC
+    ##
+    enabled: true
+    ## @param persistence.storageClass PVC Storage Class for RabbitMQ data volume
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    storageClass: "hcloud-volume"
+    ## @param persistence.selector Selector to match an existing Persistent Volume
+    ## selector:
+    ##   matchLabels:
+    ##     app: my-app
+    ##
+    selector: {}
+    ## @param persistence.accessModes PVC Access Modes for RabbitMQ data volume
+    ##
+    accessModes:
+      - ReadWriteOnce
+    ## @param persistence.existingClaim Provide an existing PersistentVolumeClaims
+    ## The value is evaluated as a template
+    ## So, for example, the name can depend on .Release or .Chart
+    ##
+    existingClaim: ""
+    ## @param persistence.mountPath The path the volume will be mounted at
+    ## Note: useful when using custom RabbitMQ images
+    ##
+    mountPath: /bitnami/rabbitmq/mnesia
+    ## @param persistence.subPath The subdirectory of the volume to mount to
+    ## Useful in dev environments and one PV for multiple services
+    ##
+    subPath: ""
+    ## @param persistence.size PVC Storage Request for RabbitMQ data volume
+    ## If you change this value, you might have to adjust `rabbitmq.diskFreeLimit` as well
+    ##
+    size: 50Gi
+    ## @param persistence.annotations Persistence annotations. Evaluated as a template
+    ## Example:
+    ## annotations:
+    ##   example.io/disk-volume-type: SSD
+    ##
+    annotations: {}
+    ## @param persistence.labels Persistence labels. Evaluated as a template
+    ## Example:
+    ## labels:
+    ##   app: my-app
+    labels: {}
+  ingress:
+    enabled: true
+    path: /
+    pathType: ImplementationSpecific
+    hostname: "rabbitmq.dev.service.aepps.com"
+    annotations:
+      kubernetes.io/ingress.class: traefik

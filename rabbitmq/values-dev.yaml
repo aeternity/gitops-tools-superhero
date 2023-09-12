@@ -6,7 +6,7 @@ rabbitmq:
     imageRegistry: ""
     imagePullSecrets: []
     storageClass: ""
-    clusterDomain: "superhero-dev"
+  clusterDomain: "superhero-dev"
   image:
     registry: docker.io
     repository: bitnami/rabbitmq

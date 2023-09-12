@@ -104,6 +104,7 @@ rabbitmq:
     hostname: "rabbitmq.dev.service.aepps.com"
     annotations:
       kubernetes.io/ingress.class: traefik
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
   ## Network Policy configuration
   ## ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
   ##

@@ -23,7 +23,7 @@ rabbitmq:
     ## @param auth.password RabbitMQ application password
     ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
     ##
-    password: secretpassword
+    #password: secretpassword
     #password: rabbitmq-secret/rabbitmq-password
     #password: {{ .Values.encValues.rabbitmq-password | b64enc | quote }}
     ## @param auth.securePassword Whether to set the RabbitMQ password securely. This is incompatible with loading external RabbitMQ definitions and 'true' when not setting the auth.password parameter.
@@ -34,7 +34,7 @@ rabbitmq:
     ## e.g:
     ## existingPasswordSecret: name-of-existing-secret
     ##
-    existingPasswordSecret: ""
+    existingPasswordSecret: "rabbitmq-secret"
     ## @param auth.enableLoopbackUser If enabled, the user `auth.username` can only connect from localhost
     ##
     enableLoopbackUser: false

@@ -101,6 +101,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: sonarqube
             server: https://kubernetes.default.svc
+          - namespace: rabbitmq
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'

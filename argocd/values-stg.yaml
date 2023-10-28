@@ -159,9 +159,6 @@ applications:
   cert-manager:
     project: tools
     namespace: cert-manager
-  eck-operator:
-    project: tools
-    namespace: elastic-system
   sentry:
     project: tools
     namespace: sentry

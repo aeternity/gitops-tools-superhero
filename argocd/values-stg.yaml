@@ -169,22 +169,10 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aepp-base:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
   aepp-graffiti:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aerepl-http:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
-  aesophia-http:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
   superhero-ui:
     project: apps
     namespace: apps
@@ -209,10 +197,6 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  explorer:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-superhero.git'
   superhero-backend:
     project: apps
     namespace: apps

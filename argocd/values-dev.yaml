@@ -119,92 +119,92 @@ argo-cd:
           - group: '*'
             kind: '*'
 
-defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
-defaultTargetRevision: dev
-
-applications:
-  argocd:
-    project: tools
-    namespace: argocd
-  sealed-secrets:
-    project: tools
-    namespace: sealed-secrets
-  traefik:
-    project: tools
-    namespace: traefik
-  metrics-server:
-    project: tools
-    namespace: kube-system
-  kube-prometheus-stack:
-    project: tools
-    namespace: monitoring
-  prometheus-blackbox-exporter:
-    project: tools
-    namespace: monitoring
-  fluent-bit:
-    project: tools
-    namespace: logging
-  hcloud-csi-driver:
-    project: tools
-    namespace: kube-system
-  cert-manager:
-    project: tools
-    namespace: cert-manager
-  sonarqube:
-    project: tools
-    namespace: sonarqube
-  rabbitmq:
-    project: tools
-    namespace: rabbitmq
-  dex-ui:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aepp-graffiti:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  state-channel-demo-frontend:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  state-channel-demo-backend:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  dex-backend-mainnet:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  dex-backend-testnet:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  ga-multisig-backend-mainnet:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  ga-multisig-backend-testnet:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  ga-multisig-ui:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aepp-lqty:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  scv-gateway:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aescan:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aescan-testnet:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+  defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
+  defaultTargetRevision: dev
+  
+  applications:
+    argocd:
+      project: tools
+      namespace: argocd
+    sealed-secrets:
+      project: tools
+      namespace: sealed-secrets
+    traefik:
+      project: tools
+      namespace: traefik
+    metrics-server:
+      project: tools
+      namespace: kube-system
+    kube-prometheus-stack:
+      project: tools
+      namespace: monitoring
+    prometheus-blackbox-exporter:
+      project: tools
+      namespace: monitoring
+    fluent-bit:
+      project: tools
+      namespace: logging
+    hcloud-csi-driver:
+      project: tools
+      namespace: kube-system
+    cert-manager:
+      project: tools
+      namespace: cert-manager
+    sonarqube:
+      project: tools
+      namespace: sonarqube
+    rabbitmq:
+      project: tools
+      namespace: rabbitmq
+    dex-ui:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    aepp-graffiti:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    state-channel-demo-frontend:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    state-channel-demo-backend:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    dex-backend-mainnet:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    dex-backend-testnet:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    ga-multisig-backend-mainnet:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    ga-multisig-backend-testnet:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    ga-multisig-ui:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    aepp-lqty:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    scv-gateway:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    aescan:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    aescan-testnet:
+      project: apps
+      namespace: apps
+      repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'

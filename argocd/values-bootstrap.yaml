@@ -1,0 +1,56 @@
+argo-cd:
+  server:
+    extraArgs:
+      - --insecure
+    config:
+      # Argo CD's externally facing base URL (optional). Required when configuring SSO
+      # url: https://argocd.example.com
+      # Argo CD instance label key
+      application.instanceLabelKey: argocd.argoproj.io/instance
+      repositories: |
+        - url: https://github.com/aeternity/gitops-tools-superhero.git
+        - type: helm
+          url: https://argoproj.github.io/argo-helm
+          name: argo
+        - type: helm
+          url: https://bitnami-labs.github.io/sealed-secrets
+          name: sealed-secrets
+        - type: helm
+          url: https://helm.traefik.io/traefik
+          name: traefik
+    additionalProjects:
+      - name: tools
+        namespace: argocd
+        additionalLabels: {}
+        additionalAnnotations: {}
+        description: Tools used to run the environment
+        sourceRepos:
+          - 'https://github.com/aeternity/gitops-tools-superhero.git'
+          - 'https://bitnami-labs.github.io/sealed-secrets'
+          - 'https://argoproj.github.io/argo-helm'
+        destinations:
+          - namespace: tools
+            server: https://kubernetes.default.svc
+          - namespace: argocd
+            server: https://kubernetes.default.svc
+          - namespace: sealed-secrets
+            server: https://kubernetes.default.svc
+          - namespace: traefik
+            server: https://kubernetes.default.svc
+        clusterResourceWhitelist:
+          - group: '*'
+            kind: '*'
+
+defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
+defaultTargetRevision: dev
+
+applications:
+  argocd:
+    project: tools
+    namespace: argocd
+  sealed-secrets:
+    project: tools
+    namespace: sealed-secrets
+  traefik:
+    project: tools
+    namespace: traefik

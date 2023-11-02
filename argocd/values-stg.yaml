@@ -158,14 +158,7 @@ applications:
   cert-manager:
     project: tools
     namespace: cert-manager
-  sentry:
-    project: tools
-    namespace: sentry
   dex-ui:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aepp-graffiti:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
@@ -214,14 +207,6 @@ applications:
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   aescan:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  graffiti-server-mainnet:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  graffiti-server-testnet:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'

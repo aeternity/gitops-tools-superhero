@@ -1,9 +1,9 @@
 apiVersion: v2
 name: kubernetes-event-exporter
 description: kubernetes-event-exporter
-version: 1.4.3
+version: 2.8.2
 
 dependencies:
   - name: kubernetes-event-exporter
-    version: 1.4.3
+    version: 2.8.2
     repository: https://charts.bitnami.com/bitnami

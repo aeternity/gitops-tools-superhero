@@ -151,11 +151,15 @@ applications:
   cert-manager:
     project: tools
     namespace: cert-manager
-  dex-ui:
+  aescan:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  aepp-graffiti:
+  aescan-testnet:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+  dex-ui:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'

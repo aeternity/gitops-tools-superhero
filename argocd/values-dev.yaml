@@ -199,6 +199,10 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+  scv-gateway-testnet:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   aescan:
     project: apps
     namespace: apps
@@ -220,6 +224,10 @@ applications:
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   scv-worker:
+    project: apps
+    namespace: apps
+    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+  scv-worker-testnet:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'

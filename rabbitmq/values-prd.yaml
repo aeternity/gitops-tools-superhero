@@ -1,0 +1,136 @@
+encValues:
+  rabbitmq-password: "AgCQWxNl0ZShGSbvRlwXBddcouepAy4r4+RJZJ0ZSPMwcko7pzXQxUK4YeOe2D95e4acRqqWiwlSrBig50lrXgJZzo9MN9XaZe+z3PtGHEa4Xioyvkp3JJY1zkXtwm34eckWLFFHK+Qbbrx9RjSYCNAYDmebqaFLDQP67oN/Fg6Ou/SpLpbfMKZ+oVr+RiTsf86yy26rldH2F0Z/t8Q6aZrzP/bgKxM6FiTZdN1PtxKMbrUDDDYgpXj5of4vFhZ+7yY92FujNT/aNU8RbwvMTjMSfGBLxSUKV1WPAS+d6f4g2iiVUB91oMY9ycYKicmAyACGpg8/CeR3Dd92CmnEDfQqAKArU5GxyYdNr4xVqQ/XQ2rYxMlQKHqk4/5HDlZHRsSI6KYDPkPpK4VsqwuZdhIy/v//azI1DeiNYiyU3ryZaWGOJfztSc00/nkyZcA4DJU+McKApxvMr02YXs3IXnba+T1uHQDcN/tFPXoSKoXBdN8qBhYumZSbQbx2Ffa1Ez1OKz00eAcYLIB1PRaGKNwwYK1y1UyVoZzS8NZZFvQk1E+vAJRCZeRKGSfznw5Xjf6Nw99R0biGp+BNIcaPlx6+UwlHFLzJa7ADc1sSuw6ppRklJpE4eXwJWmgjaaGpZvsQ5nPz1mIviMLPNcog1i4lgzXmiBiy4pth7fIK9R0JNpVAtKGYiMNIzIonLdOFSmI5qExul9IA5mRX"
+  rabbitmq-erlang-cookie: "AgAZJcmEHLPaC6ndEj5+C+Yy96y+UEDj3ho3bjkL0xo8JZM/z6NVPvkmwMiEvB/HR3eXazCub9PjHtAXEyKatxBvcCkCbKuIWJOGn5RTqTwyPjEG1yJpuVKjZU5yBpB2WRFFXY7ZgDAWw/LKSRk2+KTyGd3dDLiKuHR8p4Rqx5wMNt5UAxuQCHLTCPn1OuGzZ3recwWFndbBBW7uHHenZT+J/lzTNMHaQ63yRJRqJrn3z1SoNVRIbPRoYGi1hry5XRLncIOY4KxHjTHlixHUT7fOX3kf9S9Bi/uXt3y6DEffYWSuptxqoysub69/kCxxYM7GeqGcn+1YTLD7jO+lcbNJRuui60/yDvIE/u4U7Q0rfmS3wFGdq0wzrxogRgiVbTIjNuyUTE/0+hXTa7qcyEBIS4t5IhbkEb7BgZ6QD563PZNYOO/ybatOahHQZFJCwRHEVX+8Fv0vBnENS9ehoDZrxWYuqOq16zmamHH7TtPG/gbrhsFNQKFeWY35ftMFdqUpRgFMuBi2J+QyeiufwsFlXeMfofqQFDDXTRJGBsFgwN/gHTZzaXcGjdldiP6QSSBldnDkwtbwjs4FvwAIDvMBXZwrDFF6Vlui9Bg+HjYlWJB1mRYf+5x5FEr7RmVTonhTX+dP9gYTyrpUp7mpoK1K8YNFuYKYBb4Y3S26+lngWpLlAwzTr+Knoi/QYxdsjPuAaxLl2IIJ8kVoNZkUtiGqQi1H36vx0xaR6WWUnalJ0A=="
+
+rabbitmq:
+  global:
+    imageRegistry: ""
+    imagePullSecrets: []
+    storageClass: ""
+  clusterDomain: "superhero-prd"
+  image:
+    registry: docker.io
+    repository: bitnami/rabbitmq
+    tag: 3.12.4-debian-11-r0
+    digest: ""
+    debug: true
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+  auth:
+    ## @param auth.username RabbitMQ application username
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    username: admin
+    ## @param auth.password RabbitMQ application password
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    #password: secretpassword
+    #password: rabbitmq-secret/rabbitmq-password
+    #password: {{ .Values.encValues.rabbitmq-password | b64enc | quote }}
+    ## @param auth.securePassword Whether to set the RabbitMQ password securely. This is incompatible with loading external RabbitMQ definitions and 'true' when not setting the auth.password parameter.
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    securePassword: true
+    ## @param auth.existingPasswordSecret Existing secret with RabbitMQ credentials (must contain a value for `rabbitmq-password` key)
+    ## e.g:
+    ## existingPasswordSecret: name-of-existing-secret
+    ##
+    existingPasswordSecret: "rabbitmq-secret"
+    ## @param auth.enableLoopbackUser If enabled, the user `auth.username` can only connect from localhost
+    ##
+    enableLoopbackUser: false
+    ## @param auth.erlangCookie Erlang cookie to determine whether different nodes are allowed to communicate with each other
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/rabbitmq#environment-variables
+    ##
+    erlangCookie: ""
+    ## @param auth.existingErlangSecret Existing secret with RabbitMQ Erlang cookie (must contain a value for `rabbitmq-erlang-cookie` key)
+    ## e.g:
+    ## existingErlangSecret: name-of-existing-secret
+    ##
+    existingErlangSecret: "rabbitmq-secret"
+  persistence:
+    ## @param persistence.enabled Enable RabbitMQ data persistence using PVC
+    ##
+    enabled: true
+    ## @param persistence.storageClass PVC Storage Class for RabbitMQ data volume
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    storageClass: "hcloud-volume"
+    ## @param persistence.selector Selector to match an existing Persistent Volume
+    ## selector:
+    ##   matchLabels:
+    ##     app: my-app
+    ##
+    selector: {}
+    ## @param persistence.accessModes PVC Access Modes for RabbitMQ data volume
+    ##
+    accessModes:
+      - ReadWriteOnce
+    ## @param persistence.existingClaim Provide an existing PersistentVolumeClaims
+    ## The value is evaluated as a template
+    ## So, for example, the name can depend on .Release or .Chart
+    ##
+    existingClaim: ""
+    ## @param persistence.mountPath The path the volume will be mounted at
+    ## Note: useful when using custom RabbitMQ images
+    ##
+    mountPath: /bitnami/rabbitmq/mnesia
+    ## @param persistence.subPath The subdirectory of the volume to mount to
+    ## Useful in dev environments and one PV for multiple services
+    ##
+    subPath: ""
+    ## @param persistence.size PVC Storage Request for RabbitMQ data volume
+    ## If you change this value, you might have to adjust `rabbitmq.diskFreeLimit` as well
+    ##
+    size: 50Gi
+    ## @param persistence.annotations Persistence annotations. Evaluated as a template
+    ## Example:
+    ## annotations:
+    ##   example.io/disk-volume-type: SSD
+    ##
+    annotations: {}
+    ## @param persistence.labels Persistence labels. Evaluated as a template
+    ## Example:
+    ## labels:
+    ##   app: my-app
+    labels: {}
+  ingress:
+    enabled: true
+    path: /
+    pathType: ImplementationSpecific
+    hostname: "rabbitmq.prd.service.aepps.com"
+    annotations:
+      kubernetes.io/ingress.class: traefik
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  ## Network Policy configuration
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
+  ##
+  networkPolicy:
+    ## @param networkPolicy.enabled Enable creation of NetworkPolicy resources
+    ##
+    enabled: true
+    ## @param networkPolicy.allowExternal Don't require client label for connections
+    ## The Policy model to apply. When set to false, only pods with the correct
+    ## client label will have network access to the ports RabbitMQ is listening
+    ## on. When true, RabbitMQ will accept connections from any source
+    ## (with the correct destination port).
+    ##
+    allowExternal: true
+    ## @param networkPolicy.additionalRules Additional NetworkPolicy Ingress "from" rules to set. Note that all rules are OR-ed.
+    ## e.g:
+    ## additionalRules:
+    ##  - matchLabels:
+    ##    - role: frontend
+    ##  - matchExpressions:
+    ##    - key: role
+    ##      operator: In
+    ##      values:
+    ##        - frontend
+    ##
+    additionalRules: []
+  clustering:
+    enabled: true

@@ -151,6 +151,9 @@ applications:
   cert-manager:
     project: tools
     namespace: cert-manager
+  rabbitmq:
+    project: tools
+    namespace: rabbitmq
   aescan:
     project: apps
     namespace: apps

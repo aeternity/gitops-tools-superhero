@@ -141,12 +141,6 @@ applications:
   prometheus-blackbox-exporter:
     project: tools
     namespace: monitoring
-  fluent-bit:
-    project: tools
-    namespace: logging
-  kubernetes-event-exporter:
-    project: tools
-    namespace: monitoring
   hcloud-csi-driver:
     project: tools
     namespace: kube-system

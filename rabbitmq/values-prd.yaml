@@ -59,7 +59,7 @@ rabbitmq:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "hcloud-volume"
+    storageClass: "hcloud-volumes"
     ## @param persistence.selector Selector to match an existing Persistent Volume
     ## selector:
     ##   matchLabels:

@@ -1,0 +1,10 @@
+apiVersion: v2
+name: uptime-kuma
+description: uptime-kuma
+
+version: 2.18.0
+
+dependencies:
+  - name: uptime-kuma
+    version: 2.18.0
+    repository: https://helm.irsigler.cloud

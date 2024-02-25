@@ -101,6 +101,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: rabbitmq
             server: https://kubernetes.default.svc
+          - namespace: uptime-kuma
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -150,6 +152,9 @@ applications:
   rabbitmq:
     project: tools
     namespace: rabbitmq
+  uptime-kuma:
+    project: tools
+    namespace: uptime-kuma
   aescan:
     project: apps
     namespace: apps

@@ -144,9 +144,6 @@ applications:
   fluent-bit:
     project: tools
     namespace: logging
-  kubernetes-event-exporter:
-    project: tools
-    namespace: monitoring
   kube-prometheus-stack:
     project: tools
     namespace: monitoring

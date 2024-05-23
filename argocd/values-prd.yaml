@@ -155,6 +155,9 @@ applications:
   uptime-kuma:
     project: tools
     namespace: uptime-kuma
+  redis:
+    project: tools
+    namespace: redis
   aescan:
     project: apps
     namespace: apps

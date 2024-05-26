@@ -104,6 +104,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: sentry
             server: https://kubernetes.default.svc
+          - namespace: redis
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -153,6 +155,9 @@ applications:
   cert-manager:
     project: tools
     namespace: cert-manager
+  redis:
+    project: tools
+    namespace: redis
   dex-ui:
     project: apps
     namespace: apps

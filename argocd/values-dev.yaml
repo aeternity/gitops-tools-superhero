@@ -104,6 +104,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: rabbitmq
             server: https://kubernetes.default.svc
+          - namespace: redis
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -155,6 +157,9 @@ applications:
   rabbitmq:
     project: tools
     namespace: rabbitmq
+  redis:
+    project: tools
+    namespace: redis
   dex-ui:
     project: apps
     namespace: apps

@@ -98,7 +98,7 @@ prometheus-blackbox-exporter:
         scrapeTimeout: 60s
         module: http_backend
       - name: superhero-backend-testnet
-        url: https://uperhero-backend-testnet.prd.service.aepps.com
+        url: https://superhero-backend-testnet.prd.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend

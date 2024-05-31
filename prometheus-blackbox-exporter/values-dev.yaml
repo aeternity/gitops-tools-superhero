@@ -77,11 +77,6 @@ prometheus-blackbox-exporter:
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
-      - name: ga-multisig-ui
-        url: https://ga-multisig-ui.dev.service.aepps.com
-        interval: 60s
-        scrapeTimeout: 60s
-        module: http_backend
       - name: scv-gateway
         url: https://scv-gateway.dev.service.aepps.com
         interval: 60s

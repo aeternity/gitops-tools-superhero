@@ -33,82 +33,82 @@ prometheus-blackbox-exporter:
 
     targets:
       - name: aescan
-        url: https://aescan.io
+        url: https://aescan.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: aescan-testnet
-        url: https://testnet.aescan.io
+        url: https://aescan-testnet.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: dex-backend-mainnet
-        url: https://dex-backend-mainnet.prd.service.aepps.com
+        url: https://dex-backend-mainnet.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: dex-backend-testnet
-        url: https://dex-backend-testnet.prd.service.aepps.com
+        url: https://dex-backend-testnet.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: dex
-        url: https://aepp.dex.superhero.com
+        url: https://dex.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: ga-multisig-backend-mainnet
-        url: https://ga-multisig-backend-mainnet.prd.service.aepps.com/health
+        url: https://ga-multisig-backend-mainnet.stg.service.aepps.com/health
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: ga-multisig-backend-testnet
-        url: https://ga-multisig-backend-testnet.prd.service.aepps.com/health
+        url: https://ga-multisig-backend-testnet.stg.service.aepps.com/health
         interval: 60s
         scrapeTimeout: 60s
         module: http_2xx
       - name: ga-multisig-ui
-        url: https://ga-multisig-ui.prd.service.aepps.com
+        url: https://ga-multisig-ui.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
       - name: scv-gateway
-        url: https://scv-gateway.prd.service.aepps.com/status
+        url: https://scv-gateway.stg.service.aepps.com/status
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
       - name: scv-gateway-testnet
-        url: https://scv-gateway-testnet.prd.service.aepps.com/status
+        url: https://scv-gateway-testnet.stg.service.aepps.com/status
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
       - name: state-channel-demo-backend
-        url: https://state-channel-demo-backend.prd.service.aepps.com
+        url: https://state-channel-demo-backend.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
       - name: state-channel-demo
-        url: https://statechannel.aepps.com
+        url: https://state-channel-demo.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
       #- name: superhero-backend-mainnet
-        #url: https://superhero-backend-mainnet.prd.service.aepps.com
+        #url: https://superhero-backend.stg.service.aepps.com
         #interval: 60s
         #scrapeTimeout: 60s
         #module: http_backend
       #- name: superhero-backend-testnet
-        #url: https://superhero-backend-testnet.prd.service.aepps.com
+        #url: https://superhero-backend-testnet.stg.service.aepps.com
         #interval: 60s
         #scrapeTimeout: 60s
         #module: http_backend
       - name: superhero
-        url: https://superhero.prd.service.aepps.com
+        url: https://superhero.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
       - name: superhero-wallet
-        url: https://superhero-wallet.prd.service.aepps.com
+        url: https://superhero-wallet.stg.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend

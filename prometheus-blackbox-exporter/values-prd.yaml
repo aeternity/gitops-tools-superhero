@@ -72,16 +72,6 @@ prometheus-blackbox-exporter:
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
-      - name: scv-gateway
-        url: https://scv-gateway.stg.service.aepps.com/status
-        interval: 60s
-        scrapeTimeout: 60s
-        module: http_backend
-      - name: scv-gateway-testnet
-        url: https://scv-gateway-testnet.stg.service.aepps.com/status
-        interval: 60s
-        scrapeTimeout: 60s
-        module: http_backend
       - name: state-channel-demo-backend
         url: https://state-channel-demo-backend.stg.service.aepps.com
         interval: 60s

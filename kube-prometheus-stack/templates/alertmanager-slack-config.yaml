@@ -20,6 +20,6 @@ spec:
       apiURL:
         name: kube-prometheus-stack-secret
         key: webhook_url
-      channel: '#monitoring'
+      channel: '#hetzner-monitoring'
       title: {{`"{{ template \"slack.ae.title\" . }}"`}}
       text: {{`"{{ template \"slack.ae.text\" . }}"`}}

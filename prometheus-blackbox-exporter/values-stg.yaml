@@ -113,6 +113,11 @@ prometheus-blackbox-exporter:
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
+      - name: testing
+        url: https://testing.prd.service.aepps.com
+        interval: 60s
+        scrapeTimeout: 60s
+        module: http_backend
 
     relabelings:
       # This is the part where, the original SM endpoints passed as parameters to blackbox exporter.

@@ -134,3 +134,7 @@ rabbitmq:
     additionalRules: []
   clustering:
     enabled: true
+  extraEnvVars:
+  - name: RABBITMQ_ULIMIT_NOFILES
+    value: ""
+

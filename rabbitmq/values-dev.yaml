@@ -3,6 +3,9 @@ encValues:
   rabbitmq-erlang-cookie: "AgCo6lFPfwGbZTiL4ct2tkqe+p2KqVSyQq3oUWl6vkoeixCsQKDOmt67yGCFooCywuFvhs8TMOcm3oXtvMVR8OcJJihCA5YgVZCjcPjRvgtfWGk+38nvZmhuZ7FjBUxcllPbvZCui1fg1+CvQmufB/FzjsBzvxOF6rV5kjc3HpIpJlRS2UQ5Da8MjMP0GqHJaAe1ByLjZuNa3NNkgXJt+XrxnH4RLdVwe44MSdUeZsTzWd+kCWDteSiPlsfAasl/kIyigo4zWNOp0bvRFXIcQPvTAnGlWrQdiOQGichp25loxQx9bDNVr2pysuFTatHIrTedMiHfSDbU+OH8XkM0LCXeElQyrZoiAVk5A2OvdJZbxc90PhxGcYjCNKhzw6p9EP711E9+GGBIX+QkKCrqBBecFDAzl1ELcnJNJ321kAwFZ+NnzGw/NbQsJRRKOeclMQcjmc0tjXANKvEUo+lA1/d9WUI+8cZUlHOzKqgmPT9J1tmIHFZjL4KkvLA7+NVgUUF9jfrlDaJ7F49ZSlUm+sqjBTr+Hr9xBMucxFDxiA2/7Ter6lqMG3UNPk6Q9lk1KOWeJnI2EAbVB+86qYF4fDMb+xCdkheBV1elsaPuZfid2niddVifYYjmZ/1fp212xIusH9iSzrZ1hL20ZtDG3/rVqzglyw1OORm6KK+lA/W0FQ12z75Gp51y5orCj3QLC6kWoD2OMH3tSYdn"
 
 rabbitmq:
+  extraEnvVars:
+    - name: RABBITMQ_ULIMIT_NOFILES
+      value: ""
   global:
     imageRegistry: ""
     imagePullSecrets: []
@@ -134,7 +137,5 @@ rabbitmq:
     additionalRules: []
   clustering:
     enabled: true
-  extraEnvVars:
-  - name: RABBITMQ_ULIMIT_NOFILES
-    value: ""
+  
 

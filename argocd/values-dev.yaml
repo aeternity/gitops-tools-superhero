@@ -100,8 +100,6 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: cert-manager
             server: https://kubernetes.default.svc
-          - namespace: sonarqube
-            server: https://kubernetes.default.svc
           - namespace: rabbitmq
             server: https://kubernetes.default.svc
           - namespace: redis
@@ -151,9 +149,6 @@ applications:
   cert-manager:
     project: tools
     namespace: cert-manager
-  sonarqube:
-    project: tools
-    namespace: sonarqube
   rabbitmq:
     project: tools
     namespace: rabbitmq

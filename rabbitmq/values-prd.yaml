@@ -3,14 +3,14 @@ encValues:
   rabbitmq-erlang-cookie: "AgAZJcmEHLPaC6ndEj5+C+Yy96y+UEDj3ho3bjkL0xo8JZM/z6NVPvkmwMiEvB/HR3eXazCub9PjHtAXEyKatxBvcCkCbKuIWJOGn5RTqTwyPjEG1yJpuVKjZU5yBpB2WRFFXY7ZgDAWw/LKSRk2+KTyGd3dDLiKuHR8p4Rqx5wMNt5UAxuQCHLTCPn1OuGzZ3recwWFndbBBW7uHHenZT+J/lzTNMHaQ63yRJRqJrn3z1SoNVRIbPRoYGi1hry5XRLncIOY4KxHjTHlixHUT7fOX3kf9S9Bi/uXt3y6DEffYWSuptxqoysub69/kCxxYM7GeqGcn+1YTLD7jO+lcbNJRuui60/yDvIE/u4U7Q0rfmS3wFGdq0wzrxogRgiVbTIjNuyUTE/0+hXTa7qcyEBIS4t5IhbkEb7BgZ6QD563PZNYOO/ybatOahHQZFJCwRHEVX+8Fv0vBnENS9ehoDZrxWYuqOq16zmamHH7TtPG/gbrhsFNQKFeWY35ftMFdqUpRgFMuBi2J+QyeiufwsFlXeMfofqQFDDXTRJGBsFgwN/gHTZzaXcGjdldiP6QSSBldnDkwtbwjs4FvwAIDvMBXZwrDFF6Vlui9Bg+HjYlWJB1mRYf+5x5FEr7RmVTonhTX+dP9gYTyrpUp7mpoK1K8YNFuYKYBb4Y3S26+lngWpLlAwzTr+Knoi/QYxdsjPuAaxLl2IIJ8kVoNZkUtiGqQi1H36vx0xaR6WWUnalJ0A=="
 
 rabbitmq:
-  extraEnvVars:
-    - name: RABBITMQ_ULIMIT_NOFILES
-      value: ""
   global:
     imageRegistry: ""
     imagePullSecrets: []
     storageClass: ""
   clusterDomain: "superhero-prd"
+  extraEnvVars:
+    - name: RABBITMQ_ULIMIT_NOFILES
+      value: ""
   image:
     registry: docker.io
     repository: bitnami/rabbitmq

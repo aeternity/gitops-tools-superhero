@@ -104,8 +104,6 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: rabbitmq
             server: https://kubernetes.default.svc
-          - namespace: uptime-kuma
-            server: https://kubernetes.default.svc
           - namespace: redis
             server: https://kubernetes.default.svc
         clusterResourceWhitelist:
@@ -118,7 +116,6 @@ argo-cd:
         description: Applications deployed on K8S
         sourceRepos:
           - 'https://github.com/aeternity/gitops-apps-aelabs.git'
-          -  'https://github.com/aeternity/gitops-apps-aelabs.git'
         destinations:
           - namespace: apps
             server: https://kubernetes.default.svc
@@ -157,9 +154,6 @@ applications:
   rabbitmq:
     project: tools
     namespace: rabbitmq
-  uptime-kuma:
-    project: tools
-    namespace: uptime-kuma
   redis:
     project: tools
     namespace: redis

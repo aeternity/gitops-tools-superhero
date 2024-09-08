@@ -4,6 +4,7 @@ kind: AlertmanagerConfig
 metadata:
   name: alertmanager-slack-config
   labels:
+    app: alertmanager
     alertmanagerConfig: {{- include "kube-prometheus-stack.labels" . | nindent 4 }}
   namespace: {{ .Release.Namespace }}
 spec:

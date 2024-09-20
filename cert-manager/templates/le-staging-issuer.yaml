@@ -21,7 +21,7 @@ spec:
         cnameStrategy: Follow
         route53:
           region: us-east-1
-          accessKeyID: AKIARRNBUIJ5LDV2CVZH
+          accessKeyID: AKIARRNBUIJ5F2EEQXKL
           secretAccessKeySecretRef:
             name: route53-secret
             key: accessKeySecret

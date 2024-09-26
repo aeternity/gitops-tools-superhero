@@ -2,6 +2,7 @@ defaultCertificateDmains:
   - "*.dev.service.aepps.com"
 
 traefik:
+  fullnameOverride: traefik
   globalArguments: []
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"

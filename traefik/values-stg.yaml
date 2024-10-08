@@ -2,6 +2,7 @@ defaultCertificateDmains:
   - "*.stg.service.aepps.com"
 
 traefik:
+  instanceLabelOverride: traefik
   globalArguments: []
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"

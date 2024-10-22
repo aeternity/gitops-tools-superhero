@@ -1,4 +1,4 @@
-plausible:
+plausible-analytics:
   # Plausible specific values
 
   # -- Disables authentication completely, no registration, login will be shown.

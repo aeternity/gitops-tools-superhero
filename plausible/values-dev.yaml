@@ -156,6 +156,7 @@ plausible-analytics:
       - host: plausible.dev.service.aepps.com 
         paths:
           - path: "/"
+            pathType: Implementation
     tls: []    
 
   resources: {}

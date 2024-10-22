@@ -154,7 +154,8 @@ plausible-analytics:
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
     hosts:
       - host: plausible.dev.service.aepps.com 
-        paths: []
+        paths:
+          - path: "/"
     tls: []    
 
   resources: {}

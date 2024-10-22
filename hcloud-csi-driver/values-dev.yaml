@@ -22,7 +22,7 @@ hcloud-csi-driver:
   ## Controller configuration
   controller:
     ## hcloud-csi-driver Docker image for controller containers
-    image: hetznercloud/hcloud-csi-driver:1.6.0
+    image: hetznercloud/hcloud-csi-driver:v2.9.0
     ## ImagePullPolicy for the hcloud-csi-driver Docker image
     imagePullPolicy: IfNotPresent
 
@@ -30,7 +30,7 @@ hcloud-csi-driver:
   ## Node configuration
   node:
     ## hcloud-csi-driver Docker image for node containers
-    image: hetznercloud/hcloud-csi-driver:1.6.0
+    image: hetznercloud/hcloud-csi-driver:v2.9.0
     ## ImagePullPolicy for the hcloud-csi-driver Docker image
     imagePullPolicy: IfNotPresent
     ## (host) path to kubelet lib dir

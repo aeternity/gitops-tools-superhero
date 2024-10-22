@@ -1,0 +1,10 @@
+apiVersion: v2
+name: plausible
+description: A plausible helm chart
+
+version: 0.8.0
+
+dependencies:
+  - name: plausible
+    version: 0.8.0
+    repository: https://zekker6.github.io/helm-charts/

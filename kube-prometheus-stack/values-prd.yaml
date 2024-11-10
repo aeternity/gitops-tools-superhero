@@ -197,7 +197,7 @@ kube-prometheus-stack:
     - name: pods
       rules:
         - alert: ContainerCpuUsage
-          expr: (sum(rate(container_cpu_usage_seconds_total{name!=""}[5m])) BY (instance, name) * 100) > 90
+          expr: (sum(rate(container_cpu_usage_seconds_total{pod!=""}[5m])) BY (instance, pod) * 100) > 90
           for: 5m
           labels:
             severity: critical
@@ -205,7 +205,7 @@ kube-prometheus-stack:
             env: prd
           annotations:
             summary: "Container CPU usage"
-            description: "Container CPU usage is above 90%\n VALUE = {{ $value }}"
+            description: "Container CPU usage is above 90%\nVALUE = {{ $value }}\nPod: {{ $labels.pod }}"
         - alert: RedisDown
           expr: redis_up == 0
           for: 0m

@@ -49,6 +49,9 @@ argo-cd:
         - type: helm
           url: https://charts.bitnami.com/bitnami
           name: redis
+        - type: helm
+          url: https://zekker6.github.io/helm-charts/
+          name: plausible
       dex.config: |
         connectors:
           - type: github
@@ -106,6 +109,8 @@ argo-cd:
             server: https://kubernetes.default.svc
           - namespace: redis
             server: https://kubernetes.default.svc
+          - namespace: plausible
+            server: https://kubernetes.default.svc
         clusterResourceWhitelist:
           - group: '*'
             kind: '*'
@@ -157,6 +162,9 @@ applications:
   redis:
     project: tools
     namespace: redis
+  plausible:
+    project: tools
+    namespace: plausible
   aescan:
     project: apps
     namespace: apps

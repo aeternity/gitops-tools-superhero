@@ -36,15 +36,24 @@ plausible-analytics:
     enabled: true
     # -- The URL Connection String to clickhouse DB see -> https://clickhouse.tech/docs/en/interfaces/http/
     url: "http://plausible-clickhouse.plausible:8123/plausible_events_db"
-    # -- Sub-chart values, see https://artifacthub.io/packages/helm/sentry/clickhouse
+    replicas: 1
+    image: clickhouse/clickhouse-server
+    imageVersion: "24.3.3.102-alpine"
     clickhouse:
-      replicas: 1
-      # -- Latest sentry/clickhouse chart ships 19.14, which doesn't work together
-      # with latest plausible
-      # https://artifacthub.io/packages/helm/sentry/clickhouse
-      # https://hub.docker.com/r/clickhouse/clickhouse-server/tags
-      image: clickhouse/clickhouse-server
-      imageVersion: "24.3.3.102-alpine"
+      persistentVolumeClaim:
+        enabled: true
+        dataPersistentVolume:
+          enabled: true
+          accessModes:
+            - ReadWriteOnce
+          storageClassName: "hcloud-volumes"
+          storage: 50Gi
+        logsPersistentVolume:
+          enabled: true
+          accessModes:
+            - ReadWriteOnce
+          storageClassName: "hcloud-volumes"
+          storage: 50Gi
 
   # -- Plausible uses and SMTP server to send transactional emails e.g. account activation, password reset, weekly reports, etc.
   smtp:

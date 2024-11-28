@@ -197,7 +197,7 @@ kube-prometheus-stack:
     - name: pods
       rules:
         - alert: ContainerCpuUsage
-          expr: sum(rate(container_cpu_usage_seconds_total{pod!="", pod!~"superhero-backend.*"}[5m])) BY (instance, pod) * 100 > 10
+          expr: sum(rate(container_cpu_usage_seconds_total{pod!="", pod!~"superhero-backend.*"}[5m])) BY (instance, pod) * 100 > 90
           for: 5m
           labels:
             severity: critical

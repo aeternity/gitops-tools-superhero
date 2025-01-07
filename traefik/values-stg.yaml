@@ -16,7 +16,7 @@ traefik:
     websecure:
       tls:
         enabled: true
-  tlsStore:
+  tlsStores:
     default:
       defaultCertificate:
         secretName: traefik-default-cert

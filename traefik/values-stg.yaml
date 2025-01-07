@@ -13,7 +13,8 @@ traefik:
     access:
       enabled: true
   serviceAccount:
-    create: true
+    enabled: true  # Replaced "create" with "enabled"
+    name: traefik-sa # Optional: you can define a specific name for the service account
   ports:
     websecure:
       tls:

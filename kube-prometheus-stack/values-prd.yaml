@@ -281,3 +281,5 @@ kube-prometheus-stack:
           for: 15m
           labels:
             severity: critical
+            namespace: monitoring
+

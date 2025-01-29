@@ -151,6 +151,7 @@ kube-prometheus-stack:
           for: 10m
           labels:
             severity: critical
+            namespace: monitoring
           annotations:
             summary: Kubernetes Node ready (instance {{ $labels.instance }})
             description: "Node {{ $labels.node }} has been unready for a long time\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
@@ -159,6 +160,7 @@ kube-prometheus-stack:
           for: 2m
           labels:
             severity: critical
+            namespace: monitoring
           annotations:
             summary: Kubernetes memory pressure (instance {{ $labels.instance }})
             description: "{{ $labels.node }} has MemoryPressure condition\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
@@ -167,6 +169,7 @@ kube-prometheus-stack:
           for: 2m
           labels:
             severity: critical
+            namespace: monitoring
           annotations:
             summary: Kubernetes disk pressure (instance {{ $labels.instance }})
             description: "{{ $labels.node }} has DiskPressure condition\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
@@ -175,6 +178,7 @@ kube-prometheus-stack:
           for: 2m
           labels:
             severity: critical
+            namespace: monitoring
           annotations:
             summary: Kubernetes out of disk (instance {{ $labels.instance }})
             description: "{{ $labels.node }} has OutOfDisk condition\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
@@ -183,6 +187,7 @@ kube-prometheus-stack:
           for: 2m
           labels:
             severity: critical
+            namespace: monitoring
           annotations:
             summary: Kubernetes out of capacity (instance {{ $labels.instance }})
             description: "{{ $labels.node }} is out of capacity\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
@@ -191,6 +196,7 @@ kube-prometheus-stack:
           for: 0m
           labels:
             severity: critical
+            namespace: monitoring
           annotations:
             summary: Kubernetes container oom killer (instance {{ $labels.instance }})
             description: "Container {{ $labels.container }} in pod {{ $labels.namespace }}/{{ $labels.pod }} has been OOMKilled {{ $value }} times in the last 10 minutes.\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"                   
@@ -231,6 +237,7 @@ kube-prometheus-stack:
           for: 2m
           labels:
             severity: critical
+            namespace: monitoring
           annotations:
             summary: Host out of memory (instance {{ $labels.instance }})
             description: "Node memory is filling up (< 10% left)\n  VALUE = {{ $value }}"
@@ -255,6 +262,7 @@ kube-prometheus-stack:
           for: 1m
           labels:
             severity: critical
+            namespace: monitoring
         - alert: KubePodCrashLooping
           annotations:
             description: 'Pod {{ $labels.namespace }}/{{ $labels.pod }} ({{ $labels.container
@@ -265,6 +273,7 @@ kube-prometheus-stack:
           for: 15m
           labels:
             severity: critical
+            namespace: monitoring
         - alert: KubePodNotReady
           annotations:
             description: Pod {{ $labels.namespace }}/{{ $labels.pod }} has been in a non-ready
@@ -282,4 +291,3 @@ kube-prometheus-stack:
           labels:
             severity: critical
             namespace: monitoring
-

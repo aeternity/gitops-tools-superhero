@@ -7,6 +7,8 @@ traefik:
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"
     - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    - "--entrypoints.websecure.http2.maxconcurrentstreams=5000"
+    - "--entrypoints.web.http2.maxconcurrentstreams=5000"
   logs:
     general:
       level: DEBUG

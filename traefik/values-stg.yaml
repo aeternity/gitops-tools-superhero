@@ -2,6 +2,8 @@ defaultCertificateDmains:
   - "*.stg.service.aepps.com"
 
 traefik:
+  deployment:
+    replicas: 2
   instanceLabelOverride: traefik
   globalArguments: []
   additionalArguments:

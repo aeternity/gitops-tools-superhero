@@ -3,7 +3,7 @@ defaultCertificateDmains:
 
 traefik:
   deployment:
-    replicas: 2
+    replicas: 1
   instanceLabelOverride: traefik
   globalArguments: []
   additionalArguments:

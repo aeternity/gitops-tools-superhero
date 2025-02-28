@@ -102,12 +102,12 @@ prometheus-blackbox-exporter:
         #interval: 60s
         #scrapeTimeout: 60s
         #module: http_backend
-      - name: webmail_keypair_org
+      - name: webmail-keypair-org
         url: https://webmail.keypair.org
         interval: 60s
         scrapeTimeout: 60s
         module: http_backend
-      - name: iredmail_prd
+      - name: iredmail-prd
         url: https://iredmail.prd.service.aepps.com
         interval: 60s
         scrapeTimeout: 60s

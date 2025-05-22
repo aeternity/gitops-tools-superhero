@@ -144,6 +144,16 @@ kube-prometheus-stack:
           annotations:
             summary: "Probe failed (URL: {{ $labels.instance }})"
             description: "Please check status on the following link: https://superhero-backend.prd.service.aepps.com/health/backend"
+        - alert: BlackboxProbeMdwSync
+          expr: probe_failed_due_to_regex{target="mainnet-mdw"} > 0
+          for: 0m
+          labels:
+            severity: critical
+            namespace: monitoring
+            env: prd
+          annotations:
+            summary: "MDW sync probe failed (URL: {{ $labels.instance }})"
+            description: "Blackbox probe failed regex match for mdw_synced. Check: https://mainnet.aeternity.io/mdw/status"
     - name: kubernetes
       rules:
         - alert: KubernetesNodeReady

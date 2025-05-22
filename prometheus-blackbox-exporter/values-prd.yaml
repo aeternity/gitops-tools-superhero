@@ -27,6 +27,7 @@ prometheus-blackbox-exporter:
           fail_if_not_ssl: false
           fail_if_body_not_matches_regexp:
             - '"mdw_synced":\s*true'
+        
   serviceMonitor:
     enabled: true
 
@@ -123,7 +124,7 @@ prometheus-blackbox-exporter:
         scrapeTimeout: 60s
         module: http_backend
       - name: mainnet-mdw
-        url: https://iredmail.prd.service.aepps.com
+        url: https://mainnet.aeternity.io/mdw/status
         interval: 60s
         scrapeTimeout: 60s
         module: http_mdw_match

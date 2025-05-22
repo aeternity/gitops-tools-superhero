@@ -26,7 +26,7 @@ prometheus-blackbox-exporter:
           preferred_ip_protocol: "ip4"
           fail_if_not_ssl: false
           fail_if_body_not_matches_regexp:
-            - '"mdw_synced":\s*false'
+            - '"mdw_synced":\s*true'
   serviceMonitor:
     enabled: true
 

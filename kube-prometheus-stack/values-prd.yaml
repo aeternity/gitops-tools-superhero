@@ -152,7 +152,7 @@ kube-prometheus-stack:
             namespace: monitoring
             env: prd
           annotations:
-            summary: "MDW sync probe failed (URL: {{ $labels.instance }})"
+            summary: "MDW sync probe failed (Target: {{ $labels.target }})"
             description: "Blackbox probe failed regex match for mdw_synced. Check: https://mainnet.aeternity.io/mdw/status"
     - name: kubernetes
       rules:

@@ -10,7 +10,7 @@ encAelabs:
 
 argo-cd:
   global:
-    domain: https://argocd.dev.service.aepps.com
+    domain: argocd.dev.service.aepps.com
   server:
     ingress:
       enabled: true

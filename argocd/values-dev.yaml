@@ -9,22 +9,32 @@ encAelabs:
   username: "AgBhM0+d96R17Ld3rqYUJ7OpzU/ZpCppy4JfZJ+CO2P3kNFUT9yAZoIre704iTtJPvIn5LVYUu+Y2ZE41SKB3OxO5JaWIHd54jVbZbQ/4OYijEdRC9pgM9QHP9TwjrWx+tJTfDwtmfvDCWM5PxcjnV8bS0gKE/PFG1Z5iYl2DBodOKq0lSjaOPd36kSfPe3/hsrQR8Svsg/Lw89SbUwlEFrCy9uG45Z8Iyfx3k8w7TAqwEjINoU32Jax/VK0gd9/tQQ2uC26dsClTDsOHdiKdH9pTu4UPTiVD5g5cN42MbpnONm5wV9VjnhSAqzW3oK9ZpVLv0Lr2wzFhvJCL/n0h09f60RMTAF5YqI8qypGBNLDUUtkqd++U5KOS4WB3zJmze8PucC+aKj3qie0ohepbMMThIgPlCKJozmwxXBsHbEwDJLsRN4mhXWk0Ws+J6mb8j6E4gh+wa7mJccv3hlxsx5haeA+gedRvh9XWqc4bvRAxyXMNUrA1iG34I96s5AKLoltkdZuMa3FtmRyMkXpFzO8k8gjHay7zXJ7LUsndcYQCrkcyym7oUOo/riOZ31Jx3ljslSnZMkO1uspLYFSG8HuekGMk5o5rRY+Zu/eACFxlAN8RvgcQ2EOG8Wmo/TtPw7QzXyzCqjL+kfegGAq2c1yQm0zmfVBhvoOi6s/E54g4inKe3xkUpLup2kpy2t4GUJD6yRuBZXwUA=="
 
 argo-cd:
-  server:
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
-      pathType: ImplementationSpecific
-      hosts:
-        - "argocd.dev.service.aepps.com"
-    extraArgs:
-      - --insecure=true
-      - --repo-server-timeout-seconds=180
-    config:
+  configs:
+    server:
+      ingress:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        pathType: ImplementationSpecific
+        hosts:
+          - "argocd.dev.service.aepps.com"
+      extraArgs:
+        - --insecure=true
+        - --repo-server-timeout-seconds=180
+    cm:
+      dex.config: |
+        connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: $dex.github.clientID
+              clientSecret: $dex.github.clientSecret
+              orgs:
+                - name: aeternity
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
-      # Argo CD instance label key
       url: https://argocd.dev.service.aepps.com
       application.instanceLabelKey: argocd.argoproj.io/instance
       repositories: |
@@ -48,30 +58,20 @@ argo-cd:
         - type: helm
           url: https://zekker6.github.io/helm-charts/
           name: plausible
-      dex.config: |
-        connectors:
-          - type: github
-            id: github
-            name: GitHub
-            config:
-              clientID: $dex.github.clientID
-              clientSecret: $dex.github.clientSecret
-              orgs:
-              - name: aeternity
       resource.customizations: |
-          networking.k8s.io/Ingress:
-            health.lua: |
-              hs = {}
-              hs.status = "Healthy"
-              return hs
-          admissionregistration.k8s.io/MutatingWebhookConfiguration:
-            ignoreDifferences: |
-              jsonPointers:
-              - /webhooks/0/failurePolicy
-          admissionregistration.k8s.io/ValidatingWebhookConfiguration:
-            ignoreDifferences: |
-              jsonPointers:
-              - /webhooks/0/failurePolicy
+        networking.k8s.io/Ingress:
+          health.lua: |
+            hs = {}
+            hs.status = "Healthy"
+            return hs
+        admissionregistration.k8s.io/MutatingWebhookConfiguration:
+          ignoreDifferences: |
+            jsonPointers:
+            - /webhooks/0/failurePolicy
+        admissionregistration.k8s.io/ValidatingWebhookConfiguration:
+          ignoreDifferences: |
+            jsonPointers:
+            - /webhooks/0/failurePolicy
     rbacConfig:
       policy.default: role:readonly
       policy.csv: |
@@ -235,3 +235,4 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
+

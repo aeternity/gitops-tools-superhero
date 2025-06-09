@@ -20,12 +20,13 @@ argo-cd:
       pathType: ImplementationSpecific
       hosts:
         - "argocd.dev.service.aepps.com"
-    extraArgs:
-      - --insecure=true
-      - --repo-server-timeout-seconds=180
   configs:
+    params:
+      server.insecure: true
+      applicationsetcontroller.policy: create-update
     cm:
       url: https://argocd.dev.service.aepps.com
+      users.anonymous.enabled: "false"
       dex.config: |
         connectors:
           - type: github

@@ -75,59 +75,60 @@ argo-cd:
           ignoreDifferences: |
             jsonPointers:
             - /webhooks/0/failurePolicy
-    rbacConfig:
+    rbac:
       policy.default: role:readonly
       policy.csv: |
         g, aeternity:devops, role:admin
-    additionalProjects:
-      - name: tools
-        namespace: argocd
-        additionalLabels: {}
-        additionalAnnotations: {}
-        description: Tools used to run the environment
-        sourceRepos:
-          - 'https://github.com/aeternity/gitops-tools-superhero.git'
-          - 'https://bitnami-labs.github.io/sealed-secrets'
-          - 'https://argoproj.github.io/argo-helm'
-        destinations:
-          - namespace: tools
-            server: https://kubernetes.default.svc
-          - namespace: argocd
-            server: https://kubernetes.default.svc
-          - namespace: sealed-secrets
-            server: https://kubernetes.default.svc
-          - namespace: traefik
-            server: https://kubernetes.default.svc
-          - namespace: kube-system
-            server: https://kubernetes.default.svc
-          - namespace: monitoring
-            server: https://kubernetes.default.svc
-          - namespace: logging
-            server: https://kubernetes.default.svc
-          - namespace: cert-manager
-            server: https://kubernetes.default.svc
-          - namespace: rabbitmq
-            server: https://kubernetes.default.svc
-          - namespace: redis
-            server: https://kubernetes.default.svc
-          - namespace: plausible
-            server: https://kubernetes.default.svc
-        clusterResourceWhitelist:
-          - group: '*'
-            kind: '*'
-      - name: apps
-        namespace: argocd
-        additionalLabels: {}
-        additionalAnnotations: {}
-        description: Applications deployed on K8S
-        sourceRepos:
-          - 'https://github.com/aeternity/gitops-apps-aelabs.git'
-        destinations:
-          - namespace: apps
-            server: https://kubernetes.default.svc
-        clusterResourceWhitelist:
-          - group: '*'
-            kind: '*'
+
+projects:
+  - name: tools
+    namespace: argocd
+    additionalLabels: {}
+    additionalAnnotations: {}
+    description: Tools used to run the environment
+    sourceRepos:
+      - 'https://github.com/aeternity/gitops-tools-superhero.git'
+      - 'https://bitnami-labs.github.io/sealed-secrets'
+      - 'https://argoproj.github.io/argo-helm'
+    destinations:
+      - namespace: tools
+        server: https://kubernetes.default.svc
+      - namespace: argocd
+        server: https://kubernetes.default.svc
+      - namespace: sealed-secrets
+        server: https://kubernetes.default.svc
+      - namespace: traefik
+        server: https://kubernetes.default.svc
+      - namespace: kube-system
+        server: https://kubernetes.default.svc
+      - namespace: monitoring
+        server: https://kubernetes.default.svc
+      - namespace: logging
+        server: https://kubernetes.default.svc
+      - namespace: cert-manager
+        server: https://kubernetes.default.svc
+      - namespace: rabbitmq
+        server: https://kubernetes.default.svc
+      - namespace: redis
+        server: https://kubernetes.default.svc
+      - namespace: plausible
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: apps
+    namespace: argocd
+    additionalLabels: {}
+    additionalAnnotations: {}
+    description: Applications deployed on K8S
+    sourceRepos:
+      - 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    destinations:
+      - namespace: apps
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
 
 defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
 defaultTargetRevision: dev

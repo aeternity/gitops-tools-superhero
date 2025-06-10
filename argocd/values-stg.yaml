@@ -9,6 +9,8 @@ encAelabs:
   username: "AgB/I436aqhlrFRnHPWgi0tfzwk6U3ydTyrBXQ/twOWF6j+426U+EqIl9a0CQ1adYcwYWzqZ67YuGrMx/sHxTqPooup/XmF25xnQn28i6wrlU0ZaoBSjmKbXpgsKp40TEcVXYwlmIf6sjb6/T7ekszSp+EK4aOv07JC6zn8OQWaxmTWjbKMGpdNhMqYwlvuBE+Bm3TA034zWBWg5bnh7cS0ReuirpmUIY8OmzkNnOYN2rT61N4NzLFtprUD2/Qm7Ul23ezhySp35LB+m0qJ1yIY79ZeM/GW9owM7beyy4oUhe0ZhDlQeSaVbws3YmjXANcg30t2TjHatNFV7sgU++Yam7B/n2Cakkk7T25qjYWNZEQkaO72d4IE/+tIWrrUefhU9uqeHThGhinhTehzP1utPkPDOWCW0gZxgwBTsGVWUDdENpNC8O7Cy9gf7OhhKoQaYDGWgcWr3UtQpr+VdqHWob+BK65BNNNlMdDSr+Gao3v3cXgmuwPrtxBtM3YQ5CpykUxGn4rLDXjT+BRDSkU7A5ZSQKFfFHLvmL/OV9nXN9EuV6o27ULGfuNdveuKm8OWMkzBAAUUTVilmYcCM/6s9bTuZNp2pw+7skhn+dj4AbGPvB5Sde4LgYqkpD7l7VNrOaUBpUfh4aMAbxzAr2uMDLt3lbf6M592dbxe2k7ZRcZLn7+OJDfGlkL7OBgrmcjMtkN4jGM1J6g=="
 
 argo-cd:
+  global:
+    domain: argocd.stg.service.aepps.com
   server:
     ingress:
       enabled: true
@@ -18,14 +20,25 @@ argo-cd:
       pathType: ImplementationSpecific
       hosts:
         - "argocd.stg.service.aepps.com"
-    extraArgs:
-      - --insecure=true
-      - --repo-server-timeout-seconds=180
-    config:
+  configs:
+    params:
+      server.insecure: true
+      applicationsetcontroller.policy: create-update
+    cm:
+      url: https://argocd.stg.service.aepps.com
+      users.anonymous.enabled: "false"
+      dex.config: |
+        connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: $dex.github.clientID
+              clientSecret: $dex.github.clientSecret
+              orgs:
+                - name: aeternity
       # Argo CD's externally facing base URL (optional). Required when configuring SSO
       # url: https://argocd.example.com
-      # Argo CD instance label key
-      url: https://argocd.stg.service.aepps.com
       application.instanceLabelKey: argocd.argoproj.io/instance
       repositories: |
         - url: https://github.com/aeternity/gitops-tools-superhero.git
@@ -49,80 +62,71 @@ argo-cd:
         - type: helm
           url: https://sentry-kubernetes.github.io/charts
           name: sentry
-      dex.config: |
-        connectors:
-          - type: github
-            id: github
-            name: GitHub
-            config:
-              clientID: $dex.github.clientID
-              clientSecret: $dex.github.clientSecret
-              orgs:
-              - name: aeternity
       resource.customizations: |
-          networking.k8s.io/Ingress:
-            health.lua: |
-              hs = {}
-              hs.status = "Healthy"
-              return hs
-          admissionregistration.k8s.io/MutatingWebhookConfiguration:
-            ignoreDifferences: |
-              jsonPointers:
-              - /webhooks/0/failurePolicy
-          admissionregistration.k8s.io/ValidatingWebhookConfiguration:
-            ignoreDifferences: |
-              jsonPointers:
-              - /webhooks/0/failurePolicy
-    rbacConfig:
+        networking.k8s.io/Ingress:
+          health.lua: |
+            hs = {}
+            hs.status = "Healthy"
+            return hs
+        admissionregistration.k8s.io/MutatingWebhookConfiguration:
+          ignoreDifferences: |
+            jsonPointers:
+            - /webhooks/0/failurePolicy
+        admissionregistration.k8s.io/ValidatingWebhookConfiguration:
+          ignoreDifferences: |
+            jsonPointers:
+            - /webhooks/0/failurePolicy
+    rbac:
       policy.default: role:readonly
       policy.csv: |
         g, aeternity:devops, role:admin
-    additionalProjects:
-      - name: tools
-        namespace: argocd
-        additionalLabels: {}
-        additionalAnnotations: {}
-        description: Tools used to run the environment
-        sourceRepos:
-          - 'https://github.com/aeternity/gitops-tools-superhero.git'
-        destinations:
-          - namespace: tools
-            server: https://kubernetes.default.svc
-          - namespace: argocd
-            server: https://kubernetes.default.svc
-          - namespace: sealed-secrets
-            server: https://kubernetes.default.svc
-          - namespace: traefik
-            server: https://kubernetes.default.svc
-          - namespace: kube-system
-            server: https://kubernetes.default.svc
-          - namespace: logging
-            server: https://kubernetes.default.svc
-          - namespace: monitoring
-            server: https://kubernetes.default.svc
-          - namespace: cert-manager
-            server: https://kubernetes.default.svc
-          - namespace: sentry
-            server: https://kubernetes.default.svc
-          - namespace: redis
-            server: https://kubernetes.default.svc
-        clusterResourceWhitelist:
-          - group: '*'
-            kind: '*'
-      - name: apps
-        namespace: argocd
-        additionalLabels: {}
-        additionalAnnotations: {}
-        description: Applications deployed on K8S
-        sourceRepos:
-          - 'https://github.com/aeternity/gitops-apps-superhero.git'
-          - 'https://github.com/aeternity/gitops-apps-aelabs.git'
-        destinations:
-          - namespace: apps
-            server: https://kubernetes.default.svc
-        clusterResourceWhitelist:
-          - group: '*'
-            kind: '*'
+
+projects:
+  - name: tools
+    namespace: argocd
+    additionalLabels: {}
+    additionalAnnotations: {}
+    description: Tools used to run the environment
+    sourceRepos:
+      - 'https://github.com/aeternity/gitops-tools-superhero.git'
+    destinations:
+      - namespace: tools
+        server: https://kubernetes.default.svc
+      - namespace: argocd
+        server: https://kubernetes.default.svc
+      - namespace: sealed-secrets
+        server: https://kubernetes.default.svc
+      - namespace: traefik
+        server: https://kubernetes.default.svc
+      - namespace: kube-system
+        server: https://kubernetes.default.svc
+      - namespace: logging
+        server: https://kubernetes.default.svc
+      - namespace: monitoring
+        server: https://kubernetes.default.svc
+      - namespace: cert-manager
+        server: https://kubernetes.default.svc
+      - namespace: sentry
+        server: https://kubernetes.default.svc
+      - namespace: redis
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: apps
+    namespace: argocd
+    additionalLabels: {}
+    additionalAnnotations: {}
+    description: Applications deployed on K8S
+    sourceRepos:
+      - 'https://github.com/aeternity/gitops-apps-superhero.git'
+      - 'https://github.com/aeternity/gitops-apps-aelabs.git'
+    destinations:
+      - namespace: apps
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
 
 defaultRepoUrl: 'https://github.com/aeternity/gitops-tools-superhero.git'
 defaultTargetRevision: stg

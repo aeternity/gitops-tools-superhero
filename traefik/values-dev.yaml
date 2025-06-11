@@ -2,9 +2,6 @@ defaultCertificateDmains:
   - "*.dev.service.aepps.com"
 
 traefik:
-  providers:
-    kubernetesCRD:
-      enabled: true
   instanceLabelOverride: traefik
   globalArguments: []
   additionalArguments:

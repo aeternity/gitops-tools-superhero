@@ -12,8 +12,6 @@ traefik:
       level: DEBUG
     access:
       enabled: true
-  serviceAccount:
-    create: true
   ports:
     websecure:
       tls:

@@ -1,0 +1,34 @@
+defaultCertificateDmains:
+  - "test.superk8.com"
+
+traefik:
+  instanceLabelOverride: traefik-superk8
+  globalArguments: []
+  additionalArguments:
+    - "--entrypoints.web.http.redirections.entrypoint.to=:443"
+    - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+  logs:
+    general:
+      level: DEBUG
+    access:
+      enabled: true
+  ports:
+    websecure:
+      tls:
+        enabled: true
+  tlsStore:
+    default:
+      defaultCertificate:
+        secretName: traefik-superk8-cert
+  service:
+    enabled: true
+    type: LoadBalancer
+    annotations:
+      load-balancer.hetzner.cloud/name: "traefik-lb-superk8"
+      load-balancer.hetzner.cloud/location: "nbg1"
+      load-balancer.hetzner.cloud/type: "lb11"
+      load-balancer.hetzner.cloud/use-private-ip: "true"
+      load-balancer.hetzner.cloud/ipv6-disabled: "true"
+      load-balancer.hetzner.cloud/disable-private-ingress: "true"
+      load-balancer.hetzner.cloud/protocol: "tcp"
+      load-balancer.hetzner.cloud/hostname: "superk8.com"

@@ -19,7 +19,7 @@ traefik:
   tlsStore:
     default:
       defaultCertificate:
-        secretName: traefik-superk8-cert
+        secretName: traefik-default-hetzner-cert
   service:
     enabled: true
     type: LoadBalancer

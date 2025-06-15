@@ -2,11 +2,11 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: traefik-default-cert
+  name: traefik-default-hetzner-cert
   labels:
     solver: hetzner
 spec:
-  secretName: traefik-default-cert
+  secretName: traefik-default-hetzner-cert
   dnsNames:
     {{- toYaml .Values.defaultCertificateDmains | nindent 4 }}
   issuerRef:

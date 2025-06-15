@@ -17,7 +17,7 @@ traefik:
       tls:
         enabled: true
   tlsStore:
-    default:
+    default-superk8:
       defaultCertificate:
         secretName: traefik-default-hetzner-cert
   service:

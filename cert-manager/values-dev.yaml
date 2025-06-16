@@ -4,9 +4,6 @@ encValues:
 dnsSolverDomains:
   - 'aepps.com'
 
-hetznerZoneName: wordcraft.fun
-hetznerApiUrl: https://dns.hetzner.com/api/v1
-
 cert-manager:
   installCRDs: true
   securityContext:

@@ -6,7 +6,7 @@ encValuesHetzner:
 dnsSolverDomains:
   - 'aepps.com'
 
-hetznerZoneName: superk8.com
+hetznerZoneName: wordcraft.fun
 hetznerApiUrl: https://dns.hetzner.com/api/v1
 
 cert-manager:

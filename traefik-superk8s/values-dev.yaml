@@ -1,5 +1,5 @@
 defaultCertificateDmains:
-  - "test.superk8.com"
+  - "test.wordcraft.fun"
 
 traefik:
   instanceLabelOverride: traefik-superk8
@@ -31,4 +31,4 @@ traefik:
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "tcp"
-      load-balancer.hetzner.cloud/hostname: "superk8.com"
+      load-balancer.hetzner.cloud/hostname: "wordcraft.fun"

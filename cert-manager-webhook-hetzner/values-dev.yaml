@@ -1,0 +1,27 @@
+encValues:  
+  api-key: "AgAf6XR7QiAeDpYfREURX5IbLuLLwQXUAVNssrdjJWeoXQf0N9dcTlKXDkBX0KLngLs4fN2tR5HJv7TOuPF49tM9qxrkkVhbIyPY8/XFcgeA3JbiZd72g3pOSrtWAY9AhNhEyZTcsM/Ey2/Uhx3+nc9fbzw0Y1bAj4zWDFs3Zqh0jOXfctxg4iM99u2Q3k6T0XHnFFC2orNE4RDzjDNwm0gPqmPEFg6of4skjxSNXji3wBHF7qeOHEwqsaLC1E5gLmKN9GpU3FxXDf1WanyEhsujJgAPJN6wyc7SfKzWYhGI5XbXQLW39KeUrOpltb4tHRkMeF7M3BaQ/Evn1FS078IsJEJ8Tw22GtN3stYcWEKUBniCFQ07syXOH3eAUD7kGbrX+bFuSXzuwEG6/jBHXYawslXozVDhQh5qXfh3T7rnAKl4fazPdpQ/mbPgU1hGYbZ4modmEAkJrXQbZciqoQf9fxE3QLsYaNgEM+KijaNBJnlBh/dAU7pQrNap2DSHGOckTM5hAZcb/Ur9jby7KEDQwrhnQqi4kAFhK9aDMurfwNS83fk1GD1Cet6ovo8R1jnTSESb/huoueOiOYkHlujTLGpBCk3UGYUmbbIfOOtjbt6iDPy0MTWWWQLLHqYVdfJ98ZfNwOvCmdD5+17cHv4pc31fokfJM9ZHrnP2NkAmNwDrWYZS9Ks9NKMwijRKsASKcGLZbKTGUmVl+H3BmMIUi1mnmjagiBjXVH3nQetafQ=="
+
+cert-manager-webhook-hetzner:
+  groupName: acme.superk8.com
+
+  certManager:
+    namespace: cert-manager
+    serviceAccountName: cert-manager
+
+  image:
+    repository: deyaeddin/cert-manager-webhook-hetzner
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  replicaCount: 1
+
+  nameOverride: ""
+  fullnameOverride: ""
+
+  service:
+    type: ClusterIP
+    port: 443
+
+  secretName:
+    - hetzner-dns-secret
+

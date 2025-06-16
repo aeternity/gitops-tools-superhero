@@ -1,0 +1,9 @@
+apiVersion: v2
+name: cert-manager-webhook-hetzner
+version: 0.2.1
+
+dependencies:
+  - name: cert-manager-webhook-hetzner
+    version: 0.2.1
+    repository: https://deyaeddin.github.io/cert-manager-webhook-hetzner/chart/
+

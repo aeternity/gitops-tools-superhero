@@ -15,5 +15,4 @@ spec:
             solverName: hetzner
             config:
               secretName: hetzner-dns-secret
-              zoneName: {{ .Values.hetznerZoneName | quote }}
               apiUrl: {{ .Values.hetznerApiUrl | default "https://dns.hetzner.com/api/v1" | quote }}

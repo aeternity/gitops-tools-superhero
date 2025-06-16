@@ -170,9 +170,6 @@ applications:
   redis:
     project: tools
     namespace: redis
-  plausible:
-    project: tools
-    namespace: plausible
   dex-ui:
     project: apps
     namespace: apps
@@ -225,18 +222,6 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  superhero-ui:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  superhero-wallet:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-  superhero-backend:
-    project: apps
-    namespace: apps
-    repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
   scv-worker:
     project: apps
     namespace: apps
@@ -245,4 +230,3 @@ applications:
     project: apps
     namespace: apps
     repoUrl: 'https://github.com/aeternity/gitops-apps-aelabs.git'
-

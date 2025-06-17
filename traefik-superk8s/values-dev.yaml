@@ -29,3 +29,5 @@ traefik:
       load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "tcp"
       load-balancer.hetzner.cloud/hostname: "wordcraft.fun"
+  nodeSelector:
+    traefik-superk8: "true"

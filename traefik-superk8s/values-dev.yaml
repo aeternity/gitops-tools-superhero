@@ -13,6 +13,11 @@ traefik:
     websecure:
       tls:
         enabled: true
+  ingressClass:
+    enabled: true
+    isDefaultClass: false
+    name: traefik-superk8
+
   tlsStore:
     default-superk8:
       defaultCertificate:

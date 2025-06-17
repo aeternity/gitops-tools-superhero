@@ -145,7 +145,7 @@ applications:
     namespace: traefik
   traefik-superk8s:
     project: tools
-    namespace: traefik
+    namespace: traefik-superk8s
   metrics-server:
     project: tools
     namespace: kube-system

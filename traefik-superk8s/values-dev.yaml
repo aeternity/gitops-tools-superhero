@@ -4,8 +4,6 @@ traefik:
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"
     - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-    - "--tls.stores.default=default-superk8"
-
   logs:
     general:
       level: DEBUG
@@ -21,7 +19,7 @@ traefik:
     name: traefik-superk8
 
   tlsStore:
-    default-superk8:
+    default:
       defaultCertificate:
         secretName: traefik-default-hetzner-cert
   service:

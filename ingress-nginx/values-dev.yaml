@@ -1,6 +1,8 @@
 ingress-nginx:
   controller:
     replicaCount: 1
+    extraArgs:
+      default-ssl-certificate: "ingres-nginx/nginx-default-cert"
 
     service:
       enabled: true
@@ -14,6 +16,3 @@ ingress-nginx:
         load-balancer.hetzner.cloud/disable-private-ingress: "true"
         load-balancer.hetzner.cloud/protocol: "tcp"
         load-balancer.hetzner.cloud/hostname: "nginx"
-
-    defaultTLS:
-      secret: nginx-default-cert

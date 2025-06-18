@@ -2,6 +2,9 @@ defaultCertificateDmains:
   - "*.dev.service.aepps.com"
 
 traefik:
+  providers:
+    kubernetesCRD:
+      enabled: true
   instanceLabelOverride: traefik
   globalArguments: []
   additionalArguments:
@@ -12,8 +15,6 @@ traefik:
       level: DEBUG
     access:
       enabled: true
-  serviceAccount:
-    create: true
   ports:
     websecure:
       tls:

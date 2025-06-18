@@ -3,6 +3,12 @@ ingress-nginx:
     replicaCount: 1
     extraArgs:
       default-ssl-certificate: "ingres-nginx/nginx-default-cert"
+    admissionWebhooks:
+      enabled: true
+      patch:
+        enabled: true
+        job:
+          enabled: false
 
     service:
       enabled: true

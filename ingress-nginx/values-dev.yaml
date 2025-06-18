@@ -16,5 +16,4 @@ ingress-nginx:
         load-balancer.hetzner.cloud/hostname: "nginx"
 
     defaultTLS:
-      enabled: true
-      secretName: nginx-default-cert
+      secret: nginx-default-cert

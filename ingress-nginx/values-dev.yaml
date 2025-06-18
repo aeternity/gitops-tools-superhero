@@ -1,0 +1,20 @@
+ingress-nginx:
+  controller:
+    replicaCount: 1
+
+    service:
+      enabled: true
+      type: LoadBalancer
+      annotations:
+        load-balancer.hetzner.cloud/name: "nginx-lb-ingress"
+        load-balancer.hetzner.cloud/location: "nbg1"
+        load-balancer.hetzner.cloud/type: "lb11"
+        load-balancer.hetzner.cloud/use-private-ip: "true"
+        load-balancer.hetzner.cloud/ipv6-disabled: "true"
+        load-balancer.hetzner.cloud/disable-private-ingress: "true"
+        load-balancer.hetzner.cloud/protocol: "tcp"
+        load-balancer.hetzner.cloud/hostname: "nginx"
+
+    defaultTLS:
+      enabled: true
+      secretName: nginx-default-cert

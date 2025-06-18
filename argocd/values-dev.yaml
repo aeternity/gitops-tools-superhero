@@ -143,6 +143,9 @@ applications:
   traefik:
     project: tools
     namespace: traefik
+  ingress-nginx:
+    project: tools
+    namespace: ingress-nginx
   metrics-server:
     project: tools
     namespace: kube-system

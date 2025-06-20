@@ -113,8 +113,6 @@ projects:
         server: https://kubernetes.default.svc
       - namespace: plausible
         server: https://kubernetes.default.svc
-      - namespace: ingress-nginx
-        server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
@@ -145,9 +143,6 @@ applications:
   traefik:
     project: tools
     namespace: traefik
-  ingress-nginx:
-    project: tools
-    namespace: ingress-nginx
   metrics-server:
     project: tools
     namespace: kube-system

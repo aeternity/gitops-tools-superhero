@@ -110,6 +110,8 @@ projects:
         server: https://kubernetes.default.svc
       - namespace: redis
         server: https://kubernetes.default.svc
+      - namespace: ingress-nginx
+        server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
@@ -162,6 +164,9 @@ applications:
   redis:
     project: tools
     namespace: redis
+  ingress-nginx:
+    project: tools
+    namespace: ingress-nginx
   dex-ui:
     project: apps
     namespace: apps

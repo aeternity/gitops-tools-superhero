@@ -1,5 +1,10 @@
 ingress-nginx-fun:
   controller:
+    ingressClassResource:
+      name: nginx-fun
+      enabled: true
+      default: false
+    ingressClass: nginx-fun
     replicaCount: 1
     extraArgs:
       default-ssl-certificate: "ingress-nginx/nginx-fun-default-cert"

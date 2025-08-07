@@ -3,6 +3,7 @@ ingress-nginx-fun:
     replicaCount: 1
     extraArgs:
       default-ssl-certificate: "ingress-nginx/nginx-fun-default-cert"
+
     admissionWebhooks:
       enabled: true
       patch:

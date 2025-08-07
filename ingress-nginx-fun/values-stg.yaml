@@ -1,4 +1,4 @@
-ingress-nginx-fun:
+ingress-nginx:
   controller:
     ingressClassResource:
       name: nginx-fun

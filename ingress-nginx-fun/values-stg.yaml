@@ -21,9 +21,7 @@ ingress-nginx:
       type: LoadBalancer
       annotations:
         load-balancer.hetzner.cloud/name: "nginx-fun-lb-ingress"
-        # You can try to replace location with network-zone or keep both for testing
-        # load-balancer.hetzner.cloud/location: "nbg1"
-        load-balancer.hetzner.cloud/network-zone: "eu-central" 
+        load-balancer.hetzner.cloud/location: "nbg1"
         load-balancer.hetzner.cloud/type: "lb11"
         load-balancer.hetzner.cloud/use-private-ip: "true"
         load-balancer.hetzner.cloud/ipv6-disabled: "true"

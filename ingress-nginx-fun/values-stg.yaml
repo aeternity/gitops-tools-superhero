@@ -10,7 +10,7 @@ ingress-nginx-fun:
       default-ssl-certificate: "ingress-nginx/nginx-fun-default-cert"
 
     admissionWebhooks:
-      enabled: true
+      enabled: false
       patch:
         enabled: true
         job:

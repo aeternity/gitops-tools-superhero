@@ -168,6 +168,9 @@ applications:
   ingress-nginx:
     project: tools
     namespace: ingress-nginx
+  ingress-nginx-fun:
+    project: tools
+    namespace: ingress-nginx
   dex-ui:
     project: apps
     namespace: apps

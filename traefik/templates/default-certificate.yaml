@@ -1,4 +1,4 @@
-{{- if and (.Capabilities.APIVersions.Has "cert-manager.io/v1") .Values.defaultCertificateDmains -}}
+{{- if and (.Capabilities.APIVersions.Has "cert-manager.io/v1") .Values.defaultCertificateDomains -}}
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -8,7 +8,7 @@ metadata:
 spec:
   secretName: traefik-default-cert
   dnsNames:
-    {{- toYaml .Values.defaultCertificateDmains | nindent 4 }}
+    {{- toYaml .Values.defaultCertificateDomains | nindent 4 }}
   issuerRef:
     name: letsencrypt
     # We can reference ClusterIssuers by changing the kind here.

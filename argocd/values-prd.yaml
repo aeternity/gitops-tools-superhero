@@ -20,6 +20,11 @@ argo-cd:
       pathType: ImplementationSpecific
       hosts:
         - "argocd.prd.service.aepps.com"
+      tls:
+        - secretName: traefik-default-cert
+          hosts:
+            - argocd.prd.service.aepps.com
+
   configs:
     params:
       server.insecure: true

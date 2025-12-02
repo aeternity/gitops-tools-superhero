@@ -7,6 +7,7 @@ traefik:
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"
     - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
   logs:
     general:
       level: DEBUG
@@ -15,6 +16,10 @@ traefik:
   serviceAccount:
     create: true
   ports:
+    web:
+      expose:
+        default: true
+      redirectTo: websecure
     websecure:
       tls:
         enabled: true
@@ -31,5 +36,8 @@ traefik:
       load-balancer.hetzner.cloud/type: "lb11"
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
       load-balancer.hetzner.cloud/protocol: "tcp"
-      # ⚠️ removed private-only flags
-      # ⚠️ hostname optional, can be dropped
+      load-balancer.hetzner.cloud/health-check-protocol: "tcp"
+      load-balancer.hetzner.cloud/health-check-port: "80"
+      load-balancer.hetzner.cloud/health-check-interval: "10s"
+      load-balancer.hetzner.cloud/health-check-timeout: "5s"
+      load-balancer.hetzner.cloud/health-check-retries: "2"

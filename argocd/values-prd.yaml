@@ -72,6 +72,21 @@ argo-cd:
             hs = {}
             hs.status = "Healthy"
             return hs
+        bitnami.com/SealedSecret:
+          health.lua: |
+            hs = {}
+            if obj.status ~= nil and obj.status.conditions ~= nil then
+              for _, c in ipairs(obj.status.conditions) do
+                if c.type == "Synced" and c.status == "True" then
+                  hs.status = "Healthy"
+                  hs.message = c.message
+                  return hs
+                end
+              end
+            end
+            hs.status = "Progressing"
+            hs.message = "Waiting for SealedSecret to be unsealed"
+            return hs
         admissionregistration.k8s.io/MutatingWebhookConfiguration:
           ignoreDifferences: |
             jsonPointers:

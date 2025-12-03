@@ -17,6 +17,8 @@ spec:
             metadata:
               annotations:
                 traefik.ingress.kubernetes.io/router.entrypoints: web
+                traefik.ingress.kubernetes.io/router.tls: "false"
+                traefik.ingress.kubernetes.io/router.priority: "1000"
     - dns01:
         cnameStrategy: Follow
         route53:

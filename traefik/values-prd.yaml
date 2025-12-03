@@ -15,14 +15,6 @@ traefik:
       enabled: true
   serviceAccount:
     create: true
-  ports:
-    web:
-      expose:
-        default: true
-      redirectTo: websecure
-    websecure:
-      tls:
-        enabled: true
   tlsStore:
     default:
       defaultCertificate:
@@ -37,7 +29,6 @@ traefik:
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
       load-balancer.hetzner.cloud/protocol: "tcp"
       load-balancer.hetzner.cloud/health-check-protocol: "tcp"
-      load-balancer.hetzner.cloud/health-check-port: "80"
       load-balancer.hetzner.cloud/health-check-interval: "10s"
       load-balancer.hetzner.cloud/health-check-timeout: "5s"
       load-balancer.hetzner.cloud/health-check-retries: "2"

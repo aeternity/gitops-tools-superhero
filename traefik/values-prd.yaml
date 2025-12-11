@@ -7,7 +7,6 @@ traefik:
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"
     - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-    - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
   logs:
     general:
       level: DEBUG
@@ -26,9 +25,8 @@ traefik:
       load-balancer.hetzner.cloud/name: "traefik-lb"
       load-balancer.hetzner.cloud/location: "nbg1"
       load-balancer.hetzner.cloud/type: "lb11"
+      load-balancer.hetzner.cloud/use-private-ip: "true"
       load-balancer.hetzner.cloud/ipv6-disabled: "true"
+      load-balancer.hetzner.cloud/disable-private-ingress: "true"
       load-balancer.hetzner.cloud/protocol: "tcp"
-      load-balancer.hetzner.cloud/health-check-protocol: "tcp"
-      load-balancer.hetzner.cloud/health-check-interval: "10s"
-      load-balancer.hetzner.cloud/health-check-timeout: "5s"
-      load-balancer.hetzner.cloud/health-check-retries: "2"
+      load-balancer.hetzner.cloud/hostname: "prd.service.aepps.com"

@@ -1,6 +1,6 @@
 redis:
   image:
-    digest: ''
+    repository: bitnamilegacy/redis
   architecture: standalone
   persistence:
     enabled: false

@@ -2,9 +2,9 @@ apiVersion: v2
 name: redis
 description: Redis chart
 
-version: 17.3.4
+version: 19.0.0
 
 dependencies:
   - name: redis
-    version: 17.3.4
+    version: 19.0.0
     repository: https://charts.bitnami.com/bitnami

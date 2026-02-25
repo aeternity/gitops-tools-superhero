@@ -1,4 +1,6 @@
 redis:
+  image:
+    digest: ''
   architecture: standalone
   persistence:
     enabled: false

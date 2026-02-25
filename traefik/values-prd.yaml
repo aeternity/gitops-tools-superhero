@@ -1,33 +1,20 @@
 defaultCertificateDomains:
   - "*.prd.service.aepps.com"
 
-traefik:
-  fullnameOverride: traefik
-  instanceLabelOverride: traefik
-  globalArguments: []
-  additionalArguments:
-    - "--entrypoints.web.http.redirections.entrypoint.to=:443"
-    - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-  logs:
-    general:
-      level: DEBUG
-    access:
-      enabled: true
-  serviceAccount:
-    create: true
-  tlsStore:
-    default:
-      defaultCertificate:
-        secretName: traefik-default-cert
-  service:
+logs:
+  access:
     enabled: true
-    type: LoadBalancer
-    annotations:
-      load-balancer.hetzner.cloud/name: "traefik-lb"
-      load-balancer.hetzner.cloud/location: "nbg1"
-      load-balancer.hetzner.cloud/type: "lb11"
-      load-balancer.hetzner.cloud/use-private-ip: "false"
-      load-balancer.hetzner.cloud/ipv6-disabled: "true"
-      load-balancer.hetzner.cloud/disable-private-ingress: "true"
-      load-balancer.hetzner.cloud/protocol: "tcp"
-      load-balancer.hetzner.cloud/hostname: "prd.service.aepps.com"
+service:
+  type: LoadBalancer
+  annotations:
+    load-balancer.hetzner.cloud/name: "traefik-lb"
+    load-balancer.hetzner.cloud/location: "nbg1"
+    load-balancer.hetzner.cloud/type: "lb11"
+    load-balancer.hetzner.cloud/use-private-ip: "false"
+    load-balancer.hetzner.cloud/ipv6-disabled: "true"
+    load-balancer.hetzner.cloud/disable-private-ingress: "true"
+    load-balancer.hetzner.cloud/protocol: "tcp"
+    load-balancer.hetzner.cloud/hostname: "prd.service.aepps.com"
+ports:
+  web:
+    redirectTo: websecure

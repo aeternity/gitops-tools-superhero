@@ -29,4 +29,7 @@ spec:
       selfHeal: {{ $value.selfHeal | default false }}
     syncOptions:
       - CreateNamespace=true
+      {{- if $value.serverSideApply }}
+      - ServerSideApply=true
+      {{- end }}
 {{- end }}

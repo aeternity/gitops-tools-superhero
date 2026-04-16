@@ -153,6 +153,9 @@ applications:
   fluent-bit:
     project: tools
     namespace: logging
+  kube-prometheus-stack-crds:
+    project: tools
+    namespace: monitoring
   kube-prometheus-stack:
     project: tools
     namespace: monitoring

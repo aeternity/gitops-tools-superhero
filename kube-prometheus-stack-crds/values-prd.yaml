@@ -1,2 +1,4 @@
-kube-prometheus-stack-crds:
+# Uses prometheus-community/prometheus-operator-crds 20.0.3 (prometheus-operator v0.82.x)
+# Matches kube-prometheus-stack 73.2.0
+prometheus-operator-crds: {}
   

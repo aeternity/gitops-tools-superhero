@@ -164,6 +164,9 @@ applications:
   metrics-server:
     project: tools
     namespace: kube-system
+  kube-prometheus-stack-crds:
+    project: tools
+    namespace: monitoring
   kube-prometheus-stack:
     project: tools
     namespace: monitoring

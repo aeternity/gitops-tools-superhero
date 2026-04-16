@@ -156,6 +156,7 @@ applications:
   kube-prometheus-stack-crds:
     project: tools
     namespace: monitoring
+    serverSideApply: true
   kube-prometheus-stack:
     project: tools
     namespace: monitoring

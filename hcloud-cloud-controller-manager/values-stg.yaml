@@ -1,17 +1,16 @@
 encValues:
   hcloudApiToken: "AgAZ5JUJGZNQAehMVymY41iXw6U8WOs0t0s3G9P+4XhFttK8CINnLCSBmoE/KVYyESLkjtuApdYeev5IlgWxQ0cwI8rpUfxVjfZ1oj7jEZ+J3ysfwJGnrOrZfOJ7DoaYNMbT+Oq72UxjH56k2CvEgF81MnNSx6QP1SwJs4HjqckuTQnr9CaDP9X9d5n6Am/bl/beRzSAovKXDzeMdVA3WnIuHgCR8EmmPMxgoyoJp+YTwsroQDdhmLvShR3abfUsSDnmhplw0F/jRodphwxw0ZeolU+FOSsZBJo9APGZjv0YYAByWOVmMBC2ePFIeVM5qRGFSNXR/yh6HgFjG129Bv4Vilf6yU+xjiY9nJDK+FRlnpZqCVPIbPT67qqDojhXVJcvbQXtqxURUWo7EXm75ZupNrRcxm3v2etuD5wUu/xt7VhoruDbcTTt2RNoVF2WkkOEfb2X2ZOwRbEtrvSfg6VjnbscagwVEKD74d/jwTz7BkK3150pl63RtSSJJanmaEiipbm5huCtjjyL7NLmhubgqPl4OLtsSfdaoYf+6RN+2lj0XTPvoHBG/Fu7sT3JWn1gi9hi9TgEfkoKz3531axqHChDG9wVaMHuGi4dZhR7EWHyev/jq0frTxpJsgKHCcXyl9kaVB17ZgjAhdu1/eTOve+BnPdxZjAAW7J4DmTG1D3DA7xgLpn5/SU/vvmdU9e9CFLOPjHSwAG+TJ6P9XPevck/t9rOht1clNLX7GBEBbTWF7LlIXEhHJPz3eZMb7H+Pd8zWngCT3EWFnM325a7"
 hcloud-cloud-controller-manager:
-  networking:
-    enabled: true
-    clusterCIDR: 192.168.66.0/24
-    network:
-      value: stg-52cr-network
-      valueFrom: ~
+  args:
+    allocate-node-cidrs: "true"
+    cluster-cidr: 192.168.66.0/24
   env:
     HCLOUD_TOKEN:
       valueFrom:
         secretKeyRef:
           name: hcloud-cloud-controller-manager-secret
           key: hcloudApiToken
+    HCLOUD_NETWORK:
+      value: stg-52cr-network
 
 

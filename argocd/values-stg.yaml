@@ -160,6 +160,9 @@ applications:
   kube-prometheus-stack:
     project: tools
     namespace: monitoring
+  hcloud-cloud-controller-manager:
+    project: tools
+    namespace: kube-system
   hcloud-csi-driver:
     project: tools
     namespace: kube-system

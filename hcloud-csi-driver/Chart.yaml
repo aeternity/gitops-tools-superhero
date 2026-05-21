@@ -2,10 +2,10 @@ apiVersion: v2
 name: hcloud-csi-driver
 description: Hetzner cloud csi driver
 
-version: 2.2.1
+version: 2.21.1
 
 dependencies:
-  - name: hcloud-csi-driver
-    version: 2.2.1
-    repository: https://helm-charts.mlohr.com/
+  - name: hcloud-csi
+    version: 2.21.1
+    repository: https://charts.hetzner.cloud
 

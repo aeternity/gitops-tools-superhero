@@ -1,0 +1,14 @@
+encValues:
+  hcloudApiToken: "AgB1BIojBSQJZ3j0syGziLM3uKNmgRGdnRYZzaUUAEuI2HI2KVQqOnnDB11ayZxspogR7hUrjzcqCuI7+YoiqohrDh65gQNfvk/Eaets2cGbAu7E1gKWEyadOhaDS2VTZ3HGMFdy3s9tU7VkEUtc7kWplVamgs+AUqLBkuJQ+txdwucLrHQ3uZ5sT3WZqasKbRfx9x/j9PvpoNtxOnTdFCVUlVjWyW7PArrKD1nQXc3jq7rDoHK8T2TQt3RibTMqPuHshdEfC/bDhjAy3tWXlOaP2iHdpm7dzwmpUiWKmP2I90WXX5ZfHSvG6TFHefFv/p01VGR8uM9wQ8Inj32XeYnbr6Hyv5JoYsnyWPGwOuvQwnpShwNbsKQri81vn4piP4Rui/S7RtpuIRpaHS9T9WbjPnedbGctQ1wtZRF4vYOasU3E4wxT/fIKSpePhBMGQ6QiZv28kSzdXf10+5aQxdqayBvjquuuAe2uSHEfcA+XdFCX/BHybbovTaupxwAMR9ae9wL0qCbasZkmuM+76oQPXVSy3e98640QflLoAsIcUk0eco+9CqsNQWOEzKne22gdJasZurmXnhfcdlMm2VVxyM17cvIey3zDsP/1HX3zfGtxerj5iS40+nJ0Lx0yVaQ3jMH3mvR1w+SUcqP8VJgPXJPifdzjw69OsvKg9SccaATHXNuz95UkvYpwzST1Nb3kFey+BwLhli1DWB+yHnmJbl9i57znl6XgoPJn+waJSFTAUroBQxmGx9bBZWXJliypj9k1zvVwlU0fyBmlJNrQ"
+hcloud-cloud-controller-manager:
+  args:
+    allocate-node-cidrs: "true"
+    cluster-cidr: 172.16.64.0/18
+  env:
+    HCLOUD_TOKEN:
+      valueFrom:
+        secretKeyRef:
+          name: hcloud-cloud-controller-manager-secret
+          key: hcloudApiToken
+    HCLOUD_NETWORK:
+      value: prd-4c2n-network

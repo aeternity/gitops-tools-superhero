@@ -8,6 +8,7 @@ traefik:
   additionalArguments:
     - "--entrypoints.web.http.redirections.entrypoint.to=:443"
     - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    - "--entrypoints.web.http.redirections.entrypoint.priority=1"
   logs:
     general:
       level: DEBUG

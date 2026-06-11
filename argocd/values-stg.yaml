@@ -13,6 +13,12 @@ encAelabs:
 argo-cd:
   global:
     domain: argocd.stg.service.aepps.com
+  # argocd-secret (incl. redis.password) is provisioned via the SealedSecret
+  # (configs.secret.createSecret=false below), so the redis-secret-init PreSync
+  # hook is redundant. Leaving it enabled makes every sync run a PreSync Job
+  # that stalls the app-of-apps sync. Disable it on stg.
+  redisSecretInit:
+    enabled: false
   server:
     ingress:
       enabled: true

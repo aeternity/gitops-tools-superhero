@@ -24,7 +24,9 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: {{ $value.selfHeal | default false }}
+      {{- if $value.selfHeal }}
+      selfHeal: true
+      {{- end }}
     syncOptions:
       - CreateNamespace=true
       {{- if $value.serverSideApply }}

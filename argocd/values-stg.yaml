@@ -58,7 +58,7 @@ argo-cd:
           url: https://argoproj.github.io/argo-helm
           name: argo
         - type: helm
-          url: https://bitnami-labs.github.io/sealed-secrets
+          url: https://bitnami.github.io/sealed-secrets
           name: sealed-secrets
         - type: helm
           url: https://helm.traefik.io/traefik
@@ -99,7 +99,7 @@ projects:
     description: Tools used to run the environment
     sourceRepos:
       - 'https://github.com/aeternity/gitops-tools-superhero.git'
-      - 'https://bitnami-labs.github.io/sealed-secrets'
+      - 'https://bitnami.github.io/sealed-secrets'
       - 'https://argoproj.github.io/argo-helm'
       - 'https://helm.traefik.io/traefik'
       - 'https://fluent.github.io/helm-charts'
